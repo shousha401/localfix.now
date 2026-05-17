@@ -45,9 +45,6 @@ export default function ContactFooterSection() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Contact form submitted:', data);
     setSubmitted(true);
   }
 
@@ -99,12 +96,12 @@ export default function ContactFooterSection() {
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '1rem',
-                color: '#6B7B8D',
+                color: '#544D44',
                 maxWidth: '400px',
                 lineHeight: 1.6,
               }}
             >
-              No pressure, no sales pitch. Just a quick chat about how automation and AI can save you time and grow your revenue.
+              Send a message and we’ll take a look at your website, workflow, or idea.
             </p>
 
             {/* Contact info */}
@@ -124,7 +121,7 @@ export default function ContactFooterSection() {
                 Text us: (559) 389-8850
               </a>
               <a
-                href="mailto:hello@localfix.now"
+                href="mailto:help@localfix.now"
                 className="flex items-center gap-3 transition-colors hover:opacity-80"
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -134,17 +131,17 @@ export default function ContactFooterSection() {
                 }}
               >
                 <Mail size={20} strokeWidth={1.5} color="#E5742B" />
-                hello@localfix.now
+                help@localfix.now
               </a>
               <div
                 className="flex items-center gap-3"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '0.875rem',
-                  color: '#6B7B8D',
+                  color: '#544D44',
                 }}
               >
-                <Clock size={20} strokeWidth={1.5} color="#6B7B8D" />
+                <Clock size={20} strokeWidth={1.5} color="#544D44" />
                 Mon–Fri, 9am–6pm PST
               </div>
             </div>
@@ -181,6 +178,7 @@ export default function ContactFooterSection() {
               </div>
             ) : (
               <form
+                id="review-form"
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4 rounded-xl p-8"
                 style={{
@@ -281,7 +279,7 @@ export default function ContactFooterSection() {
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.8125rem',
-              color: '#6B7B8D',
+              color: '#544D44',
             }}
           >
             &copy; 2026 LocalFix. Built in Fresno.
@@ -293,7 +291,7 @@ export default function ContactFooterSection() {
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '0.8125rem',
-                color: '#6B7B8D',
+                color: '#544D44',
                 textDecoration: 'none',
               }}
             >
@@ -305,7 +303,7 @@ export default function ContactFooterSection() {
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '0.8125rem',
-                color: '#6B7B8D',
+                color: '#544D44',
                 textDecoration: 'none',
               }}
             >

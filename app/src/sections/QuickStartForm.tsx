@@ -25,9 +25,6 @@ export default function QuickStartForm() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    console.log('QuickStartForm submitted:', data);
     setSubmitted(true);
   }
 
@@ -73,7 +70,7 @@ export default function QuickStartForm() {
           style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: '0.9375rem',
-            color: '#6B7B8D',
+            color: '#544D44',
           }}
         >
           Tell us about your business and we'll get back to you within 24 hours.

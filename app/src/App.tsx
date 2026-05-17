@@ -1,17 +1,19 @@
-import { useEffect, useRef, lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import Lenis from 'lenis';
+import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import HeroSection from './sections/HeroSection';
-import HowItWorks from './components/HowItWorks';
-import RecentWork from './components/RecentWork';
-import ProblemSection from './sections/ProblemSection';
-import AboutBlock from './components/AboutBlock';
-import ContactFooterSection from './sections/ContactFooterSection';
+import Home from './pages/Home';
+import FresnoWebDesign from './pages/FresnoWebDesign';
+import WorkflowAutomation from './pages/WorkflowAutomation';
+import AiChatbot from './pages/AiChatbot';
+import WebsiteFixes from './pages/WebsiteFixes';
+import About from './pages/About';
 
 const GooeyCanvas = lazy(() => import('./components/GooeyCanvas'));
 
-export default function App() {
+function AppShell() {
   const scrollSpeedRef = useRef(0);
+  const location = useLocation();
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -39,6 +41,17 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (location.hash) {
+      window.setTimeout(() => {
+        document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+      }, 0);
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname, location.hash]);
+
   function scrollToSection(id: string) {
     const el = document.getElementById(id);
     if (el) {
@@ -52,16 +65,26 @@ export default function App() {
         <GooeyCanvas scrollSpeedRef={scrollSpeedRef} />
       </Suspense>
 
-      <Navbar onScrollTo={scrollToSection} />
+      <Navbar />
 
       <main className="relative z-10">
-        <HeroSection onScrollTo={scrollToSection} />
-        <ProblemSection />
-        <HowItWorks />
-        <RecentWork />
-        <AboutBlock />
-        <ContactFooterSection />
+        <Outlet context={{ scrollToSection }} />
       </main>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route element={<AppShell />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/fresno-web-design" element={<FresnoWebDesign />} />
+        <Route path="/workflow-automation" element={<WorkflowAutomation />} />
+        <Route path="/ai-chatbot" element={<AiChatbot />} />
+        <Route path="/website-fixes" element={<WebsiteFixes />} />
+        <Route path="/about" element={<About />} />
+      </Route>
+    </Routes>
   );
 }

@@ -43,7 +43,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#6B7B8D',
+            color: '#544D44',
             transform: 'translateY(20px)',
           }}
         >
@@ -137,7 +137,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: '0.875rem',
-            color: '#6B7B8D',
+            color: '#544D44',
           }}
         >
           Serving Fresno, Clovis, Madera, Visalia & surrounding Central Valley

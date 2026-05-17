@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-interface NavbarProps {
-  onScrollTo: (id: string) => void;
-}
-
-export default function Navbar({ onScrollTo }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -18,8 +15,11 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { label: 'Services', id: 'services' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Web Design', href: '/fresno-web-design' },
+    { label: 'Automation', href: '/workflow-automation' },
+    { label: 'AI', href: '/ai-chatbot' },
+    { label: 'About', href: '/about' },
   ];
 
   return (
@@ -35,7 +35,7 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
     >
       <div className="mx-auto flex h-full items-center justify-between px-6" style={{ maxWidth: '1200px' }}>
         {/* Logo */}
-        <a href="/" aria-label="LocalFix home" className="inline-flex items-center">
+        <Link to="/" aria-label="LocalFix home" className="inline-flex items-center">
           <svg
             width="140"
             height="32"
@@ -55,22 +55,22 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
               LocalFix<tspan fill="#E5742B">.</tspan>
             </text>
           </svg>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => onScrollTo(link.id)}
+            <Link
+              key={link.href}
+              to={link.href}
               className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
               style={{ color: '#2A2A2A', fontFamily: "'Inter', sans-serif" }}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
-          <button
-            onClick={() => onScrollTo('contact')}
+          <Link
+            to="/#review-form"
             className="text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
             style={{
               background: '#E5742B',
@@ -88,7 +88,7 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
             }}
           >
             Get a Free Review
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -126,21 +126,21 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
       >
         <div className="flex flex-col py-2">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
+            <Link
+              key={link.href}
+              to={link.href}
               onClick={() => {
-                onScrollTo(link.id);
                 setMenuOpen(false);
               }}
               className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
               style={{ color: '#2A2A2A', fontFamily: "'Inter', sans-serif" }}
             >
               {link.label}
-            </button>
+            </Link>
           ))}
-          <button
+          <Link
+            to="/#review-form"
             onClick={() => {
-              onScrollTo('contact');
               setMenuOpen(false);
             }}
             className="mx-6 my-2 text-sm font-medium text-white"
@@ -152,7 +152,7 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
             }}
           >
             Get a Free Review
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

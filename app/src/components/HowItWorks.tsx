@@ -1,33 +1,33 @@
 const steps = [
   {
-    number: '1',
+    number: '01',
     title: 'Free Website Review',
     description:
-      "Send us your current site or describe what you need. Within 48 hours, you get a short video walkthrough — what's working, what's broken, and the highest-impact fixes. No pitch.",
+      'Send your current site or describe what you need. Within 48 hours, you get a short video walkthrough showing what’s working, what’s broken, and the highest-impact fixes.',
   },
   {
-    number: '2',
+    number: '02',
     title: 'Scoped Proposal',
     description:
-      "If you want to move forward, we send a one-page proposal: exactly what we'll build, the flat price, and the delivery date. No hourly billing, no surprise charges.",
+      'If you want to move forward, you get a one-page proposal with exactly what we’ll build, the flat price, and the delivery date. No hourly billing. No surprise charges.',
   },
   {
-    number: '3',
+    number: '03',
     title: 'Build in 1–2 Weeks',
     description:
-      'We build the site, set up forms, configure your domain and email, and send you a preview link. You get one round of revisions included.',
+      'We build the site, set up forms, configure your domain and email, and send you a preview link. One round of revisions is included.',
   },
   {
-    number: '4',
+    number: '04',
     title: 'Launch & 30-Day Support',
     description:
-      'We push the site live, hand over every login and account, and stay on call for 30 days of free fixes. Optional monthly maintenance after that.',
+      'We go live, hand over your login and account details, and you get 30 days of free fixes. Optional monthly maintenance after that.',
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
+    <section id="process" className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1200px' }}>
         <div className="mx-auto text-center" style={{ maxWidth: '720px' }}>
           <span
@@ -37,7 +37,7 @@ export default function HowItWorks() {
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#6B7B8D',
+              color: '#544D44',
             }}
           >
             HOW IT WORKS
@@ -67,83 +67,134 @@ export default function HowItWorks() {
               maxWidth: '640px',
             }}
           >
-            Every project follows the same four steps so you know exactly what you're getting, what it costs, and when it ships — before you pay a dollar.
+            Every project follows the same four steps so you know what you’re getting, what it costs, and when it ships — before you pay a dollar.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => (
-            <article
-              key={step.number}
-              className="transition-all duration-300 ease-out hover:-translate-y-1"
+        <div
+          className="mx-auto mt-12 overflow-hidden rounded-2xl"
+          style={{
+            maxWidth: '980px',
+            background: '#0F2A44',
+            border: '1px solid rgba(250, 247, 242, 0.14)',
+            boxShadow: '0 24px 70px rgba(15, 42, 68, 0.22)',
+          }}
+        >
+          <div
+            className="flex items-center justify-between gap-4 border-b px-5 py-4 md:px-6"
+            style={{ borderColor: 'rgba(250, 247, 242, 0.12)' }}
+          >
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded-full" style={{ background: '#E5742B' }} />
+              <span className="h-3 w-3 rounded-full" style={{ background: '#F2C14E' }} />
+              <span className="h-3 w-3 rounded-full" style={{ background: '#25C46B' }} />
+            </div>
+
+            <span
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E2DDD6',
-                borderRadius: '12px',
-                padding: '2rem',
-                boxShadow: '0 4px 24px rgba(15, 42, 68, 0.04)',
+                fontFamily: "'Space Mono', monospace",
+                fontSize: '0.75rem',
+                color: 'rgba(250, 247, 242, 0.62)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
               }}
             >
-              <div
-                className="flex h-11 w-11 items-center justify-center text-white"
-                style={{
-                  background: '#E5742B',
-                  borderRadius: '999px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                }}
-              >
-                {step.number}
-              </div>
+              how it works
+            </span>
+          </div>
 
-              <h3
-                className="mt-5"
+          <div className="p-5 md:p-8">
+            <p
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: '0.875rem',
+                color: '#BFE8CF',
+              }}
+            >
+              &gt; four steps, no surprises
+            </p>
+
+            <div className="mt-6 grid gap-0 overflow-hidden rounded-xl border md:grid-cols-2" style={{ borderColor: 'rgba(250, 247, 242, 0.12)' }}>
+              {steps.map((step, index) => (
+                <article
+                  key={step.number}
+                  className="p-5 md:p-6"
+                  style={{
+                    borderRight: index % 2 === 0 ? '1px solid rgba(250, 247, 242, 0.12)' : undefined,
+                    borderBottom: index < 2 ? '1px solid rgba(250, 247, 242, 0.12)' : undefined,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: '0.8125rem',
+                      color: '#E5742B',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
+                    STEP {step.number}
+                  </span>
+
+                  <h3
+                    className="mt-3"
+                    style={{
+                      fontFamily: "'Fraunces', serif",
+                      fontWeight: 600,
+                      fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
+                      color: '#FAF7F2',
+                      letterSpacing: '-0.005em',
+                      lineHeight: 1.18,
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+
+                  <p
+                    className="mt-3"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '0.95rem',
+                      color: 'rgba(250, 247, 242, 0.78)',
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {step.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div
+              className="mt-6 flex flex-col gap-3 rounded-xl px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+              style={{
+                background: 'rgba(250, 247, 242, 0.06)',
+                border: '1px solid rgba(250, 247, 242, 0.10)',
+              }}
+            >
+              <p
                 style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 600,
-                  fontSize: '1.0625rem',
-                  color: '#0F2A44',
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: '0.875rem',
+                  color: '#FAF7F2',
                 }}
               >
-                {step.title}
-              </h3>
+                Total: 10–21 days
+              </p>
 
               <p
-                className="mt-3"
+                className="flex items-center gap-2"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '0.9375rem',
-                  color: '#6B7B8D',
-                  lineHeight: 1.6,
+                  color: '#BFE8CF',
+                  fontWeight: 500,
                 }}
               >
-                {step.description}
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: '#25C46B' }} />
+                ready when you are
               </p>
-            </article>
-          ))}
-        </div>
-
-        <p
-          className="mt-10 text-center"
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '0.9375rem',
-            color: '#6B7B8D',
-          }}
-        >
-          Typical project total: 10–21 days from first call to launch.
-        </p>
-
-        <div className="mt-4 text-center">
-          <a
-            href="/services"
-            className="text-brand-orange font-medium hover:underline inline-flex items-center gap-1"
-            style={{ color: '#E5742B' }}
-          >
-            See all services and packages
-            <span aria-hidden="true">→</span>
-          </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

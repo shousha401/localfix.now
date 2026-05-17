@@ -31,6 +31,7 @@ export default function ProblemSection() {
   return (
     <section
       ref={sectionRef}
+      id="problems"
       className="relative"
       style={{
         background: '#FAF7F2',
@@ -50,7 +51,7 @@ export default function ProblemSection() {
             transform: 'translateY(30px)',
           }}
         >
-          SOUND FAMILIAR?
+          SOUNDS FAMILIAR?
         </span>
 
         <h2
@@ -110,7 +111,7 @@ export default function ProblemSection() {
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.75rem',
-              color: '#6B7B8D',
+              color: '#544D44',
             }}
           >
             McKinsey Global Institute

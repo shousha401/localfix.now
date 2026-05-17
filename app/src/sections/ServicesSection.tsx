@@ -178,7 +178,7 @@ export default function ServicesSection() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '0.9375rem',
-                  color: '#6B7B8D',
+                  color: '#544D44',
                   lineHeight: 1.6,
                 }}
               >

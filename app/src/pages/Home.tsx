@@ -1,20 +1,30 @@
-import { useState } from 'react'
-import '../App.css'
+import { useOutletContext } from 'react-router-dom';
+import HeroSection from '../sections/HeroSection';
+import RecentWork from '../components/RecentWork';
+import HowItWorks from '../components/HowItWorks';
+import AboutBlock from '../components/AboutBlock';
+import ContactFooterSection from '../sections/ContactFooterSection';
+import RouteSeo from './RouteSeo';
+
+type OutletContext = {
+  scrollToSection: (id: string) => void;
+};
 
 export default function Home() {
-  const [count, setCount] = useState(0)
+  const { scrollToSection } = useOutletContext<OutletContext>();
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+      <RouteSeo
+        title="LocalFix — Fresno Web Design, Workflow Automation & AI for Local Business"
+        description="Affordable websites, fast fixes, and workflow automation for local businesses in Fresno and the Central Valley. Flat prices, two-week turnarounds, real production software."
+        canonical="https://localfix.now/"
+      />
+      <HeroSection onScrollTo={scrollToSection} />
+      <RecentWork />
+      <HowItWorks />
+      <AboutBlock />
+      <ContactFooterSection />
     </>
-  )
+  );
 }

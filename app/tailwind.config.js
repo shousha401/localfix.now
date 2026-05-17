@@ -48,6 +48,9 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          warmgray: "#544D44",
+        },
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",

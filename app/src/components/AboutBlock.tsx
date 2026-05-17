@@ -1,13 +1,13 @@
 export default function AboutBlock() {
   return (
-    <section className="relative py-20 md:py-28" style={{ background: '#FFFFFF' }}>
+    <section id="about" className="relative py-20 md:py-28" style={{ background: '#FFFFFF' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <div className="grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
           <div className="flex justify-center lg:justify-start">
             <img
-              src="https://placehold.co/400x500/E5742B/FAF7F2?text=Photo+Goes+Here"
-              alt="Portrait placeholder for Eslam from LocalFix"
-              className="w-full max-w-[280px] rounded-2xl object-cover shadow-sm"
+              src="/projects/pic.jpeg"
+              alt="Eslam from LocalFix"
+              className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
               style={{ border: '1px solid #E2DDD6' }}
             />
           </div>
@@ -51,7 +51,7 @@ export default function AboutBlock() {
                 maxWidth: '540px',
               }}
             >
-              Hi — LocalFix is run by one developer, not an agency. By day I build internal software for a Fresno food-service company; on the side, I help local businesses get their websites and workflow into the current decade. You'll work directly with me from the first message to the launch — no account managers, no offshore handoffs, no "we'll get back to you next week."
+              Hi — LocalFix is run by one developer, not an agency. I've spent the last three years building production software for a regional food-service company: internal tools, dashboards, and mobile apps used by drivers every day. LocalFix is where I bring the same engineering to local businesses — without the agency price tag. You'll work directly with me from the first message to launch. No account managers, no offshore handoffs, no "we'll get back to you next week."
             </p>
 
             <p
@@ -62,7 +62,7 @@ export default function AboutBlock() {
                 color: '#0F2A44',
               }}
             >
-              — Eslam, LocalFix
+              — ES, LocalFix
             </p>
 
             <div
@@ -77,8 +77,8 @@ export default function AboutBlock() {
                 (559) 389-8850
               </a>
               <span aria-hidden="true">·</span>
-              <a href="mailto:hello@localfix.now" className="transition-colors hover:text-[#E5742B]">
-                Email: hello@localfix.now
+              <a href="mailto:help@localfix.now" className="transition-colors hover:text-[#E5742B]">
+                Email: help@localfix.now
               </a>
             </div>
           </div>
