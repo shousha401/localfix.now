@@ -47,7 +47,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             transform: 'translateY(20px)',
           }}
         >
-          AUTOMATION & AI FOR THE CENTRAL VALLEY
+          WEBSITES & AUTOMATION — FRESNO & CENTRAL VALLEY
         </span>
 
         <h1
@@ -63,9 +63,8 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             transform: 'translateY(30px)',
           }}
         >
-          Automate your business.{' '}
-          <span style={{ color: '#E5742B' }}>Save time.</span>{' '}
-          Make more money.
+          <span style={{ color: '#0F2A44' }}>Better websites.</span>{' '}
+          <span style={{ color: '#E5742B' }}>Less busywork.</span>
         </h1>
 
         <p
@@ -75,12 +74,12 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             fontFamily: "'Inter', sans-serif",
             fontSize: '1.125rem',
             color: '#2A2A2A',
-            maxWidth: '540px',
+            maxWidth: '600px',
             lineHeight: 1.6,
             opacity: 0,
           }}
         >
-          We bring workflow automation and AI to local Fresno businesses — so you stop wasting hours on repetitive tasks and start focusing on what actually grows your bottom line.
+          We build, fix, and automate websites for local businesses across Fresno and the Central Valley. Flat prices, two-week turnarounds, and one person who answers the phone.
         </p>
 
         <div
@@ -88,9 +87,15 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           className="mt-10 flex flex-col items-center justify-center gap-4 opacity-0 sm:flex-row"
           style={{ transform: 'translateY(15px)' }}
         >
-          <button
-            onClick={() => onScrollTo('contact')}
-            className="w-full font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
+          <a
+            href="/contact#review"
+            onClick={(e) => {
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                onScrollTo('contact');
+              }
+            }}
+            className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
             style={{
               fontFamily: "'Inter', sans-serif",
               background: '#E5742B',
@@ -107,8 +112,8 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
               (e.target as HTMLElement).style.boxShadow = 'none';
             }}
           >
-            Get a Free Review
-          </button>
+            Get a Free Website Review
+          </a>
           <a
             href="sms:+15593898850"
             className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
@@ -122,7 +127,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
               fontSize: '1rem',
             }}
           >
-            Text via iMessage or WhatsApp (559) 389-8850
+            Text us — (559) 389-8850
           </a>
         </div>
 
@@ -135,7 +140,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             color: '#6B7B8D',
           }}
         >
-          Serving Fresno, Clovis, Madera & surrounding areas
+          Serving Fresno, Clovis, Madera, Visalia & surrounding Central Valley
         </p>
       </div>
     </section>
