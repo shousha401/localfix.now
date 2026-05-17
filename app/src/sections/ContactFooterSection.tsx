@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { type CSSProperties, type FormEvent, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Mail, Clock } from 'lucide-react';
@@ -9,7 +9,8 @@ export default function ContactFooterSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -43,12 +44,45 @@ export default function ContactFooterSection() {
     }
   }, []);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('submitting');
+    setErrorMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get('name'),
+      business: formData.get('business'),
+      contact: formData.get('contact'),
+      website: formData.get('website'),
+      need: formData.get('need'),
+      message: formData.get('message'),
+      honeypot: formData.get('company-website'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await response.json()) as { error?: string; ok?: boolean };
+
+      if (!response.ok) {
+        setStatus('error');
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
+
+      setStatus('success');
+    } catch {
+      setStatus('error');
+      setErrorMessage('Network error. Please try again or text us at (559) 389-8850.');
+    }
   }
 
-  const inputStyle: React.CSSProperties = {
+  const inputStyle: CSSProperties = {
     fontFamily: "'Inter', sans-serif",
     background: '#FAF7F2',
     border: '1px solid #E2DDD6',
@@ -153,27 +187,29 @@ export default function ContactFooterSection() {
             className="opacity-0"
             style={{ transform: 'translateX(30px)' }}
           >
-            {submitted ? (
+            {status === 'success' ? (
               <div
-                className="rounded-xl p-8 text-center"
+                className="rounded-xl px-8 py-12 text-center"
                 style={{
                   background: '#FFFFFF',
                   boxShadow: '0 4px 32px rgba(15, 42, 68, 0.08)',
                 }}
               >
-                <svg className="mx-auto mb-4" width="56" height="56" viewBox="0 0 48 48" fill="none">
-                  <circle cx="24" cy="24" r="24" fill="#E5742B" opacity="0.15" />
-                  <path d="M16 24L21 29L32 18" stroke="#E5742B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
                 <p
+                  className="mb-3 text-xl font-medium text-brand-navy"
                   style={{
-                    fontFamily: "'Fraunces', serif",
-                    fontWeight: 600,
-                    fontSize: '1.25rem',
-                    color: '#0F2A44',
+                    fontFamily: "'Inter', sans-serif",
                   }}
                 >
-                  Got it, we'll reply within 24 hours.
+                  Got it. We'll get back to you within 24 hours — usually same day.
+                </p>
+                <p
+                  className="text-brand-warmgray"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                  }}
+                >
+                  For anything urgent, text us at (559) 389-8850.
                 </p>
               </div>
             ) : (
@@ -199,6 +235,20 @@ export default function ContactFooterSection() {
                 </h3>
                 <input
                   type="text"
+                  name="company-website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    left: '-10000px',
+                    width: '1px',
+                    height: '1px',
+                    overflow: 'hidden',
+                  }}
+                />
+                <input
+                  type="text"
                   name="name"
                   placeholder="Your name"
                   required
@@ -213,9 +263,9 @@ export default function ContactFooterSection() {
                   }}
                 />
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Email address"
+                  type="text"
+                  name="business"
+                  placeholder="Business name"
                   required
                   style={inputStyle}
                   onFocus={(e) => {
@@ -227,10 +277,61 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 />
+                <input
+                  type="text"
+                  name="contact"
+                  placeholder="Phone or email"
+                  required
+                  style={inputStyle}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#E5742B';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                />
+                <input
+                  type="url"
+                  name="website"
+                  placeholder="Website URL (optional)"
+                  style={inputStyle}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#E5742B';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                />
+                <select
+                  name="need"
+                  required
+                  defaultValue=""
+                  style={inputStyle}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = '#E5742B';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.boxShadow = 'none';
+                  }}
+                >
+                  <option value="" disabled hidden>
+                    What do you need help with?
+                  </option>
+                  <option>I need a new website</option>
+                  <option>I want to fix or refresh my current website</option>
+                  <option>I want to automate something (booking, inquiries, etc.)</option>
+                  <option>I'm not sure — just want a free review</option>
+                  <option>Something else</option>
+                </select>
                 <textarea
                   name="message"
-                  placeholder="What do you need help with?"
-                  required
+                  placeholder="Anything else we should know? (optional)"
                   rows={4}
                   style={{
                     ...inputStyle,
@@ -245,12 +346,20 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 />
+                {errorMessage && (
+                  <p className="mb-3 text-sm text-red-600" role="alert">
+                    {errorMessage}
+                  </p>
+                )}
                 <button
                   type="submit"
+                  disabled={status === 'submitting'}
                   className="w-full font-medium text-white transition-all duration-200 hover:-translate-y-px"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     background: '#0F2A44',
+                    opacity: status === 'submitting' ? 0.75 : 1,
+                    cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
                     padding: '14px',
                     borderRadius: '8px',
                     fontSize: '1rem',
@@ -263,7 +372,7 @@ export default function ContactFooterSection() {
                     (e.target as HTMLElement).style.background = '#0F2A44';
                   }}
                 >
-                  Send Message
+                  {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
