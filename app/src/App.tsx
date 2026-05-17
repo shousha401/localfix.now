@@ -3,10 +3,11 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import HeroSection from './sections/HeroSection';
 import HowItWorks from './components/HowItWorks';
-import ScopeStrip from './components/ScopeStrip';
+import RecentWork from './components/RecentWork';
 import QuickStartForm from './sections/QuickStartForm';
 import ProblemSection from './sections/ProblemSection';
 import ServicesSection from './sections/ServicesSection';
+import AboutBlock from './components/AboutBlock';
 import ContactFooterSection from './sections/ContactFooterSection';
 
 const GooeyCanvas = lazy(() => import('./components/GooeyCanvas'));
@@ -58,10 +59,11 @@ export default function App() {
       <main className="relative z-10">
         <HeroSection onScrollTo={scrollToSection} />
         <HowItWorks />
-        <ScopeStrip />
+        <RecentWork />
         <QuickStartForm />
         <ProblemSection />
         <ServicesSection />
+        <AboutBlock />
         <ContactFooterSection />
       </main>
     </div>
