@@ -35,23 +35,27 @@ export default function Navbar({ onScrollTo }: NavbarProps) {
     >
       <div className="mx-auto flex h-full items-center justify-between px-6" style={{ maxWidth: '1200px' }}>
         {/* Logo */}
-        <button
-          onClick={() => onScrollTo('hero')}
-          className="flex items-center gap-2 transition-opacity hover:opacity-80"
-          aria-label="LocalFix - scroll to top"
-        >
-          <img src="/assets/logo-icon.png" alt="" className="h-7 w-7" />
-          <span
-            className="text-xl"
-            style={{
-              fontFamily: "'Fraunces', serif",
-              fontWeight: 600,
-              color: '#0F2A44',
-            }}
+        <a href="/" aria-label="LocalFix home" className="inline-flex items-center">
+          <svg
+            width="140"
+            height="32"
+            viewBox="0 0 140 32"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-hidden="true"
           >
-            LocalFix
-          </span>
-        </button>
+            <text
+              x="0"
+              y="26"
+              fontFamily="Fraunces, Georgia, 'Times New Roman', serif"
+              fontWeight="600"
+              fontSize="28"
+              fill="#0F2A44"
+            >
+              LocalFix<tspan fill="#E5742B">.</tspan>
+            </text>
+          </svg>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">
