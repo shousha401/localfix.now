@@ -8,7 +8,6 @@ type ContactPayload = {
   website?: string;
   need?: string;
   message?: string;
-  honeypot?: string;
 };
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -37,14 +36,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const payload = req.body as ContactPayload;
 
-  if (payload.honeypot && payload.honeypot.length > 0) {
+  if (payload.website && payload.website.length > 0) {
     return res.status(200).json({ ok: true });
   }
 
   const name = (payload.name || '').trim();
   const business = (payload.business || '').trim();
   const contact = (payload.contact || '').trim();
-  const website = (payload.website || '').trim();
   const need = (payload.need || '').trim();
   const message = (payload.message || '').trim();
 
@@ -52,27 +50,29 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Please enter your name.' });
   }
 
-  if (!business || business.length < 2 || business.length > 150) {
-    return res.status(400).json({ error: 'Please enter your business name.' });
-  }
-
   if (!contact || contact.length < 5 || contact.length > 200) {
-    return res.status(400).json({ error: 'Please enter a phone number or email.' });
+    return res.status(400).json({ error: 'Please enter an email address or phone number.' });
   }
 
-  if (!need || need.length > 100) {
-    return res.status(400).json({ error: 'Please select what you need help with.' });
+  if (!message || message.length < 10) {
+    return res.status(400).json({ error: 'Please add a short message with at least 10 characters.' });
   }
 
-  if (website && website.length > 300) {
-    return res.status(400).json({ error: 'Website URL too long.' });
+  if (message.length > 2000) {
+    return res.status(400).json({ error: 'Message is too long. Please keep it under 2,000 characters.' });
   }
 
-  if (message && message.length > 2000) {
-    return res.status(400).json({ error: 'Message too long.' });
+  if (business && business.length > 150) {
+    return res.status(400).json({ error: 'Business name is too long.' });
   }
 
-  const subject = `New Free Review Request — ${business}`;
+  if (need && need.length > 100) {
+    return res.status(400).json({ error: 'Selected service is too long.' });
+  }
+
+  const businessValue = business || 'Not provided';
+  const needValue = need || 'Not selected';
+  const subject = `New Free Review Request — ${business || name}`;
 
   const submittedAt = new Date().toLocaleString('en-US', {
     timeZone: 'America/Los_Angeles',
@@ -85,11 +85,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       <h2 style="color: #0F2A44; font-size: 20px; margin-bottom: 16px;">New free review request</h2>
       <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
         <tr><td style="padding: 8px 0; color: #6B6256; width: 140px;">Name</td><td style="padding: 8px 0; font-weight: 500;">${escapeHtml(name)}</td></tr>
-        <tr><td style="padding: 8px 0; color: #6B6256;">Business</td><td style="padding: 8px 0; font-weight: 500;">${escapeHtml(business)}</td></tr>
+        <tr><td style="padding: 8px 0; color: #6B6256;">Business</td><td style="padding: 8px 0; font-weight: 500;">${escapeHtml(businessValue)}</td></tr>
         <tr><td style="padding: 8px 0; color: #6B6256;">Phone / Email</td><td style="padding: 8px 0; font-weight: 500;">${escapeHtml(contact)}</td></tr>
-        ${website ? `<tr><td style="padding: 8px 0; color: #6B6256;">Website</td><td style="padding: 8px 0;">${escapeHtml(website)}</td></tr>` : ''}
-        <tr><td style="padding: 8px 0; color: #6B6256;">Needs</td><td style="padding: 8px 0;">${escapeHtml(need)}</td></tr>
-        ${message ? `<tr><td style="padding: 8px 0; color: #6B6256; vertical-align: top;">Message</td><td style="padding: 8px 0; white-space: pre-wrap;">${escapeHtml(message)}</td></tr>` : ''}
+        <tr><td style="padding: 8px 0; color: #6B6256;">Needs</td><td style="padding: 8px 0;">${escapeHtml(needValue)}</td></tr>
+        <tr><td style="padding: 8px 0; color: #6B6256; vertical-align: top;">Message</td><td style="padding: 8px 0; white-space: pre-wrap;">${escapeHtml(message)}</td></tr>
       </table>
       <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #E8E2D6; color: #6B6256; font-size: 13px;">Submitted ${submittedAt} PT · From localfix.now</p>
     </div>
@@ -99,11 +98,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     'New free review request',
     '',
     `Name: ${name}`,
-    `Business: ${business}`,
+    `Business: ${businessValue}`,
     `Phone/Email: ${contact}`,
-    website ? `Website: ${website}` : null,
-    `Needs: ${need}`,
-    message ? `Message: ${message}` : null,
+    `Needs: ${needValue}`,
+    `Message: ${message}`,
     '',
     `Submitted ${submittedAt} PT · From localfix.now`,
   ].filter(Boolean).join('\n');

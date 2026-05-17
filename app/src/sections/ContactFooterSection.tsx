@@ -57,7 +57,6 @@ export default function ContactFooterSection() {
       website: formData.get('website'),
       need: formData.get('need'),
       message: formData.get('message'),
-      honeypot: formData.get('company-website'),
     };
 
     try {
@@ -93,6 +92,13 @@ export default function ContactFooterSection() {
     width: '100%',
     outline: 'none',
     transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+  };
+
+  const labelStyle: CSSProperties = {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: '0.8125rem',
+    fontWeight: 600,
+    color: '#0F2A44',
   };
 
   return (
@@ -235,7 +241,7 @@ export default function ContactFooterSection() {
                 </h3>
                 <input
                   type="text"
-                  name="company-website"
+                  name="website"
                   tabIndex={-1}
                   autoComplete="off"
                   aria-hidden="true"
@@ -247,7 +253,11 @@ export default function ContactFooterSection() {
                     overflow: 'hidden',
                   }}
                 />
+                <label style={labelStyle} htmlFor="contact-name">
+                  Name *
+                </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder="Your name"
@@ -262,11 +272,14 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 />
+                <label style={labelStyle} htmlFor="contact-business">
+                  Business Name (optional)
+                </label>
                 <input
+                  id="contact-business"
                   type="text"
                   name="business"
                   placeholder="Business name"
-                  required
                   style={inputStyle}
                   onFocus={(e) => {
                     e.target.style.borderColor = '#E5742B';
@@ -277,7 +290,11 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 />
+                <label style={labelStyle} htmlFor="contact-info">
+                  Email or Phone *
+                </label>
                 <input
+                  id="contact-info"
                   type="text"
                   name="contact"
                   placeholder="Phone or email"
@@ -292,23 +309,12 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 />
-                <input
-                  type="url"
-                  name="website"
-                  placeholder="Website URL (optional)"
-                  style={inputStyle}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
-                    e.target.style.boxShadow = 'none';
-                  }}
-                />
+                <label style={labelStyle} htmlFor="contact-need">
+                  What do you need help with? (optional)
+                </label>
                 <select
+                  id="contact-need"
                   name="need"
-                  required
                   defaultValue=""
                   style={inputStyle}
                   onFocus={(e) => {
@@ -320,7 +326,7 @@ export default function ContactFooterSection() {
                     e.target.style.boxShadow = 'none';
                   }}
                 >
-                  <option value="" disabled hidden>
+                  <option value="">
                     What do you need help with?
                   </option>
                   <option>I need a new website</option>
@@ -329,9 +335,15 @@ export default function ContactFooterSection() {
                   <option>I'm not sure — just want a free review</option>
                   <option>Something else</option>
                 </select>
+                <label style={labelStyle} htmlFor="contact-message">
+                  Message *
+                </label>
                 <textarea
+                  id="contact-message"
                   name="message"
-                  placeholder="Anything else we should know? (optional)"
+                  placeholder="Tell us what you need help with"
+                  required
+                  minLength={10}
                   rows={4}
                   style={{
                     ...inputStyle,
