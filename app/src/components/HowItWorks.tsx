@@ -134,6 +134,17 @@ export default function HowItWorks() {
         >
           Typical project total: 10–21 days from first call to launch.
         </p>
+
+        <div className="mt-4 text-center">
+          <a
+            href="/services"
+            className="text-brand-orange font-medium hover:underline inline-flex items-center gap-1"
+            style={{ color: '#E5742B' }}
+          >
+            See all services and packages
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );
