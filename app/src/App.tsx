@@ -61,9 +61,11 @@ function AppShell() {
 
   return (
     <div className="relative">
-      <Suspense fallback={null}>
-        <GooeyCanvas scrollSpeedRef={scrollSpeedRef} />
-      </Suspense>
+      {location.pathname === '/' && (
+        <Suspense fallback={null}>
+          <GooeyCanvas scrollSpeedRef={scrollSpeedRef} />
+        </Suspense>
+      )}
 
       <Navbar />
 

@@ -76,7 +76,6 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             color: '#2A2A2A',
             maxWidth: '600px',
             lineHeight: 1.6,
-            opacity: 0,
           }}
         >
           We build, fix, and automate websites for Fresno-based local businesses and small businesses across California. Flat prices, two-week turnarounds, and one person who answers the phone.

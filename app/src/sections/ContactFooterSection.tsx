@@ -393,7 +393,7 @@ export default function ContactFooterSection() {
 
         {/* Bottom bar */}
         <div
-          className="mt-16 flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row"
+          className="mt-16 border-t pt-8 text-center"
           style={{ borderColor: '#E2DDD6' }}
         >
           <p
@@ -405,32 +405,6 @@ export default function ContactFooterSection() {
           >
             &copy; 2026 LocalFix. Built in Fresno.
           </p>
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="transition-colors duration-200 hover:text-[#E5742B]"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.8125rem',
-                color: '#544D44',
-                textDecoration: 'none',
-              }}
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="transition-colors duration-200 hover:text-[#E5742B]"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.8125rem',
-                color: '#544D44',
-                textDecoration: 'none',
-              }}
-            >
-              Terms
-            </a>
-          </div>
         </div>
       </div>
     </section>

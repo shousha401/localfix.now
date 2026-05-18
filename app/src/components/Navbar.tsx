@@ -17,8 +17,6 @@ export default function Navbar() {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Web Design', href: '/fresno-web-design' },
-    { label: 'Automation', href: '/workflow-automation' },
-    { label: 'AI', href: '/ai-chatbot' },
     { label: 'About', href: '/about' },
   ];
 
