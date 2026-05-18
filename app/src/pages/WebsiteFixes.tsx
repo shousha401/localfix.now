@@ -10,8 +10,8 @@ export default function WebsiteFixes() {
   return (
     <>
       <RouteSeo
-        title="Fast Website Fixes & Refresh in Fresno | LocalFix"
-        description="Broken contact forms, slow pages, mobile issues, outdated design — we fix Fresno business websites fast. Same-week turnarounds on most repairs. Flat prices starting at $499."
+        title="Fast Website Fixes for Fresno & California Small Businesses | LocalFix"
+        description="Broken contact forms, slow pages, mobile issues, outdated design — we fix websites fast for Fresno-based and California small businesses. Same-week turnarounds on most repairs. Flat prices starting at $499."
         canonical="https://localfix.now/website-fixes"
       />
       <ServiceHero

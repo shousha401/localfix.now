@@ -10,8 +10,8 @@ export default function WorkflowAutomation() {
   return (
     <>
       <RouteSeo
-        title="Workflow Automation for Fresno Small Businesses | LocalFix"
-        description="Stop the manual busywork. We build custom workflow automation, booking systems, customer inquiry routing, and internal dashboards for Fresno and Central Valley businesses. Save 5–15 hours every week."
+        title="Workflow Automation for Fresno & California Small Businesses | LocalFix"
+        description="Stop the manual busywork. We build custom workflow automation, booking systems, customer inquiry routing, and internal dashboards for Fresno-based and California small businesses. Save 5–15 hours every week."
         canonical="https://localfix.now/workflow-automation"
       />
       <ServiceHero

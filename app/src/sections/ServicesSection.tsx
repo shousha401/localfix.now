@@ -34,7 +34,7 @@ const services = [
   {
     icon: Search,
     title: 'Local SEO',
-    description: 'Get found by people searching for your services in Fresno and the Central Valley — more calls, more customers.',
+    description: 'Get found by people searching for your services in Fresno, the Central Valley, and across California — more calls, more customers.',
   },
 ];
 

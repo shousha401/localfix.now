@@ -47,7 +47,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             transform: 'translateY(20px)',
           }}
         >
-          WEBSITES & AUTOMATION — FRESNO & CENTRAL VALLEY
+          WEBSITES & AUTOMATION — FRESNO & REMOTE ACROSS CALIFORNIA
         </span>
 
         <h1
@@ -79,7 +79,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             opacity: 0,
           }}
         >
-          We build, fix, and automate websites for local businesses across Fresno and the Central Valley. Flat prices, two-week turnarounds, and one person who answers the phone.
+          We build, fix, and automate websites for Fresno-based local businesses and small businesses across California. Flat prices, two-week turnarounds, and one person who answers the phone.
         </p>
 
         <div
@@ -140,7 +140,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             color: '#544D44',
           }}
         >
-          Serving Fresno, Clovis, Madera, Visalia & surrounding Central Valley
+          Serving Fresno, the Central Valley, and small businesses across California — remote-friendly.
         </p>
       </div>
     </section>

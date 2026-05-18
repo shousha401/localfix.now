@@ -8,8 +8,8 @@ export default function About() {
   return (
     <>
       <RouteSeo
-        title="About LocalFix — Fresno Web Developer | LocalFix"
-        description="LocalFix is run by one developer in Fresno, California, who builds production software for local businesses. No agency overhead. No outsourcing. Three years of internal-tool engineering experience."
+        title="About LocalFix — Fresno-Based Web Developer for California Small Businesses"
+        description="LocalFix is run by one developer in Fresno, California, building production software for small businesses across California. No agency overhead. No outsourcing. Three years of internal-tool engineering experience."
         canonical="https://localfix.now/about"
       />
       <ServiceHero
