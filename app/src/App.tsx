@@ -8,6 +8,7 @@ import WorkflowAutomation from './pages/WorkflowAutomation';
 import AiChatbot from './pages/AiChatbot';
 import WebsiteFixes from './pages/WebsiteFixes';
 import About from './pages/About';
+import ThankYou from './pages/ThankYou';
 
 const GooeyCanvas = lazy(() => import('./components/GooeyCanvas'));
 
@@ -86,6 +87,7 @@ export default function App() {
         <Route path="/ai-chatbot" element={<AiChatbot />} />
         <Route path="/website-fixes" element={<WebsiteFixes />} />
         <Route path="/about" element={<About />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Route>
     </Routes>
   );

@@ -1,4 +1,5 @@
 import { type CSSProperties, type FormEvent, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Mail, Clock } from 'lucide-react';
@@ -6,6 +7,7 @@ import { MessageCircle, Mail, Clock } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactFooterSection() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
@@ -74,7 +76,12 @@ export default function ContactFooterSection() {
         return;
       }
 
-      setStatus('success');
+      if (data.ok === true) {
+        navigate('/thank-you');
+      } else {
+        setStatus('error');
+        setErrorMessage('Something went wrong. Please try again.');
+      }
     } catch {
       setStatus('error');
       setErrorMessage('Network error. Please try again or text us at (559) 389-8850.');
