@@ -59,6 +59,7 @@ export default function ContactFooterSection() {
       website: formData.get('website'),
       need: formData.get('need'),
       message: formData.get('message'),
+      honeypot: formData.get('company-website'),
     };
 
     try {
@@ -248,7 +249,7 @@ export default function ContactFooterSection() {
                 </h3>
                 <input
                   type="text"
-                  name="website"
+                  name="company-website"
                   tabIndex={-1}
                   autoComplete="off"
                   aria-hidden="true"

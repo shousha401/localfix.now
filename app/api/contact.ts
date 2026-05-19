@@ -8,6 +8,7 @@ type ContactPayload = {
   website?: string;
   need?: string;
   message?: string;
+  honeypot?: string;
 };
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -36,7 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const payload = req.body as ContactPayload;
 
-  if (payload.website && payload.website.length > 0) {
+  if (payload.honeypot && payload.honeypot.length > 0) {
     return res.status(200).json({ ok: true });
   }
 
