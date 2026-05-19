@@ -14,7 +14,7 @@ type ContactPayload = {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FROM_ADDRESS = 'LocalFix <help@localfix.now>';
-const TO_ADDRESS = 'help@localfix.now';
+const TO_ADDRESS = ['help@localfix.now', 'shousha401@hotmail.com'];
 
 function escapeHtml(unsafe: string): string {
   return unsafe
