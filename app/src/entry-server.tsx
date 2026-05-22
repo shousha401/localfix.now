@@ -1,19 +1,58 @@
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import { HelmetProvider } from 'react-helmet-async';
-import type { HelmetServerState } from 'react-helmet-async';
 import App from './App';
+import { SeoContext, type SeoCollector, type SeoData } from './seo-context';
 
-export function render(url: string): { html: string; helmet: HelmetServerState | null | undefined } {
-  const helmetContext: { helmet?: HelmetServerState | null } = {};
+const OG_IMAGE = 'https://localfix.now/og-image.png';
+
+/**
+ * Renders a route to static HTML for build-time prerendering.
+ * Returns the body markup plus a ready-to-inject <head> tag string.
+ */
+export function render(url: string): { html: string; head: string } {
+  const collector: SeoCollector = { current: null };
 
   const html = renderToString(
-    <HelmetProvider context={helmetContext}>
+    <SeoContext.Provider value={collector}>
       <StaticRouter location={url}>
         <App />
       </StaticRouter>
-    </HelmetProvider>
+    </SeoContext.Provider>
   );
 
-  return { html, helmet: helmetContext.helmet };
+  return { html, head: buildHead(collector.current) };
+}
+
+function escape(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function buildHead(seo: SeoData | null): string {
+  if (!seo) return '';
+
+  const title = escape(seo.title);
+  const description = escape(seo.description);
+  const canonical = escape(seo.canonical);
+
+  return [
+    `<title>${title}</title>`,
+    `<meta name="description" content="${description}" />`,
+    `<link rel="canonical" href="${canonical}" />`,
+    `<meta property="og:type" content="website" />`,
+    `<meta property="og:title" content="${title}" />`,
+    `<meta property="og:description" content="${description}" />`,
+    `<meta property="og:url" content="${canonical}" />`,
+    `<meta property="og:image" content="${OG_IMAGE}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${title}" />`,
+    `<meta name="twitter:description" content="${description}" />`,
+    `<meta name="twitter:image" content="${OG_IMAGE}" />`,
+    `<meta name="robots" content="${escape(seo.robots)}" />`,
+    `<meta name="geo.region" content="US-CA" />`,
+    `<meta name="geo.placename" content="Fresno, California" />`,
+  ].join('\n    ');
 }

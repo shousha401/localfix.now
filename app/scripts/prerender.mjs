@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -24,19 +24,12 @@ const errors = [];
 
 for (const route of ROUTES) {
   try {
-    const { html, helmet } = render(route);
+    const { html, head } = render(route);
 
     let output = template;
 
-    if (helmet) {
-      const headTags = [
-        helmet.title?.toString() ?? '',
-        helmet.meta?.toString() ?? '',
-        helmet.link?.toString() ?? '',
-      ].join('');
-      if (headTags) {
-        output = output.replace('</head>', `${headTags}\n</head>`);
-      }
+    if (head) {
+      output = output.replace('</head>', `    ${head}\n  </head>`);
     }
 
     output = output.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
@@ -54,6 +47,10 @@ for (const route of ROUTES) {
     console.error(`  FAILED ${route}: ${err instanceof Error ? err.message : String(err)}`);
   }
 }
+
+// The SSR bundle (and the public assets Vite copies alongside it) is only
+// needed during prerendering. Remove it so it is not deployed publicly.
+await rm(join(DIST, 'server'), { recursive: true, force: true });
 
 if (errors.length) {
   console.error(`\n${errors.length} route(s) failed to prerender.`);

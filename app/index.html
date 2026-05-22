@@ -20,11 +20,10 @@
     <meta name="twitter:image:alt" content="LocalFix — Better websites. Less busywork." />
     <meta name="author" content="LocalFix" />
 
-    <!-- Per-route title, description, canonical, og:type/title/description/url/image,
-         twitter:card/title/description/image, robots, geo.* are injected by
-         react-helmet-async via src/pages/RouteSeo.tsx. Each route is also
-         prerendered at build time (scripts/prerender.mjs), so crawlers see
-         the fully-resolved tags. -->
+    <!-- Per-route title, description, canonical, og:*, twitter:*, robots, and
+         geo.* tags are injected per route by the build-time prerender
+         (scripts/prerender.mjs + src/entry-server.tsx), and kept in sync
+         during client-side navigation by src/pages/RouteSeo.tsx. -->
 
     <script type="application/ld+json">
     {

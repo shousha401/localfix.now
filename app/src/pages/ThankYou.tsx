@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import RouteSeo from './RouteSeo';
 
 export default function ThankYou() {
   return (
     <>
-      <Helmet>
-        <title>Thank You | LocalFix</title>
-        <meta name="description" content="Your LocalFix request was received. We'll be in touch within 24 hours." />
-        <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://localfix.now/thank-you" />
-      </Helmet>
+      <RouteSeo
+        title="Thank You | LocalFix"
+        description="Your LocalFix request was received. We'll be in touch within 24 hours."
+        canonical="https://localfix.now/thank-you"
+        noindex
+      />
 
       <section
         className="flex min-h-screen items-center justify-center px-6"
@@ -23,8 +23,8 @@ export default function ThankYou() {
           GOOGLE ADS CONVERSION TAG GOES HERE
           ============================================================
           When you set up Google Ads, you'll get a conversion ID and label.
-          Paste the Google-provided <script> snippet inside a <Helmet> block
-          here so it fires when this page loads.
+          Fire the Google-provided snippet from a useEffect in this component
+          (or add the gtag script tag to index.html) so it runs on page load.
 
           Reference: https://support.google.com/google-ads/answer/6095821
           ============================================================
