@@ -191,6 +191,26 @@ export default function ContactFooterSection() {
                 <Clock size={20} strokeWidth={1.5} color="#544D44" />
                 Mon–Fri, 9am–6pm PST
               </div>
+              <a
+                href="https://share.google/B7M1F0JFeexef85S9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.875rem',
+                  color: '#0F2A44',
+                  background: '#FAF7F2',
+                  border: '1px solid #E2DDD6',
+                  padding: '8px 14px',
+                  width: 'fit-content',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="#E5742B" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                Leave us a Google review
+              </a>
             </div>
           </div>
 

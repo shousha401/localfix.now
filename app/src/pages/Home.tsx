@@ -1,6 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import HeroSection from '../sections/HeroSection';
 import RecentWork from '../components/RecentWork';
+import Testimonials from '../components/Testimonials';
 import HowItWorks from '../components/HowItWorks';
 import AboutBlock from '../components/AboutBlock';
 import ContactFooterSection from '../sections/ContactFooterSection';
@@ -22,6 +23,7 @@ export default function Home() {
       />
       <HeroSection onScrollTo={scrollToSection} />
       <RecentWork />
+      <Testimonials />
       <HowItWorks />
       <AboutBlock />
       <ContactFooterSection />
