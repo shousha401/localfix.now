@@ -4,6 +4,7 @@
 **Domain:** localfix.now
 **Deployment:** Vercel
 **Location:** Fresno, CA — serves Fresno, Central Valley, and remote clients across California
+**Note:** Meeting has been delayed by 2 weeks (as of May 26, 2026).
 
 ---
 
