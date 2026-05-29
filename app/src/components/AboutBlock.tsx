@@ -4,12 +4,18 @@ export default function AboutBlock() {
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <div className="grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
           <div className="flex justify-center lg:justify-start">
-            <img
-              src="/projects/pic.jpeg"
-              alt="Eslam from LocalFix"
-              className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
-              style={{ border: '1px solid #E2DDD6' }}
-            />
+            <picture className="contents">
+              <source srcSet="/projects/pic.webp" type="image/webp" />
+              <img
+                src="/projects/pic.jpeg"
+                alt="Eslam Shousha, founder of LocalFix — Fresno web developer"
+                width={280}
+                height={350}
+                decoding="async"
+                className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
+                style={{ border: '1px solid #E2DDD6' }}
+              />
+            </picture>
           </div>
 
           <div>

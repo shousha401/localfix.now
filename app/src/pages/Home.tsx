@@ -4,6 +4,7 @@ import RecentWork from '../components/RecentWork';
 import Testimonials from '../components/Testimonials';
 import HowItWorks from '../components/HowItWorks';
 import AboutBlock from '../components/AboutBlock';
+import Faq from '../components/Faq';
 import ContactFooterSection from '../sections/ContactFooterSection';
 import RouteSeo from './RouteSeo';
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Testimonials />
       <HowItWorks />
       <AboutBlock />
+      <Faq />
       <ContactFooterSection />
     </>
   );

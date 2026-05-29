@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const serviceLinks = [
+  { label: 'Fresno Web Design', href: '/fresno-web-design' },
+  { label: 'Workflow Automation', href: '/workflow-automation' },
+  { label: 'AI Chatbot', href: '/ai-chatbot' },
+  { label: 'Website Fixes', href: '/website-fixes' },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,11 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Web Design', href: '/fresno-web-design' },
-    { label: 'About', href: '/about' },
-  ];
+  const linkStyle = { color: '#2A2A2A', fontFamily: "'Inter', sans-serif" } as const;
 
   return (
     <nav
@@ -57,16 +60,56 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
-              style={{ color: '#2A2A2A', fontFamily: "'Inter', sans-serif" }}
+          <Link
+            to="/"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            Home
+          </Link>
+
+          {/* Services dropdown (opens on hover or keyboard focus) */}
+          <div className="group relative">
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+              style={linkStyle}
+              aria-haspopup="true"
             >
-              {link.label}
-            </Link>
-          ))}
+              Services
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div
+              className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            >
+              <div
+                className="flex w-56 flex-col overflow-hidden rounded-xl py-2 shadow-lg"
+                style={{ background: '#FAF7F2', border: '1px solid #E2DDD6' }}
+              >
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="px-4 py-2.5 text-sm font-medium transition-colors hover:bg-[#F0EBE3] hover:text-[#E5742B]"
+                    style={linkStyle}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Link
+            to="/about"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            About
+          </Link>
+
           <Link
             to="/#review-form"
             className="text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
@@ -94,6 +137,7 @@ export default function Navbar() {
           className="flex h-10 w-10 items-center justify-center md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F2A44" strokeWidth="2" strokeLinecap="round">
             {menuOpen ? (
@@ -116,32 +160,59 @@ export default function Navbar() {
       <div
         className="overflow-hidden transition-all duration-300 ease-out md:hidden"
         style={{
-          maxHeight: menuOpen ? '300px' : '0',
+          maxHeight: menuOpen ? '460px' : '0',
           opacity: menuOpen ? 1 : 0,
           background: '#FAF7F2',
           borderBottom: menuOpen ? '1px solid #E2DDD6' : '1px solid transparent',
         }}
       >
         <div className="flex flex-col py-2">
-          {navLinks.map((link) => (
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            Home
+          </Link>
+
+          <span
+            className="px-6 pb-1 pt-3 text-left"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: '11px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              color: '#6B7B8D',
+            }}
+          >
+            Services
+          </span>
+          {serviceLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              onClick={() => {
-                setMenuOpen(false);
-              }}
-              className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
-              style={{ color: '#2A2A2A', fontFamily: "'Inter', sans-serif" }}
+              onClick={() => setMenuOpen(false)}
+              className="px-6 py-2.5 pl-8 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+              style={linkStyle}
             >
               {link.label}
             </Link>
           ))}
+
+          <Link
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className="px-6 py-3 pt-4 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            About
+          </Link>
+
           <Link
             to="/#review-form"
-            onClick={() => {
-              setMenuOpen(false);
-            }}
-            className="mx-6 my-2 text-sm font-medium text-white"
+            onClick={() => setMenuOpen(false)}
+            className="mx-6 my-2 text-center text-sm font-medium text-white"
             style={{
               background: '#E5742B',
               padding: '10px',

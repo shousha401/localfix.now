@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts: preconnect + non-blocking stylesheet (replaces the slow CSS @import). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300..600&family=Space+Mono:wght@400;700&display=swap"
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -75,8 +84,8 @@
         "worstRating": "1"
       },
       "sameAs": [
-        "https://share.google/B7M1F0JFeexef85S9",
-        "https://www.google.com/maps/search/LocalFix+Fresno+CA"
+        "https://maps.google.com/?cid=17860024772841425269",
+        "https://share.google/B7M1F0JFeexef85S9"
       ]
     }
     </script>
@@ -133,54 +142,10 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much does a custom website cost in Fresno?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "LocalFix offers flat-price websites starting at $499 for a refresh of an existing site and $1,499 for a new custom website. Final price depends on the number of pages and features."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How fast can you build a new website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most new websites launch in 10-14 days from the kickoff call. Refresh projects ship in 7-10 days. Same-week turnaround on small fixes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you serve businesses outside Fresno?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. LocalFix serves businesses across the entire Central Valley including Clovis, Madera, Visalia, Hanford, Selma, and Reedley. We also work with clients anywhere in California."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is workflow automation and do I need it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Workflow automation replaces manual tasks like answering common questions, booking appointments, routing customer inquiries, and tracking orders. If your team spends multiple hours each week on repetitive tasks, automation can save 5-15 hours a week."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you build an AI chatbot for my business?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We build custom AI chatbots trained on your specific business — not generic ChatGPT wrappers. They handle FAQs, capture leads, and route customers to the right place 24/7."
-          }
-        }
-      ]
-    }
-    </script>
+    <!-- FAQPage structured data lives in src/components/Faq.tsx so the markup is
+         emitted only on pages that render the visible FAQ (keeping schema and
+         on-page content in sync). -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

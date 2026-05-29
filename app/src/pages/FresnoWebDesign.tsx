@@ -3,6 +3,7 @@ import ProblemSection from '../sections/ProblemSection';
 import HowItWorks from '../components/HowItWorks';
 import RecentWork from '../components/RecentWork';
 import AboutBlock from '../components/AboutBlock';
+import Faq from '../components/Faq';
 import ContactFooterSection from '../sections/ContactFooterSection';
 import RouteSeo from './RouteSeo';
 
@@ -26,6 +27,7 @@ export default function FresnoWebDesign() {
       <HowItWorks />
       <RecentWork />
       <AboutBlock />
+      <Faq />
       <ContactFooterSection />
     </>
   );

@@ -15,6 +15,19 @@ const ROUTES = [
   '/thank-you',
 ];
 
+const SITE_ORIGIN = 'https://localfix.now';
+
+// Indexable routes for the sitemap (excludes the noindex /thank-you and 404
+// pages). Regenerated on every build so <lastmod> never goes stale.
+const SITEMAP_URLS = [
+  { path: '/', priority: '1.0' },
+  { path: '/fresno-web-design', priority: '0.9' },
+  { path: '/workflow-automation', priority: '0.9' },
+  { path: '/ai-chatbot', priority: '0.9' },
+  { path: '/website-fixes', priority: '0.9' },
+  { path: '/about', priority: '0.7' },
+];
+
 const template = await readFile(join(DIST, 'index.html'), 'utf-8');
 
 // Import the SSR bundle produced by `vite build --ssr`
@@ -47,6 +60,41 @@ for (const route of ROUTES) {
     console.error(`  FAILED ${route}: ${err instanceof Error ? err.message : String(err)}`);
   }
 }
+
+// Prerender the catch-all 404 page to dist/404.html. Vercel serves this
+// automatically (with a real 404 status) for any path that has no matching
+// file, so unknown URLs are no longer soft-200 copies of the homepage.
+try {
+  const { html, head } = render('/__not-found__');
+  let output = template;
+  if (head) {
+    output = output.replace('</head>', `    ${head}\n  </head>`);
+  }
+  output = output.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+  await writeFile(join(DIST, '404.html'), output);
+  console.log('  prerendered 404 -> dist/404.html');
+} catch (err) {
+  errors.push({ route: '404', error: String(err) });
+  console.error(`  FAILED 404: ${err instanceof Error ? err.message : String(err)}`);
+}
+
+// Generate sitemap.xml with a fresh lastmod so it never goes stale.
+const lastmod = new Date().toISOString().slice(0, 10);
+const sitemap =
+  `<?xml version="1.0" encoding="UTF-8"?>\n` +
+  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  SITEMAP_URLS.map(
+    ({ path, priority }) =>
+      `  <url>\n` +
+      `    <loc>${SITE_ORIGIN}${path}</loc>\n` +
+      `    <lastmod>${lastmod}</lastmod>\n` +
+      `    <changefreq>monthly</changefreq>\n` +
+      `    <priority>${priority}</priority>\n` +
+      `  </url>`
+  ).join('\n') +
+  `\n</urlset>\n`;
+await writeFile(join(DIST, 'sitemap.xml'), sitemap);
+console.log(`  generated sitemap.xml (${SITEMAP_URLS.length} urls, lastmod ${lastmod})`);
 
 // The SSR bundle (and the public assets Vite copies alongside it) is only
 // needed during prerendering. Remove it so it is not deployed publicly.

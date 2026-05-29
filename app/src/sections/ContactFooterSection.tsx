@@ -1,5 +1,5 @@
 import { type CSSProperties, type FormEvent, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Mail, Clock } from 'lucide-react';
@@ -420,17 +420,45 @@ export default function ContactFooterSection() {
 
         {/* Bottom bar */}
         <div
-          className="mt-16 border-t pt-8 text-center"
+          className="mt-16 border-t pt-8"
           style={{ borderColor: '#E2DDD6' }}
         >
+          <nav
+            aria-label="Footer"
+            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+          >
+            {[
+              { label: 'Home', to: '/' },
+              { label: 'Fresno Web Design', to: '/fresno-web-design' },
+              { label: 'Workflow Automation', to: '/workflow-automation' },
+              { label: 'AI Chatbot', to: '/ai-chatbot' },
+              { label: 'Website Fixes', to: '/website-fixes' },
+              { label: 'About', to: '/about' },
+            ].map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="transition-colors hover:text-[#E5742B]"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.875rem',
+                  color: '#0F2A44',
+                  fontWeight: 500,
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
           <p
+            className="mt-6 text-center"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '0.8125rem',
               color: '#544D44',
             }}
           >
-            &copy; 2026 LocalFix. Built in Fresno.
+            &copy; 2026 LocalFix. Built in Fresno, California. Serving the Central Valley &amp; small businesses across California.
           </p>
         </div>
       </div>
