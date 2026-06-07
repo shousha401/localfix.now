@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <>
       <RouteSeo
-        title="LocalFix — Fresno-Based Web Design, Automation & AI for California Small Businesses"
-        description="Fresno-based websites, fast fixes, and workflow automation for small businesses across California. Remote-friendly service, flat prices, two-week turnarounds, real production software."
+        title="LocalFix — Fresno Web Designer, Automation & AI for California Small Businesses"
+        description="Fresno web designer and automation shop for local small businesses across California. Fast fixes, flat prices, two-week turnarounds, and one person who answers the phone."
         canonical="https://localfix.now/"
       />
       <HeroSection onScrollTo={scrollToSection} />

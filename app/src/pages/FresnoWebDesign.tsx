@@ -10,8 +10,8 @@ export default function FresnoWebDesign() {
   return (
     <>
       <RouteSeo
-        title="Fresno Web Design & Website Developer | LocalFix"
-        description="Custom websites for Fresno small businesses — restaurants, salons, contractors, clinics, and service providers. Mobile-friendly, fast, and built in 1–2 weeks. Flat-price web design serving Fresno, Clovis, Madera, and the Central Valley."
+        title="Fresno Web Designer & Website Developer | LocalFix"
+        description="Fresno web designer building custom websites for small businesses — restaurants, salons, contractors, clinics, and service providers. Mobile-friendly, fast, built in 1–2 weeks. Serving Fresno, Clovis, Madera, and the Central Valley."
         canonical="https://localfix.now/fresno-web-design"
       />
       <ServiceHero
