@@ -78,7 +78,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             lineHeight: 1.6,
           }}
         >
-          We build, fix, and automate websites for Fresno-based local businesses and small businesses across California. Flat prices, two-week turnarounds, and one person who answers the phone.
+          We're a Fresno web designer and automation shop — we build, fix, and automate websites for local businesses across California. Flat prices, two-week turnarounds, and one person who answers the phone.
         </p>
 
         <div
