@@ -14,8 +14,8 @@ export default function AiChatbot() {
   return (
     <>
       <RouteSeo
-        title="AI Chatbot for Fresno & California Small Businesses | LocalFix"
-        description="Custom AI chatbots and FAQ assistants for Fresno-based and California small businesses. 24/7 customer answers, automated lead capture, and intelligent inquiry routing — trained on your business, not generic AI."
+        title="AI Chatbot for Fresno Small Business | LocalFix"
+        description="Custom AI chatbots for Fresno & Central Valley small businesses, trained on your business — answer customers 24/7 and capture leads after hours."
         canonical={content.url}
       />
       <ServiceSchema

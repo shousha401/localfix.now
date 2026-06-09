@@ -11,6 +11,7 @@ export default function AboutBlock() {
                 alt="Eslam Shousha, founder of LocalFix — Fresno web developer"
                 width={280}
                 height={350}
+                loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
                 style={{ border: '1px solid #E2DDD6' }}

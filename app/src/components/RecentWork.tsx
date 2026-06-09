@@ -424,7 +424,6 @@ export default function RecentWork() {
             >
               <ScreenshotGallery
                 project={project}
-                priority={projectIndex === 0}
                 onOpenDetails={() => setSelectedProject(project)}
                 maxThumbnails={2}
                 featured={projectIndex === 0}

@@ -87,7 +87,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           style={{ transform: 'translateY(15px)' }}
         >
           <a
-            href="/contact#review"
+            href="#contact"
             onClick={(e) => {
               if (window.location.pathname === '/') {
                 e.preventDefault();

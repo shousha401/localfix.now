@@ -14,8 +14,8 @@ export default function WebsiteFixes() {
   return (
     <>
       <RouteSeo
-        title="Fast Website Fixes for Fresno & California Small Businesses | LocalFix"
-        description="Broken contact forms, slow pages, mobile issues, outdated design — we fix websites fast for Fresno-based and California small businesses. Same-week turnarounds on most repairs. Flat prices starting at $499."
+        title="Fast Website Fixes for Fresno Businesses | LocalFix"
+        description="Fast website fixes for Fresno & Central Valley small businesses — broken forms, slow pages, mobile issues & outdated design. Flat price from $499."
         canonical={content.url}
       />
       <ServiceSchema
