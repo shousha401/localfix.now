@@ -1,12 +1,13 @@
-type FaqItem = {
+export type FaqItem = {
   question: string;
   answer: string;
 };
 
 // Single source of truth: the visible accordion and the FAQPage JSON-LD are
-// both generated from this array, so the structured data always matches the
-// on-page content (a Google requirement for FAQ markup).
-const faqs: FaqItem[] = [
+// both generated from the same array, so the structured data always matches
+// the on-page content (a Google requirement for FAQ markup). Service pages
+// pass their own `items` so each page's FAQ is unique to that service.
+const defaultFaqs: FaqItem[] = [
   {
     question: 'How much does a custom website cost in Fresno?',
     answer:
@@ -34,17 +35,24 @@ const faqs: FaqItem[] = [
   },
 ];
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
+type Props = {
+  /** Service pages pass their own questions; defaults to the shared set. */
+  items?: FaqItem[];
+  heading?: string;
 };
 
-export default function Faq() {
+export default function Faq({ items = defaultFaqs, heading = 'Frequently asked questions' }: Props = {}) {
+  const faqs = items;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
   return (
     <section id="faq" className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
       <script
@@ -76,7 +84,7 @@ export default function Faq() {
               lineHeight: 1.12,
             }}
           >
-            Frequently asked questions
+            {heading}
           </h2>
         </div>
 

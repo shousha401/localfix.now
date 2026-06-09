@@ -1,11 +1,14 @@
 import ServiceHero from '../components/ServiceHero';
 import ProblemSection from '../sections/ProblemSection';
+import ServiceDetails from '../components/ServiceDetails';
 import HowItWorks from '../components/HowItWorks';
 import RecentWork from '../components/RecentWork';
 import AboutBlock from '../components/AboutBlock';
 import Faq from '../components/Faq';
+import ServiceSchema from '../components/ServiceSchema';
 import ContactFooterSection from '../sections/ContactFooterSection';
 import RouteSeo from './RouteSeo';
+import { workflowAutomation as content } from '../content/services';
 
 export default function WorkflowAutomation() {
   return (
@@ -13,7 +16,14 @@ export default function WorkflowAutomation() {
       <RouteSeo
         title="Workflow Automation for Fresno & California Small Businesses | LocalFix"
         description="Stop the manual busywork. We build custom workflow automation, booking systems, customer inquiry routing, and internal dashboards for Fresno-based and California small businesses. Save 5–15 hours every week."
-        canonical="https://localfix.now/workflow-automation"
+        canonical={content.url}
+      />
+      <ServiceSchema
+        serviceType={content.schema.serviceType}
+        name={content.schema.name}
+        description={content.schema.description}
+        url={content.url}
+        breadcrumbName={content.schema.breadcrumbName}
       />
       <ServiceHero
         eyebrow="WORKFLOW AUTOMATION — FRESNO & CENTRAL VALLEY"
@@ -23,11 +33,12 @@ export default function WorkflowAutomation() {
         primaryCtaText="Get a Free Review"
         secondaryCtaText="Text us - (559) 389-8850"
       />
-      <ProblemSection />
+      <ProblemSection {...content.problem} stat={null} />
+      <ServiceDetails {...content.details} />
       <HowItWorks />
       <RecentWork />
       <AboutBlock />
-      <Faq />
+      <Faq items={content.faqs} />
       <ContactFooterSection />
     </>
   );

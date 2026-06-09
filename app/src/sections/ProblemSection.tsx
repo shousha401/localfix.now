@@ -4,7 +4,31 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProblemSection() {
+type Stat = { text: string; source: string };
+
+type Props = {
+  overline?: string;
+  headline?: string;
+  body?: string;
+  /** The highlighted stat box. Pass `null` to hide it on pages where it
+   *  doesn't apply. Defaults to the automation stat shown on the home page. */
+  stat?: Stat | null;
+};
+
+const DEFAULT_BODY =
+  "Most local business owners spend hours every week on repetitive tasks — answering the same questions, scheduling appointments, chasing leads, updating spreadsheets. All while big companies use AI and automation to run circles around them. It doesn't have to be that way.";
+
+const DEFAULT_STAT: Stat = {
+  text: 'Local businesses lose 20+ hours per week to tasks that could be fully automated',
+  source: 'McKinsey Global Institute',
+};
+
+export default function ProblemSection({
+  overline = 'SOUNDS FAMILIAR?',
+  headline = "You're working harder than you need to.",
+  body = DEFAULT_BODY,
+  stat = DEFAULT_STAT,
+}: Props = {}) {
   const sectionRef = useRef<HTMLElement>(null);
   const overlineRef = useRef<HTMLSpanElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -13,7 +37,9 @@ export default function ProblemSection() {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    const els = [overlineRef.current, headlineRef.current, bodyRef.current, statRef.current];
+    const els = [overlineRef.current, headlineRef.current, bodyRef.current, statRef.current].filter(
+      Boolean
+    );
     gsap.to(els, {
       opacity: 1,
       y: 0,
@@ -51,7 +77,7 @@ export default function ProblemSection() {
             transform: 'translateY(30px)',
           }}
         >
-          SOUNDS FAMILIAR?
+          {overline}
         </span>
 
         <h2
@@ -67,7 +93,7 @@ export default function ProblemSection() {
             transform: 'translateY(30px)',
           }}
         >
-          You're working harder than you need to.
+          {headline}
         </h2>
 
         <p
@@ -82,41 +108,43 @@ export default function ProblemSection() {
             transform: 'translateY(30px)',
           }}
         >
-          Most local business owners spend hours every week on repetitive tasks — answering the same questions, scheduling appointments, chasing leads, updating spreadsheets. All while big companies use AI and automation to run circles around them. It doesn't have to be that way.
+          {body}
         </p>
 
-        <div
-          ref={statRef}
-          className="mx-auto mt-8 opacity-0"
-          style={{
-            background: 'rgba(15, 42, 68, 0.04)',
-            borderRadius: '12px',
-            padding: '1rem 1.5rem',
-            maxWidth: '480px',
-            transform: 'translateY(30px)',
-          }}
-        >
-          <p
+        {stat && (
+          <div
+            ref={statRef}
+            className="mx-auto mt-8 opacity-0"
             style={{
-              fontFamily: "'Fraunces', serif",
-              fontWeight: 600,
-              fontSize: '1rem',
-              color: '#0F2A44',
+              background: 'rgba(15, 42, 68, 0.04)',
+              borderRadius: '12px',
+              padding: '1rem 1.5rem',
+              maxWidth: '480px',
+              transform: 'translateY(30px)',
             }}
           >
-            Local businesses lose 20+ hours per week to tasks that could be fully automated
-          </p>
-          <p
-            className="mt-1"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '0.75rem',
-              color: '#544D44',
-            }}
-          >
-            McKinsey Global Institute
-          </p>
-        </div>
+            <p
+              style={{
+                fontFamily: "'Fraunces', serif",
+                fontWeight: 600,
+                fontSize: '1rem',
+                color: '#0F2A44',
+              }}
+            >
+              {stat.text}
+            </p>
+            <p
+              className="mt-1"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: '0.75rem',
+                color: '#544D44',
+              }}
+            >
+              {stat.source}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

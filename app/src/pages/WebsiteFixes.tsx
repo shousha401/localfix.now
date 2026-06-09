@@ -1,11 +1,14 @@
 import ServiceHero from '../components/ServiceHero';
 import ProblemSection from '../sections/ProblemSection';
+import ServiceDetails from '../components/ServiceDetails';
 import HowItWorks from '../components/HowItWorks';
 import RecentWork from '../components/RecentWork';
 import AboutBlock from '../components/AboutBlock';
 import Faq from '../components/Faq';
+import ServiceSchema from '../components/ServiceSchema';
 import ContactFooterSection from '../sections/ContactFooterSection';
 import RouteSeo from './RouteSeo';
+import { websiteFixes as content } from '../content/services';
 
 export default function WebsiteFixes() {
   return (
@@ -13,7 +16,14 @@ export default function WebsiteFixes() {
       <RouteSeo
         title="Fast Website Fixes for Fresno & California Small Businesses | LocalFix"
         description="Broken contact forms, slow pages, mobile issues, outdated design — we fix websites fast for Fresno-based and California small businesses. Same-week turnarounds on most repairs. Flat prices starting at $499."
-        canonical="https://localfix.now/website-fixes"
+        canonical={content.url}
+      />
+      <ServiceSchema
+        serviceType={content.schema.serviceType}
+        name={content.schema.name}
+        description={content.schema.description}
+        url={content.url}
+        breadcrumbName={content.schema.breadcrumbName}
       />
       <ServiceHero
         eyebrow="WEBSITE FIXES — SAME-WEEK TURNAROUND"
@@ -23,11 +33,12 @@ export default function WebsiteFixes() {
         primaryCtaText="Get a Free Review"
         secondaryCtaText="Text us - (559) 389-8850"
       />
-      <ProblemSection />
+      <ProblemSection {...content.problem} stat={null} />
+      <ServiceDetails {...content.details} />
       <HowItWorks />
       <RecentWork />
       <AboutBlock />
-      <Faq />
+      <Faq items={content.faqs} />
       <ContactFooterSection />
     </>
   );
