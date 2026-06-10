@@ -9,11 +9,6 @@ export type FaqItem = {
 // pass their own `items` so each page's FAQ is unique to that service.
 const defaultFaqs: FaqItem[] = [
   {
-    question: 'How much does a custom website cost in Fresno?',
-    answer:
-      'LocalFix offers flat-price websites starting at $499 for a refresh of an existing site and $1,499 for a new custom website. Final price depends on the number of pages and features.',
-  },
-  {
     question: 'How fast can you build a new website?',
     answer:
       'Most new websites launch in 10-14 days from the kickoff call. Refresh projects ship in 7-10 days. Same-week turnaround on small fixes.',

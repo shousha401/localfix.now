@@ -33,7 +33,7 @@ export const fresnoWebDesign: ServiceContent = {
     h2: 'Fresno web design built to turn visitors into calls',
     intro: [
       `LocalFix builds custom websites for Fresno-area businesses — not a stock template you have to wrestle into shape. I design every page around the one thing that matters to you: getting the phone to ring and the calendar to fill. That means a layout where your number, hours, and booking button are the first things a visitor sees, copy that speaks to your actual customers, and a structure built by hand instead of dragged out of a page-builder. Restaurant, salon, contractor, clinic — your site should look like your business, not like everyone else's.`,
-      `Speed and phones come first, because that's where your customers are. I build pages that load fast on a cell signal and stay readable one-thumbed, so nobody bounces before they reach your form. Pricing is flat and published: a brand-new custom website starts at $1,499, and refreshing the site you already have starts at $499 — the final number depends on how many pages and features you need. New builds launch in 10 to 14 days, refreshes in 7 to 10. When it's done, the domain, the logins, and the whole thing belong to you. You work with me directly the entire way — no account managers, no handoffs.`,
+      `Speed and phones come first, because that's where your customers are. I build pages that load fast on a cell signal and stay readable one-thumbed, so nobody bounces before they reach your form. Pricing is flat and agreed up front: one fixed number based on how many pages and features you need, in writing before any work starts. New builds launch in 10 to 14 days, refreshes in 7 to 10. When it's done, the domain, the logins, and the whole thing belong to you. You work with me directly the entire way — no account managers, no handoffs.`,
     ],
     whatsIncludedTitle: "What's included",
     whatsIncluded: [
@@ -75,7 +75,7 @@ export const fresnoWebDesign: ServiceContent = {
     {
       question: 'How much does Fresno web design cost?',
       answer:
-        "A brand-new custom website starts at $1,499, and refreshing an existing site starts at $499. The final flat price depends on how many pages and features you need, and you'll see it in writing before you pay anything.",
+        "Every project is quoted as one flat price based on how many pages and features you need — never hourly billing. You'll see the full price in writing after a free review, before you pay anything.",
     },
     {
       question: 'How long until my new website is live?',
@@ -107,7 +107,7 @@ export const fresnoWebDesign: ServiceContent = {
     serviceType: 'Web Design',
     name: 'Custom Website Design',
     description:
-      'Custom, mobile-first website design for Fresno-area local businesses, built to turn phone visitors into calls and bookings, with new sites from $1,499 and refreshes from $499.',
+      'Custom, mobile-first website design for Fresno-area local businesses, built to turn phone visitors into calls and bookings, with flat up-front pricing.',
     breadcrumbName: 'Fresno Web Design',
   },
 };
@@ -305,7 +305,7 @@ export const websiteFixes: ServiceContent = {
     eyebrow: 'WHAT I FIX',
     h2: "Website fixes that don't require a full rebuild",
     intro: [
-      `When something on your site breaks, you don't need a months-long project or a brand-new platform — you need it working again. LocalFix handles targeted website fixes for the problems that actually cost you customers: a contact form that quietly stops sending, pages that crawl on a phone, a layout that fell apart after an update. Repairs are scoped at a flat price starting at $499, with same-week turnaround on small jobs. You get one engineer who diagnoses the real issue, fixes it, and tells you plainly what was wrong — not a ticket queue.`,
+      `When something on your site breaks, you don't need a months-long project or a brand-new platform — you need it working again. LocalFix handles targeted website fixes for the problems that actually cost you customers: a contact form that quietly stops sending, pages that crawl on a phone, a layout that fell apart after an update. Repairs are scoped at one flat price agreed before work starts, with same-week turnaround on small jobs. You get one engineer who diagnoses the real issue, fixes it, and tells you plainly what was wrong — not a ticket queue.`,
       `Wherever possible, I work with the website you already have. WordPress, Squarespace, Wix, Shopify, or a hand-coded site — the goal is the same: fix what's broken without forcing you to start over. After a free review, you get a one-page proposal with a flat price and a delivery date before any work begins — no hourly meter, no surprise invoice. And every fix ships with 30 days of free follow-up fixes, so if something related surfaces after launch, it's already covered.`,
     ],
     whatsIncludedTitle: 'What I can fix',
@@ -348,7 +348,7 @@ export const websiteFixes: ServiceContent = {
     {
       question: 'How much do website fixes cost?',
       answer:
-        'Website fixes start at a flat $499. After a free review, you get a one-page proposal with a fixed price and a delivery date before any work starts — never hourly billing. The final price depends on how many fixes are involved and how complex they are.',
+        'Every fix is quoted as one flat price. After a free review, you get a one-page proposal with a fixed price and a delivery date before any work starts — never hourly billing. The price depends on how many fixes are involved and how complex they are.',
     },
     {
       question: 'How fast can you fix my website?',
