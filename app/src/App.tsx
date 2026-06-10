@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -12,23 +12,8 @@ import ThankYou from './pages/ThankYou';
 import NotFound from './pages/NotFound';
 import { initAnalytics, trackPageview } from './lib/analytics';
 
-const GooeyCanvas = lazy(() => import('./components/GooeyCanvas'));
-
 function AppShell() {
-  const scrollSpeedRef = useRef(0);
   const location = useLocation();
-  // Only mount the heavy Three.js/WebGL hero on larger screens with motion
-  // allowed. Skipping it on mobile avoids shipping/running the shader where it
-  // costs the most for Core Web Vitals; the hero's CSS gradient is the fallback.
-  const [enableCanvas, setEnableCanvas] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
-    const update = () => setEnableCanvas(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -39,10 +24,6 @@ function AppShell() {
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-    });
-
-    lenis.on('scroll', (e: { velocity: number }) => {
-      scrollSpeedRef.current = e.velocity / window.innerHeight;
     });
 
     function raf(time: number) {
@@ -84,12 +65,6 @@ function AppShell() {
 
   return (
     <div className="relative">
-      {location.pathname === '/' && enableCanvas && (
-        <Suspense fallback={null}>
-          <GooeyCanvas scrollSpeedRef={scrollSpeedRef} />
-        </Suspense>
-      )}
-
       <Navbar />
 
       <main className="relative z-10">

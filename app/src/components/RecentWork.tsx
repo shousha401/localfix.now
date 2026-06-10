@@ -1,4 +1,5 @@
-import { useState, type ImgHTMLAttributes } from 'react';
+import { useState, type HTMLAttributes, type ImgHTMLAttributes } from 'react';
+import { useTilt } from '../lib/useTilt';
 
 type ProjectImage = {
   src: string;
@@ -300,6 +301,13 @@ function imageFitClass(image: ProjectImage) {
   return image.fit === 'cover' ? 'object-cover' : 'object-contain';
 }
 
+// Project card with a subtle pointer-follow 3D tilt on desktop; on touch
+// devices the hook is inert and the CSS hover lift still applies.
+function TiltArticle(props: HTMLAttributes<HTMLElement>) {
+  const ref = useTilt<HTMLElement>(4);
+  return <article ref={ref} {...props} />;
+}
+
 function ScreenshotGallery({
   project,
   priority = false,
@@ -415,7 +423,7 @@ export default function RecentWork() {
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
           {orderedProjects.map((project, projectIndex) => (
-            <article
+            <TiltArticle
               key={project.slug}
               className={`group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md ${
                 projectIndex === 0 ? 'md:col-span-2' : ''
@@ -537,7 +545,7 @@ export default function RecentWork() {
                   </button>
                 </div>
               </div>
-            </article>
+            </TiltArticle>
           ))}
         </div>
 
