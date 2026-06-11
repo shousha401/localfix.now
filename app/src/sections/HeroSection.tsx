@@ -1,9 +1,5 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-
-// Lazy so three.js ships in its own chunk and only loads where the scene
-// actually mounts (desktop, motion allowed).
-const Hero3D = lazy(() => import('../components/Hero3D'));
 
 interface HeroSectionProps {
   onScrollTo: (id: string) => void;
@@ -16,17 +12,6 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const trustRef = useRef<HTMLParagraphElement>(null);
-  // Only mount the 3D scene on larger screens with motion allowed. Mobile
-  // keeps the plain CSS gradient hero for Core Web Vitals.
-  const [enable3D, setEnable3D] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
-    const update = () => setEnable3D(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(0.16, 1, 0.3, 1)' } });
@@ -48,12 +33,6 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
         background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)',
       }}
     >
-      {enable3D && (
-        <Suspense fallback={null}>
-          <Hero3D />
-        </Suspense>
-      )}
-
       <div className="relative z-10 mx-auto px-6 text-center" style={{ maxWidth: '720px', paddingTop: '64px' }}>
         {/* Overline */}
         <span
