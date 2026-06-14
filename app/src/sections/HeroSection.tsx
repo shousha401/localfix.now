@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Hero3D from './Hero3D';
 
 interface HeroSectionProps {
   onScrollTo: (id: string) => void;
@@ -34,8 +33,6 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
         background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)',
       }}
     >
-      <Hero3D />
-
       <div className="relative z-10 mx-auto px-6 text-center" style={{ maxWidth: '720px', paddingTop: '64px' }}>
         {/* Overline */}
         <span
