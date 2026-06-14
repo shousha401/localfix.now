@@ -54,12 +54,12 @@ export default function Hero3D() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0"
+      className="pointer-events-none absolute left-1/2 top-1/2 z-0"
       style={{
-        // Fade the scene out behind the centered text so copy stays readable.
-        maskImage: 'radial-gradient(ellipse at center, transparent 0%, transparent 38%, black 78%)',
-        WebkitMaskImage:
-          'radial-gradient(ellipse at center, transparent 0%, transparent 38%, black 78%)',
+        // A compact, centered accent rather than a full-bleed background.
+        width: 'clamp(260px, 32vw, 440px)',
+        height: 'clamp(260px, 32vw, 440px)',
+        transform: 'translate(-50%, -50%)',
         opacity: 0.9,
       }}
     >
