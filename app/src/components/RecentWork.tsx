@@ -533,23 +533,23 @@ const projects: Project[] = [
     tags: ['Internal Platform', 'CMMS', 'Inventory', 'Work Orders'],
     description:
       'An in-house maintenance management system that replaced a commercial CMMS — work orders, parts inventory, purchasing, preventive maintenance, and role-based access.',
-    techStack: 'Node.js · Express · SQLite · REST API',
+    techStack: 'React · Node.js · Express · SQLite · REST API',
     images: [
       {
-        src: '/projects/cmpplus-home.png',
-        alt: 'Cmp-Plus maintenance dashboard',
-        fit: 'contain',
-        position: 'center top',
-      },
-      {
-        src: '/projects/cmpplus-workorder.png',
-        alt: 'Cmp-Plus work order wizard',
+        src: '/projects/cmpplus-assets.png',
+        alt: 'Cmp-Plus asset registry — equipment by category, make, building, and status',
         fit: 'contain',
         position: 'center top',
       },
       {
         src: '/projects/cmpplus-inventory.png',
-        alt: 'Cmp-Plus parts inventory with bin locations',
+        alt: 'Cmp-Plus parts inventory with on-hand, cost, and reorder points',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/cmpplus-home.png',
+        alt: 'Cmp-Plus module home — work orders, inventory, requests, PMs, assets',
         fit: 'contain',
         position: 'center top',
       },
@@ -641,13 +641,12 @@ const projectOrder = [
   'refined-stitchery',
   'delivery-verification-system',
   'digital-receiving-log',
+  'cmp-plus-cmms',
   'alhambra-guide-platform',
   'operations-hub-internal-it-operations-platform',
-  // Staged — each of these is fully written above but hidden until its screenshots
-  // are added to public/projects/ (see SCREENSHOTS-TODO.md). Uncomment a slug to
-  // publish that project.
+  // Staged — fully written above but hidden until its screenshots are added to
+  // public/projects/ (see SCREENSHOTS-TODO.md). Uncomment the slug to publish.
   // 'ask-jd-ai-assistant',
-  // 'cmp-plus-cmms',
 ];
 
 const orderedProjects = projectOrder

@@ -1,30 +1,12 @@
 # Screenshots — status
 
-**Live now (7 projects with real screenshots):**
+**Live now (8 projects with real screenshots):**
 Kings County Water District, Pirata Goods, Refined Stitchery (public sites),
-plus **Formulation Batch Builder** and **Digital Receiving Log** (internal —
-captured from the real apps running on fully synthetic / demo data, with no
-company-identifying information).
+plus **Formulation Batch Builder**, **Digital Receiving Log**, and
+**Cmp-Plus (CMMS)** (internal — captured from the real apps with no
+company-identifying information; see notes below).
 
-The two internal projects below are **fully written** in
-`app/src/components/RecentWork.tsx` but **hidden** (commented out of
-`projectOrder`) — they still need images.
-
----
-
-## Cmp-Plus (CMMS)  → slug `cmp-plus-cmms`
-
-Runs locally (React client on :5174 + Node server on :3010), but the seed only
-creates an admin login — no demo work orders / parts / vendors — so a fresh
-instance shows empty screens. To publish it, either:
-- author a demo-data seed (buildings, assets, parts, vendors, a few work
-  orders) and screenshot, **or**
-- drop your own screenshots (scrub any real vendor / part names first).
-
-Files needed in `app/public/projects/`:
-- `cmpplus-home.png`      — the maintenance dashboard / home
-- `cmpplus-workorder.png` — the work-order wizard
-- `cmpplus-inventory.png` — parts inventory with bin locations
+Only one project remains hidden (commented out of `projectOrder`):
 
 ## Ask JD (AI assistant)  → slug `ask-jd-ai-assistant`
 
@@ -34,9 +16,19 @@ machine — so it can't be captured here. Drop screenshots when you can run it:
 - `askjd-answer.png`    — an answer grounded in real data
 - `askjd-dashboard.png` — an admin / audit / status view
 
+**To publish it:** add its 3 images with the exact filenames above, run
+`npm run optimize:images` (from `app/`), then uncomment its slug in
+`projectOrder` in `RecentWork.tsx`.
+
 ---
 
-**To publish either one:** add its 3 images with the exact filenames above,
-run `npm run optimize:images` (from `app/`), then uncomment its slug in
-`projectOrder` in `RecentWork.tsx`. Tweak the `alt` / `built` / `value` text in
-that entry if it doesn't match your actual screens.
+## How the internal screenshots were kept company-safe
+
+- **Formulation Batch Builder** — ran a throwaway copy with a synthetic Swarmbox
+  mock (generic beef-trim products, made-up codes/vendors).
+- **Digital Receiving Log** — ran a fresh instance on the repo's demo seed with
+  `SITE_NAME="Riverbend Foods Co."` (replaces the hardcoded company name).
+- **Cmp-Plus (CMMS)** — captured from the live app, but every screenshot ran a
+  DOM scrub first that rewrites the building names `JD Main → Main Plant` and
+  `JD Dry → Dry Store` (verified 0 "JD" left). Views with real vendor names
+  (Purchase Orders) were deliberately not captured.
