@@ -19,6 +19,7 @@ type Project = {
   liveUrl: string | null;
   detailUrl: string | null;
   isPrivate: boolean;
+  lightFrame?: boolean;
   details: {
     summary?: string;
     built: string | string[];
@@ -283,14 +284,370 @@ const projects: Project[] = [
         'The platform keeps research grounded in trusted documents and supports Arabic and English workflows without presenting unverified answers as fact.',
     },
   },
+  {
+    slug: 'kings-county-water-district',
+    title: 'Kings County Water District',
+    fullTitle: 'Kings County Water District — Public Agency Website',
+    tags: ['Website', 'Local Business', 'Bilingual', 'Accessibility'],
+    description:
+      'Full website rebuild for a California public water agency — replacing a dated early-2000s site with a fast, responsive, bilingual React app.',
+    techStack: 'React · Vite · TypeScript · Tailwind · React Router',
+    images: [
+      {
+        src: '/projects/kcwd-home.jpg',
+        alt: 'Kings County Water District homepage hero',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/kcwd-board.jpg',
+        alt: 'Board of Directors page with meeting agendas and minutes',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/kcwd-projects.jpg',
+        alt: 'Recharge-basin projects page with stats and tables',
+        fit: 'cover',
+        position: 'center top',
+      },
+    ],
+    liveUrl: 'https://kingscwd.vercel.app',
+    detailUrl: null,
+    isPrivate: false,
+    lightFrame: true,
+    details: {
+      built:
+        'A five-page responsive site — home, board of directors with a tabbed agenda and minutes archive, projects, policies, and contact — rebuilt from an early-2000s Adobe Muse site into a modern, accessible, English / Spanish React app.',
+      value:
+        'Residents and landowners can find board meetings, district projects, and policy documents on any device, in English or Spanish, on a site that finally loads fast and meets modern accessibility expectations.',
+    },
+  },
+  {
+    slug: 'pirata-goods',
+    title: 'Pirata Goods',
+    fullTitle: 'Pirata Goods — Leather Goods E-Commerce',
+    tags: ['E-Commerce', 'Website', 'Admin CMS', 'Checkout'],
+    description:
+      'Full e-commerce site for a handcrafted leather brand — storefront, cart, cash-on-delivery checkout, and a complete admin CMS in one Next.js app.',
+    techStack: 'Next.js · TypeScript · Tailwind · Vercel',
+    images: [
+      {
+        src: '/projects/pirata-home.jpg',
+        alt: 'Pirata Goods storefront homepage',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/pirata-shop.jpg',
+        alt: 'Pirata Goods shop page with product grid',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/pirata-about.jpg',
+        alt: 'Pirata Goods brand story page',
+        fit: 'cover',
+        position: 'center top',
+      },
+    ],
+    liveUrl: 'https://pirata-goods-site.vercel.app',
+    detailUrl: null,
+    isPrivate: false,
+    lightFrame: true,
+    details: {
+      summary:
+        'A complete online store for a handcrafted leather brand — public storefront plus an owner-run admin CMS, built as a single Next.js app.',
+      built: [
+        'Storefront with home, shop, and product pages',
+        'Category filters and product sorting',
+        'Color-aware photo galleries with full-screen zoom',
+        'Cart persisted across visits',
+        'Cash-on-delivery checkout with server-side price validation',
+        'Order confirmation emails',
+        'Admin CMS for products and photos',
+      ],
+      value: [
+        'Owner manages the whole catalogue without a developer',
+        'Customers browse and order on any device',
+        'Prices are validated server-side at checkout',
+        'One codebase for storefront and admin',
+      ],
+    },
+  },
+  {
+    slug: 'refined-stitchery',
+    title: 'Refined Stitchery',
+    fullTitle: 'Refined Stitchery — Embroidery & Personalisation Storefront',
+    tags: ['E-Commerce', 'Website', 'Admin Portal', 'Stripe'],
+    description:
+      'Marketing and e-commerce site for a UK embroidery and personalisation business, with a shopping cart, Stripe checkout, and a password-protected admin portal.',
+    techStack: 'React 19 · TypeScript · Vite · Tailwind · Vercel',
+    images: [
+      {
+        src: '/projects/stitchery-home.jpg',
+        alt: 'Refined Stitchery homepage hero',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/stitchery-mid.jpg',
+        alt: 'Refined Stitchery services section',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/stitchery-lower.jpg',
+        alt: 'Refined Stitchery custom products section',
+        fit: 'cover',
+        position: 'center top',
+      },
+    ],
+    liveUrl: 'https://stitchery-website.vercel.app',
+    detailUrl: null,
+    isPrivate: false,
+    lightFrame: true,
+    details: {
+      summary:
+        'A boutique storefront for a Kent-based sewing and personalisation business — embroidery, custom printing, alterations, workwear and more — with an owner-managed product catalogue.',
+      built: [
+        'Responsive marketing storefront',
+        'Services, who-we-serve, and FAQ pages',
+        'Shopping cart',
+        'Stripe checkout (activates when keys are set)',
+        'Password-protected admin portal',
+        'Product and photo management via serverless functions + Vercel Blob',
+      ],
+      value: [
+        'Owner updates products and photos without touching code',
+        'Customers browse services and order online',
+        'Ready for card payments the moment Stripe keys are added',
+      ],
+    },
+  },
+  {
+    slug: 'formulation-batch-builder',
+    title: 'Formulation Batch Builder',
+    fullTitle: 'Formulation Batch Builder — Live-Inventory Blend Optimizer',
+    tags: ['Automation', 'Optimization', 'Live Inventory', 'Manufacturing'],
+    description:
+      'An optimizer that reads live warehouse inventory and computes the fewest-pallet blend to fill N batches at a target weight and lean %, with several build strategies to choose from.',
+    techStack: 'Node.js · Express · REST API · Live Inventory Integration',
+    images: [
+      {
+        src: '/projects/formulation-builder.png',
+        alt: 'Formulation Batch Builder build screen',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/formulation-results.png',
+        alt: 'Formulation Batch Builder results and pull sheet',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/formulation-methods.png',
+        alt: 'Formulation Batch Builder build-method options',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A production tool that solves a real formulation problem: hit a target batch weight and lean percentage while breaking the fewest whole pallets, reading fresh inventory on every run.',
+      built: [
+        'Live inventory pull on every build',
+        'Fewest-pallet blend solver',
+        'Target weight and lean-band constraints',
+        'Multiple build strategies to compare',
+        'Pull sheets for the floor',
+        'No stored state — every build reads fresh',
+      ],
+      value: [
+        'Replaces manual, error-prone blend math',
+        'Breaks fewer whole pallets',
+        'Keeps every batch inside the lean spec',
+        'Gives the floor a clear pull sheet',
+      ],
+      privacy:
+        'This was built for an internal manufacturing workflow, so company-specific details are hidden.',
+    },
+  },
+  {
+    slug: 'ask-jd-ai-assistant',
+    title: 'Ask JD',
+    fullTitle: 'Ask JD — On-Prem AI Assistant for ERP & Warehouse Data',
+    tags: ['AI Assistant', 'RAG', 'Natural Language', 'On-Prem'],
+    description:
+      'An AI assistant that answers natural-language questions about company ERP and warehouse data, running entirely on-premises.',
+    techStack: 'LLM · RAG · Node.js · SQL Server · On-Prem Deployment',
+    images: [
+      {
+        src: '/projects/askjd-chat.png',
+        alt: 'Ask JD natural-language chat interface',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/askjd-answer.png',
+        alt: 'Ask JD answering a data question with sources',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/askjd-dashboard.png',
+        alt: 'Ask JD admin or audit view',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A natural-language assistant over the company ERP and warehouse systems — ask a question in plain English, get an answer grounded in real data, without sending anything to the cloud.',
+      built: [
+        'Natural-language querying of ERP and warehouse data',
+        'Retrieval-augmented answers grounded in the real schema',
+        'Runs fully on-premises',
+        'Audit log of questions and answers',
+      ],
+      value: [
+        'Staff get answers without writing SQL or waiting on reports',
+        'Data never leaves the building',
+        'Grounded answers instead of guesses',
+      ],
+      privacy:
+        'This is an internal proof-of-concept over private company systems, so specifics are hidden.',
+    },
+  },
+  {
+    slug: 'cmp-plus-cmms',
+    title: 'Cmp-Plus',
+    fullTitle: 'Cmp-Plus — In-House Maintenance Management System (CMMS)',
+    tags: ['Internal Platform', 'CMMS', 'Inventory', 'Work Orders'],
+    description:
+      'An in-house maintenance management system that replaced a commercial CMMS — work orders, parts inventory, purchasing, preventive maintenance, and role-based access.',
+    techStack: 'Node.js · Express · SQLite · REST API',
+    images: [
+      {
+        src: '/projects/cmpplus-home.png',
+        alt: 'Cmp-Plus maintenance dashboard',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/cmpplus-workorder.png',
+        alt: 'Cmp-Plus work order wizard',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/cmpplus-inventory.png',
+        alt: 'Cmp-Plus parts inventory with bin locations',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A maintenance department platform built in-house to replace a paid CMMS product — owned, tweakable, and wired to the company own data.',
+      built: [
+        'Work-order lifecycle with manager approval',
+        'Parts inventory with bin locations',
+        'Purchasing, receiving, and an append-only stock ledger',
+        'Preventive-maintenance scheduling',
+        'Parts and work requests with triage',
+        'Role-based access',
+        'One-shot importer from the old system',
+      ],
+      value: [
+        'Replaced a recurring commercial-software cost',
+        'Fully owned and customizable in-house',
+        'Accurate parts stock and costs',
+        'Preventive maintenance instead of firefighting',
+      ],
+      privacy:
+        'This was built for an internal maintenance department, so company-specific details are hidden.',
+    },
+  },
+  {
+    slug: 'digital-receiving-log',
+    title: 'Digital Receiving Log',
+    fullTitle: 'Digital Receiving Log — Paper Form to Audit-Ready Records',
+    tags: ['Internal Tool', 'Compliance', 'Food Safety', 'PDF'],
+    description:
+      'A tablet/desktop app that replaces a hand-written food-safety receiving log with searchable records, live spec enforcement, and audit-ready PDFs.',
+    techStack: 'Node.js · Express · SQLite · PDF Generation',
+    images: [
+      {
+        src: '/projects/receiving-entry.png',
+        alt: 'Digital receiving log entry form',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/receiving-records.png',
+        alt: 'Digital receiving log searchable records',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/receiving-pdf.png',
+        alt: 'Generated receiving log PDF for the audit binder',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A digital replacement for a paper receiving log that keeps the exact same data as queryable records, enforces food-safety rules as you type, and regenerates the official PDF on demand.',
+      built: [
+        'Structured receiving entry form',
+        'Live food-safety spec enforcement',
+        'Searchable, filterable records',
+        'On-demand official PDF regeneration',
+        'Audit-ready history',
+      ],
+      value: [
+        'Answers questions the paper scans never could',
+        'Catches spec violations at entry time',
+        'Audit binder PDFs on demand',
+        'No more lost or unreadable paper forms',
+      ],
+      privacy:
+        'This was built for an internal food-safety workflow, so company-specific details are hidden.',
+    },
+  },
 ];
 
 const projectOrder = [
+  'kings-county-water-district',
   'shoushabox-production-system',
+  'pirata-goods',
   'sanad-legal-ai-platform',
+  'refined-stitchery',
   'delivery-verification-system',
   'alhambra-guide-platform',
   'operations-hub-internal-it-operations-platform',
+  // Staged — each of these is fully written above but hidden until its screenshots
+  // are added to public/projects/ (see SCREENSHOTS-TODO.md). Uncomment a slug to
+  // publish that project.
+  // 'formulation-batch-builder',
+  // 'ask-jd-ai-assistant',
+  // 'cmp-plus-cmms',
+  // 'digital-receiving-log',
 ];
 
 const orderedProjects = projectOrder
@@ -323,9 +680,9 @@ function ScreenshotGallery({
 }) {
   const [hero, ...thumbnails] = project.images;
   const visibleThumbnails = typeof maxThumbnails === 'number' ? thumbnails.slice(0, maxThumbnails) : thumbnails;
-  const isAlhambra = project.slug === 'alhambra-guide-platform';
-  const frameBackground = isAlhambra ? 'bg-[#FAF7F2]' : 'bg-[#0F2A44]';
-  const thumbnailBackground = isAlhambra ? 'bg-white' : 'bg-[#122F4B]';
+  const lightFrame = project.lightFrame ?? project.slug === 'alhambra-guide-platform';
+  const frameBackground = lightFrame ? 'bg-[#FAF7F2]' : 'bg-[#0F2A44]';
+  const thumbnailBackground = lightFrame ? 'bg-white' : 'bg-[#122F4B]';
 
   return (
     <div className={frameBackground}>
