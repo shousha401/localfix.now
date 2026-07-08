@@ -435,20 +435,20 @@ const projects: Project[] = [
     techStack: 'Node.js · Express · REST API · Live Inventory Integration',
     images: [
       {
-        src: '/projects/formulation-builder.png',
-        alt: 'Formulation Batch Builder build screen',
-        fit: 'contain',
-        position: 'center top',
-      },
-      {
         src: '/projects/formulation-results.png',
-        alt: 'Formulation Batch Builder results and pull sheet',
+        alt: 'Formulation Batch Builder result — KPIs, projection, and material pull sheet',
         fit: 'contain',
         position: 'center top',
       },
       {
         src: '/projects/formulation-methods.png',
-        alt: 'Formulation Batch Builder build-method options',
+        alt: 'Formulation Batch Builder PickForMe — every in-band build option',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/formulation-builder.png',
+        alt: 'Formulation Batch Builder setup — products, batch parameters, and build methods',
         fit: 'contain',
         position: 'center top',
       },
@@ -589,20 +589,20 @@ const projects: Project[] = [
     techStack: 'Node.js · Express · SQLite · PDF Generation',
     images: [
       {
-        src: '/projects/receiving-entry.png',
-        alt: 'Digital receiving log entry form',
+        src: '/projects/receiving-records.png',
+        alt: 'Digital receiving log — searchable records with filters and dispositions',
         fit: 'contain',
         position: 'center top',
       },
       {
-        src: '/projects/receiving-records.png',
-        alt: 'Digital receiving log searchable records',
+        src: '/projects/receiving-detail.png',
+        alt: 'Digital receiving log — full record detail with lines and audit trail',
         fit: 'contain',
         position: 'center top',
       },
       {
         src: '/projects/receiving-pdf.png',
-        alt: 'Generated receiving log PDF for the audit binder',
+        alt: 'Generated F400-007 receiving log PDF for the audit binder',
         fit: 'contain',
         position: 'center top',
       },
@@ -636,18 +636,18 @@ const projectOrder = [
   'kings-county-water-district',
   'shoushabox-production-system',
   'pirata-goods',
+  'formulation-batch-builder',
   'sanad-legal-ai-platform',
   'refined-stitchery',
   'delivery-verification-system',
+  'digital-receiving-log',
   'alhambra-guide-platform',
   'operations-hub-internal-it-operations-platform',
   // Staged — each of these is fully written above but hidden until its screenshots
   // are added to public/projects/ (see SCREENSHOTS-TODO.md). Uncomment a slug to
   // publish that project.
-  // 'formulation-batch-builder',
   // 'ask-jd-ai-assistant',
   // 'cmp-plus-cmms',
-  // 'digital-receiving-log',
 ];
 
 const orderedProjects = projectOrder

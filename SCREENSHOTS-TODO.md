@@ -1,42 +1,42 @@
-# Screenshots needed to publish the 4 internal projects
+# Screenshots — status
 
-The three public sites (Kings County Water District, Pirata Goods, Refined Stitchery)
-are already live in **Recent Work** with real screenshots.
+**Live now (7 projects with real screenshots):**
+Kings County Water District, Pirata Goods, Refined Stitchery (public sites),
+plus **Formulation Batch Builder** and **Digital Receiving Log** (internal —
+captured from the real apps running on fully synthetic / demo data, with no
+company-identifying information).
 
-The four internal projects below are **fully written** in
-`app/src/components/RecentWork.tsx` but **hidden** — they only need screenshots.
-To publish one:
-
-1. Drop its 3 images into `app/public/projects/` using the exact filenames below.
-2. Run `npm run optimize:images` (from `app/`) to generate the `.webp` versions.
-3. Uncomment the matching slug in the `projectOrder` array in `RecentWork.tsx`.
-
-Recommended shot size: ~1600px wide, PNG (screenshots of app UI). Any browser
-window screenshot is fine — the card letterboxes them on a dark frame.
+The two internal projects below are **fully written** in
+`app/src/components/RecentWork.tsx` but **hidden** (commented out of
+`projectOrder`) — they still need images.
 
 ---
 
-## Formulation Batch Builder  → slug `formulation-batch-builder`
-- `formulation-builder.png`  — the build screen (products added, targets set)
-- `formulation-results.png`  — a completed build / pull sheet
-- `formulation-methods.png`  — the build-method options (drain / ClayWAY / PickForMe, etc.)
-
-## Ask JD  → slug `ask-jd-ai-assistant`
-- `askjd-chat.png`      — the chat interface
-- `askjd-answer.png`    — an answer grounded in real data
-- `askjd-dashboard.png` — an admin / audit / status view
-
 ## Cmp-Plus (CMMS)  → slug `cmp-plus-cmms`
+
+Runs locally (React client on :5174 + Node server on :3010), but the seed only
+creates an admin login — no demo work orders / parts / vendors — so a fresh
+instance shows empty screens. To publish it, either:
+- author a demo-data seed (buildings, assets, parts, vendors, a few work
+  orders) and screenshot, **or**
+- drop your own screenshots (scrub any real vendor / part names first).
+
+Files needed in `app/public/projects/`:
 - `cmpplus-home.png`      — the maintenance dashboard / home
 - `cmpplus-workorder.png` — the work-order wizard
 - `cmpplus-inventory.png` — parts inventory with bin locations
 
-## Digital Receiving Log  → slug `digital-receiving-log`
-- `receiving-entry.png`   — the entry form
-- `receiving-records.png` — the searchable records list
-- `receiving-pdf.png`     — a generated PDF for the audit binder
+## Ask JD (AI assistant)  → slug `ask-jd-ai-assistant`
+
+Needs the on-prem LLM + RAG stack running, which isn't available on this
+machine — so it can't be captured here. Drop screenshots when you can run it:
+- `askjd-chat.png`      — the chat interface
+- `askjd-answer.png`    — an answer grounded in real data
+- `askjd-dashboard.png` — an admin / audit / status view
 
 ---
 
-*If any alt text or copy doesn't match your actual screens, tweak the matching
-entry in `RecentWork.tsx` — the `alt`, `built`, and `value` fields.*
+**To publish either one:** add its 3 images with the exact filenames above,
+run `npm run optimize:images` (from `app/`), then uncomment its slug in
+`projectOrder` in `RecentWork.tsx`. Tweak the `alt` / `built` / `value` text in
+that entry if it doesn't match your actual screens.
