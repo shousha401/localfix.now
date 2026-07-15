@@ -1,6 +1,46 @@
-/* Fonts are loaded via <link rel="preconnect"> + <link rel="stylesheet"> in
-   index.html (not @import) so they don't block rendering behind the CSS
-   bundle. See the <head> of index.html. */
+/* Fonts are self-hosted (bundled with the site via @fontsource) instead of
+   loaded from Google Fonts. Because the files ship from our own origin and are
+   discovered through this render-blocking CSS, the real font is available on
+   first paint — no external request to wait on, so no font-swap flash on page
+   or route changes. Family names below match those used throughout the app
+   ('Fraunces', 'Inter', 'Space Mono'), so no component styles need to change. */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  /* Served from /public with a stable filename so index.html can <link rel="preload">
+     it — the display font used by every heading is then ready at first paint. */
+  src: url('/fonts/fraunces-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('@fontsource/space-mono/files/space-mono-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('@fontsource/space-mono/files/space-mono-latin-700-normal.woff2') format('woff2');
+}
 
 @tailwind base;
 @tailwind components;

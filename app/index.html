@@ -12,13 +12,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts: preconnect + non-blocking stylesheet (replaces the slow CSS @import). -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300..600&family=Space+Mono:wght@400;700&display=swap"
-    />
+    <!-- Fonts are self-hosted and bundled via @fontsource (see src/index.css).
+         No external Google Fonts request, so the real font is ready on first
+         paint with no swap flash. The display font (Fraunces, used by every
+         heading) is preloaded so it's in hand before the first paint. -->
+    <link rel="preload" href="/fonts/fraunces-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
