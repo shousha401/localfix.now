@@ -32,7 +32,7 @@ export default function ThankYou() {
         <div className="mx-auto text-center" style={{ maxWidth: '760px' }}>
           <h1
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               lineHeight: 1.05,
@@ -44,7 +44,7 @@ export default function ThankYou() {
           <p
             className="mx-auto mt-6"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.125rem',
               color: '#2A2A2A',
               maxWidth: '620px',
@@ -65,7 +65,7 @@ export default function ThankYou() {
           >
             <p
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: '#0F2A44',
@@ -76,7 +76,7 @@ export default function ThankYou() {
             <p
               className="mt-1"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
                 color: '#544D44',
                 lineHeight: 1.6,
@@ -90,7 +90,7 @@ export default function ThankYou() {
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-lg font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 background: '#E5742B',
                 padding: '10px 20px',
                 fontSize: '0.9375rem',
@@ -105,7 +105,7 @@ export default function ThankYou() {
               to="/"
               className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 background: '#E5742B',
                 padding: '14px 32px',
                 borderRadius: '10px',
@@ -126,7 +126,7 @@ export default function ThankYou() {
               to="/fresno-web-design"
               className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 background: 'transparent',
                 border: '2px solid #0F2A44',
                 color: '#0F2A44',

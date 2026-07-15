@@ -59,7 +59,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
           <span
             className="block"
             style={{
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -71,7 +71,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
               color: '#0F2A44',
@@ -93,7 +93,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
               <summary
                 className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 [&::-webkit-details-marker]:hidden"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 600,
                   fontSize: '1.0625rem',
                   color: '#0F2A44',
@@ -118,7 +118,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
               <p
                 className="px-6 pb-5"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '1rem',
                   color: '#425061',
                   lineHeight: 1.7,

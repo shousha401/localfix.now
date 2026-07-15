@@ -39,7 +39,7 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
     background-color: var(--color-cream);
     color: var(--color-charcoal);
     line-height: 1.6;
@@ -48,7 +48,10 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', serif;
+    /* Georgia is metrically close to Fraunces, so the split-second before the
+       web font loads shows a near-identical serif instead of Times New Roman.
+       This removes the "funny letters" flash on client-side route changes. */
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   }
 }
 

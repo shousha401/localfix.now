@@ -39,7 +39,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           ref={overlineRef}
           className="block opacity-0"
           style={{
-            fontFamily: "'Space Mono', monospace",
+            fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
@@ -54,7 +54,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           ref={headlineRef}
           className="mt-6 opacity-0"
           style={{
-            fontFamily: "'Fraunces', serif",
+            fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
             fontWeight: 700,
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.05,
@@ -71,7 +71,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           ref={subRef}
           className="mx-auto mt-6 opacity-0"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.125rem',
             color: '#2A2A2A',
             maxWidth: '600px',
@@ -96,7 +96,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             }}
             className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: '#E5742B',
               padding: '14px 32px',
               borderRadius: '10px',
@@ -117,7 +117,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             href="sms:+15593898850"
             className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: 'transparent',
               border: '2px solid #0F2A44',
               color: '#0F2A44',
@@ -134,7 +134,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           ref={trustRef}
           className="mt-8 opacity-0"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '0.875rem',
             color: '#544D44',
           }}

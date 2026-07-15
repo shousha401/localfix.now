@@ -21,7 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const linkStyle = { color: '#2A2A2A', fontFamily: "'Inter', sans-serif" } as const;
+  const linkStyle = { color: '#2A2A2A', fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" } as const;
 
   return (
     <nav
@@ -117,7 +117,7 @@ export default function Navbar() {
               background: '#E5742B',
               padding: '8px 20px',
               borderRadius: '8px',
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLElement).style.background = '#D46620';
@@ -179,7 +179,7 @@ export default function Navbar() {
           <span
             className="px-6 pb-1 pt-3 text-left"
             style={{
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -217,7 +217,7 @@ export default function Navbar() {
               background: '#E5742B',
               padding: '10px',
               borderRadius: '8px',
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             }}
           >
             Get a Free Review

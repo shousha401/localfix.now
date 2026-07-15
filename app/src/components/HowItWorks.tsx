@@ -33,7 +33,7 @@ export default function HowItWorks() {
           <span
             className="block"
             style={{
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2.25rem, 5vw, 3rem)',
               color: '#0F2A44',
@@ -60,7 +60,7 @@ export default function HowItWorks() {
           <p
             className="mx-auto mt-5"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.0625rem',
               color: '#2A2A2A',
               lineHeight: 1.7,
@@ -92,7 +92,7 @@ export default function HowItWorks() {
 
             <span
               style={{
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                 fontSize: '0.75rem',
                 color: 'rgba(250, 247, 242, 0.62)',
                 textTransform: 'uppercase',
@@ -106,7 +106,7 @@ export default function HowItWorks() {
           <div className="p-5 md:p-8">
             <p
               style={{
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                 fontSize: '0.875rem',
                 color: '#BFE8CF',
               }}
@@ -126,7 +126,7 @@ export default function HowItWorks() {
                 >
                   <span
                     style={{
-                      fontFamily: "'Space Mono', monospace",
+                      fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                       fontSize: '0.8125rem',
                       color: '#E5742B',
                       letterSpacing: '0.04em',
@@ -138,7 +138,7 @@ export default function HowItWorks() {
                   <h3
                     className="mt-3"
                     style={{
-                      fontFamily: "'Fraunces', serif",
+                      fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                       fontWeight: 600,
                       fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
                       color: '#FAF7F2',
@@ -152,7 +152,7 @@ export default function HowItWorks() {
                   <p
                     className="mt-3"
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.95rem',
                       color: 'rgba(250, 247, 242, 0.78)',
                       lineHeight: 1.65,
@@ -173,7 +173,7 @@ export default function HowItWorks() {
             >
               <p
                 style={{
-                  fontFamily: "'Space Mono', monospace",
+                  fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                   fontSize: '0.875rem',
                   color: '#FAF7F2',
                 }}
@@ -184,7 +184,7 @@ export default function HowItWorks() {
               <p
                 className="flex items-center gap-2"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.9375rem',
                   color: '#BFE8CF',
                   fontWeight: 500,

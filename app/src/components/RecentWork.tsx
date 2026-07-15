@@ -738,7 +738,7 @@ export default function RecentWork() {
           <span
             className="block"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.75rem',
               fontWeight: 600,
               letterSpacing: '0.04em',
@@ -751,7 +751,7 @@ export default function RecentWork() {
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(2.35rem, 5vw, 3.25rem)',
               color: '#0F2A44',
@@ -766,7 +766,7 @@ export default function RecentWork() {
           <p
             className="mt-5"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.0625rem',
               color: '#2A2A2A',
               lineHeight: 1.7,
@@ -802,7 +802,7 @@ export default function RecentWork() {
                       style={{
                         background: 'rgba(229, 116, 43, 0.10)',
                         color: '#C76024',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.8125rem',
                         fontWeight: 500,
                         letterSpacing: '0',
@@ -818,7 +818,7 @@ export default function RecentWork() {
                 <h3
                   className="mt-5"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontWeight: 700,
                     fontSize:
                       projectIndex === 0 ? 'clamp(1.85rem, 3vw, 2.25rem)' : 'clamp(1.45rem, 2vw, 1.75rem)',
@@ -833,7 +833,7 @@ export default function RecentWork() {
                 <p
                   className="mt-3"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontSize: '1rem',
                     color: '#425061',
                     lineHeight: 1.72,
@@ -849,7 +849,7 @@ export default function RecentWork() {
                 <p
                   className="mt-auto pt-6"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontSize: '0.875rem',
                     color: '#5F6F80',
                     lineHeight: 1.6,
@@ -867,7 +867,7 @@ export default function RecentWork() {
                       className="inline-flex min-h-10 items-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
                       style={{
                         background: '#E5742B',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       }}
                     >
                       View Project
@@ -880,7 +880,7 @@ export default function RecentWork() {
                       style={{
                         background: '#FAF7F2',
                         color: '#544D44',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       }}
                     >
                       Private Project
@@ -894,7 +894,7 @@ export default function RecentWork() {
                     style={{
                       borderColor: '#E2DDD6',
                       color: '#0F2A44',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     }}
                   >
                     See Details
@@ -908,7 +908,7 @@ export default function RecentWork() {
         <p
           className="mt-10 text-center"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '0.9375rem',
             color: '#544D44',
           }}
@@ -934,7 +934,7 @@ export default function RecentWork() {
               <div>
                 <p
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     letterSpacing: '0.04em',
@@ -947,7 +947,7 @@ export default function RecentWork() {
                   id="project-detail-title"
                   className="mt-2"
                   style={{
-                    fontFamily: "'Fraunces', serif",
+                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: 'clamp(1.75rem, 4vw, 2.35rem)',
                     color: '#0F2A44',
@@ -980,7 +980,7 @@ export default function RecentWork() {
                   <div>
                     <h4
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontWeight: 600,
                         color: '#0F2A44',
                       }}
@@ -990,7 +990,7 @@ export default function RecentWork() {
                     <p
                       className="mt-2"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#2A2A2A',
                         lineHeight: 1.65,
@@ -1004,7 +1004,7 @@ export default function RecentWork() {
                 <div>
                   <h4
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
                       color: '#0F2A44',
                     }}
@@ -1015,7 +1015,7 @@ export default function RecentWork() {
                     <ul
                       className="mt-2 space-y-1.5"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#2A2A2A',
                         lineHeight: 1.55,
@@ -1029,7 +1029,7 @@ export default function RecentWork() {
                     <p
                       className="mt-2"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#2A2A2A',
                         lineHeight: 1.65,
@@ -1043,7 +1043,7 @@ export default function RecentWork() {
                 <div>
                   <h4
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
                       color: '#0F2A44',
                     }}
@@ -1054,7 +1054,7 @@ export default function RecentWork() {
                     <ul
                       className="mt-2 space-y-1.5"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#2A2A2A',
                         lineHeight: 1.55,
@@ -1068,7 +1068,7 @@ export default function RecentWork() {
                     <p
                       className="mt-2"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#2A2A2A',
                         lineHeight: 1.65,
@@ -1082,7 +1082,7 @@ export default function RecentWork() {
                 <div>
                   <h4
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
                       color: '#0F2A44',
                     }}
@@ -1092,7 +1092,7 @@ export default function RecentWork() {
                   <p
                     className="mt-2"
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.875rem',
                       color: '#5F6F80',
                       lineHeight: 1.6,
@@ -1110,7 +1110,7 @@ export default function RecentWork() {
                     className="inline-flex min-h-10 items-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
                     style={{
                       background: '#E5742B',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     }}
                   >
                     View Project
@@ -1120,7 +1120,7 @@ export default function RecentWork() {
                 {selectedProject.details.privacy && (
                   <p
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.8125rem',
                       color: '#544D44',
                       lineHeight: 1.6,

@@ -29,7 +29,7 @@ export default function ServiceHero({
         <span
           className="block"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '12px',
             fontWeight: 700,
             textTransform: 'uppercase',
@@ -43,7 +43,7 @@ export default function ServiceHero({
         <h1
           className="mt-6"
           style={{
-            fontFamily: "'Fraunces', serif",
+            fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
             fontWeight: 700,
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.05,
@@ -58,7 +58,7 @@ export default function ServiceHero({
         <p
           className="mx-auto mt-6"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.125rem',
             color: '#2A2A2A',
             maxWidth: '640px',
@@ -73,7 +73,7 @@ export default function ServiceHero({
             to="/#review-form"
             className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: '#E5742B',
               padding: '14px 32px',
               borderRadius: '10px',
@@ -86,7 +86,7 @@ export default function ServiceHero({
             href="sms:+15593898850"
             className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: 'transparent',
               border: '2px solid #0F2A44',
               color: '#0F2A44',

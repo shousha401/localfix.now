@@ -23,7 +23,7 @@ export default function AboutBlock() {
             <span
               className="block"
               style={{
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                 fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
@@ -36,7 +36,7 @@ export default function AboutBlock() {
             <h2
               className="mt-4"
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(2rem, 4vw, 2.25rem)',
                 color: '#0F2A44',
@@ -51,7 +51,7 @@ export default function AboutBlock() {
             <p
               className="mt-5"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1.125rem',
                 color: '#2A2A2A',
                 lineHeight: 1.75,
@@ -64,7 +64,7 @@ export default function AboutBlock() {
             <p
               className="mt-6 italic"
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontSize: '1.25rem',
                 color: '#0F2A44',
               }}
@@ -75,7 +75,7 @@ export default function AboutBlock() {
             <div
               className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
                 color: '#6B7B8D',
               }}

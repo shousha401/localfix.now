@@ -89,7 +89,7 @@ export default function ContactFooterSection() {
   }
 
   const inputStyle: CSSProperties = {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
     background: '#FAF7F2',
     border: '1px solid #E2DDD6',
     borderRadius: '8px',
@@ -102,7 +102,7 @@ export default function ContactFooterSection() {
   };
 
   const labelStyle: CSSProperties = {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
     fontSize: '0.8125rem',
     fontWeight: 600,
     color: '#0F2A44',
@@ -128,7 +128,7 @@ export default function ContactFooterSection() {
           >
             <h2
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
                 color: '#0F2A44',
@@ -141,7 +141,7 @@ export default function ContactFooterSection() {
             <p
               className="mt-4"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1rem',
                 color: '#544D44',
                 maxWidth: '400px',
@@ -157,7 +157,7 @@ export default function ContactFooterSection() {
                 href="sms:+15593898850"
                 className="flex items-center gap-3 transition-colors hover:text-[#E5742B]"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 500,
                   fontSize: '1.125rem',
                   color: '#0F2A44',
@@ -171,7 +171,7 @@ export default function ContactFooterSection() {
                 href="mailto:help@localfix.now"
                 className="flex items-center gap-3 transition-colors hover:opacity-80"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '1rem',
                   color: '#E5742B',
                   textDecoration: 'none',
@@ -183,7 +183,7 @@ export default function ContactFooterSection() {
               <div
                 className="flex items-center gap-3"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
                   color: '#544D44',
                 }}
@@ -197,7 +197,7 @@ export default function ContactFooterSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
                   color: '#0F2A44',
                   background: '#FAF7F2',
@@ -231,7 +231,7 @@ export default function ContactFooterSection() {
                 <p
                   className="mb-3 text-xl font-medium text-brand-navy"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   }}
                 >
                   Got it. We'll get back to you within 24 hours — usually same day.
@@ -239,7 +239,7 @@ export default function ContactFooterSection() {
                 <p
                   className="text-brand-warmgray"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   }}
                 >
                   For anything urgent, text us at (559) 389-8850.
@@ -257,7 +257,7 @@ export default function ContactFooterSection() {
               >
                 <h3
                   style={{
-                    fontFamily: "'Fraunces', serif",
+                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: '1.125rem',
                     color: '#0F2A44',
@@ -395,7 +395,7 @@ export default function ContactFooterSection() {
                   disabled={status === 'submitting'}
                   className="w-full font-medium text-white transition-all duration-200 hover:-translate-y-px"
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     background: '#0F2A44',
                     opacity: status === 'submitting' ? 0.75 : 1,
                     cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
@@ -440,7 +440,7 @@ export default function ContactFooterSection() {
                 to={link.to}
                 className="transition-colors hover:text-[#E5742B]"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
                   color: '#0F2A44',
                   fontWeight: 500,
@@ -453,7 +453,7 @@ export default function ContactFooterSection() {
           <p
             className="mt-6 text-center"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.8125rem',
               color: '#544D44',
             }}

@@ -34,7 +34,7 @@ export default function ServiceDetails({
           <span
             className="block"
             style={{
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -47,7 +47,7 @@ export default function ServiceDetails({
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
               color: '#0F2A44',
@@ -63,7 +63,7 @@ export default function ServiceDetails({
               key={index}
               className="mt-5"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1.0625rem',
                 color: '#2A2A2A',
                 lineHeight: 1.75,
@@ -78,7 +78,7 @@ export default function ServiceDetails({
         <div className="mt-12">
           <h3
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontWeight: 700,
               fontSize: '1.125rem',
               color: '#0F2A44',
@@ -109,7 +109,7 @@ export default function ServiceDetails({
                   <div>
                     <h4
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontWeight: 600,
                         fontSize: '1.0625rem',
                         color: '#0F2A44',
@@ -121,7 +121,7 @@ export default function ServiceDetails({
                     <p
                       className="mt-2"
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
                         color: '#425061',
                         lineHeight: 1.65,
@@ -142,7 +142,7 @@ export default function ServiceDetails({
         >
           <h3
             style={{
-              fontFamily: "'Space Mono', monospace",
+              fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -154,7 +154,7 @@ export default function ServiceDetails({
           <p
             className="mt-3"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.0625rem',
               color: '#2A2A2A',
               lineHeight: 1.7,

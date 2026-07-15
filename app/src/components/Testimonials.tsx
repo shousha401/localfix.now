@@ -62,7 +62,7 @@ export default function Testimonials() {
             <span
               className="block"
               style={{
-                fontFamily: "'Space Mono', monospace",
+                fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
                 fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
@@ -74,7 +74,7 @@ export default function Testimonials() {
             <h2
               className="mt-4"
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(2rem, 4vw, 2.75rem)',
                 color: '#0F2A44',
@@ -104,7 +104,7 @@ export default function Testimonials() {
               <div className="flex items-center gap-2">
                 <span
                   style={{
-                    fontFamily: "'Fraunces', serif",
+                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                     fontWeight: 700,
                     fontSize: '1.5rem',
                     color: '#0F2A44',
@@ -117,7 +117,7 @@ export default function Testimonials() {
               </div>
               <p
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.8125rem',
                   color: '#6B7B8D',
                   marginTop: '2px',
@@ -144,7 +144,7 @@ export default function Testimonials() {
                 <div>
                   <p
                     style={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
                       fontSize: '0.9375rem',
                       color: '#0F2A44',
@@ -155,7 +155,7 @@ export default function Testimonials() {
                   {review.badge && (
                     <p
                       style={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.75rem',
                         color: '#6B7B8D',
                         marginTop: '2px',
@@ -171,7 +171,7 @@ export default function Testimonials() {
               <blockquote
                 className="mt-4 flex-1"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.9375rem',
                   color: '#2A2A2A',
                   lineHeight: 1.7,
@@ -197,7 +197,7 @@ export default function Testimonials() {
               <Stars size={13} />
               <p
                 style={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 600,
                   fontSize: '0.875rem',
                   color: '#0F2A44',
@@ -209,7 +209,7 @@ export default function Testimonials() {
               {review.badge && (
                 <p
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontSize: '0.75rem',
                     color: '#6B7B8D',
                   }}
@@ -232,7 +232,7 @@ export default function Testimonials() {
           <div>
             <p
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1.25rem',
                 color: '#0F2A44',
@@ -244,7 +244,7 @@ export default function Testimonials() {
             <p
               className="mt-1"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
                 color: '#544D44',
               }}
@@ -258,7 +258,7 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: '#E5742B',
               padding: '12px 24px',
               fontSize: '0.9375rem',

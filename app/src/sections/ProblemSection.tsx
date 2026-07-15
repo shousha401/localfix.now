@@ -69,7 +69,7 @@ export default function ProblemSection({
           ref={overlineRef}
           className="block opacity-0"
           style={{
-            fontFamily: "'Space Mono', monospace",
+            fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
@@ -84,7 +84,7 @@ export default function ProblemSection({
           ref={headlineRef}
           className="mt-5 opacity-0"
           style={{
-            fontFamily: "'Fraunces', serif",
+            fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
             fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
             color: '#0F2A44',
@@ -100,7 +100,7 @@ export default function ProblemSection({
           ref={bodyRef}
           className="mx-auto mt-5 opacity-0"
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.0625rem',
             color: '#2A2A2A',
             lineHeight: 1.7,
@@ -125,7 +125,7 @@ export default function ProblemSection({
           >
             <p
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: '#0F2A44',
@@ -136,7 +136,7 @@ export default function ProblemSection({
             <p
               className="mt-1"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.75rem',
                 color: '#544D44',
               }}
