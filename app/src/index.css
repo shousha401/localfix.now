@@ -9,16 +9,18 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  /* Served from /public with a stable filename so index.html can <link rel="preload">
-     it — the display font used by every heading is then ready at first paint. */
-  src: url('/fonts/fraunces-wght-normal.woff2') format('woff2-variations');
+  /* FULL variable file: varies weight AND optical size (opsz), so large headings
+     render with the sharp, high-contrast "display" shapes instead of the heavy,
+     text-optimised ones. Served from /public with a stable name so index.html can
+     preload it. */
+  src: url('/fonts/fraunces-full-normal.woff2') format('woff2-variations');
 }
 @font-face {
   font-family: 'Fraunces';
   font-style: italic;
   font-display: swap;
   font-weight: 100 900;
-  src: url('@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2') format('woff2-variations');
+  src: url('@fontsource-variable/fraunces/files/fraunces-latin-full-italic.woff2') format('woff2-variations');
 }
 @font-face {
   font-family: 'Inter';
