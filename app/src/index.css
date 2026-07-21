@@ -97,6 +97,10 @@
        web font loads shows a near-identical serif instead of Times New Roman.
        This removes the "funny letters" flash on client-side route changes. */
     font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    /* Fraunces' default liga feature fuses fi/fl/ff pairs ("flat", "five",
+       "fixes") into single decorative glyphs that read as broken letters at
+       display sizes — keep heading letterforms separate. */
+    font-variant-ligatures: none;
   }
 }
 
