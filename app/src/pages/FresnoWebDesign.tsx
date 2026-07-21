@@ -1,6 +1,7 @@
 import ServiceHero from '../components/ServiceHero';
 import ProblemSection from '../sections/ProblemSection';
 import ServiceDetails from '../components/ServiceDetails';
+import PricingBlock from '../components/PricingBlock';
 import HowItWorks from '../components/HowItWorks';
 import RecentWork from '../components/RecentWork';
 import AboutBlock from '../components/AboutBlock';
@@ -15,7 +16,7 @@ export default function FresnoWebDesign() {
     <>
       <RouteSeo
         title="Fresno Web Designer & Website Developer | LocalFix"
-        description="Fresno web designer building fast, mobile-friendly custom websites for small businesses in Fresno, Clovis, Madera & the Central Valley. Built in 1–2 weeks."
+        description="Fresno web designer building fast, mobile-friendly custom websites for Central Valley small businesses. One-page sites $595 flat. Built in 1–2 weeks."
         canonical={content.url}
       />
       <ServiceSchema
@@ -24,6 +25,11 @@ export default function FresnoWebDesign() {
         description={content.schema.description}
         url={content.url}
         breadcrumbName={content.schema.breadcrumbName}
+        offer={{
+          price: '595',
+          description:
+            'Custom one-page website — includes domain, business email, hosting, and SSL setup, plus local SEO. Multi-page sites quoted flat, up front.',
+        }}
       />
       <ServiceHero
         eyebrow="FRESNO WEB DESIGN"
@@ -35,6 +41,7 @@ export default function FresnoWebDesign() {
       />
       <ProblemSection {...content.problem} stat={null} />
       <ServiceDetails {...content.details} />
+      <PricingBlock />
       <HowItWorks />
       <RecentWork />
       <AboutBlock />

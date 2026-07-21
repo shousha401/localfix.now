@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { hasSpaNavigated } from '../lib/navigation-state';
 
 interface HeroSectionProps {
   onScrollTo: (id: string) => void;
@@ -13,14 +14,30 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
   const ctaRef = useRef<HTMLDivElement>(null);
   const trustRef = useRef<HTMLParagraphElement>(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(0.16, 1, 0.3, 1)' } });
+  // The markup ships visible (no opacity-0 / transform initial states) so the
+  // prerendered HTML is never hidden for crawlers, no-JS visitors, or LCP.
+  // gsap.from() applies the pre-animation state at runtime only, and
+  // useLayoutEffect runs before paint so users never see a flash of the
+  // resting state first.
+  useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // On a slow initial load the prerendered hero has been visible for a
+    // while by the time this runs — replaying the entrance would yank
+    // readable content away and push LCP back to the animation's end.
+    // Only play it when JS was ready near first paint (fast loads) or on
+    // SPA navigations (where mount and paint happen together).
+    if (!hasSpaNavigated() && performance.now() > 1500) return;
 
-    tl.to(overlineRef.current, { opacity: 1, y: 0, duration: 0.8 }, 0.2)
-      .to(headlineRef.current, { opacity: 1, y: 0, duration: 0.8 }, 0.4)
-      .to(subRef.current, { opacity: 1, duration: 0.8 }, 0.6)
-      .to(ctaRef.current, { opacity: 1, y: 0, duration: 0.8 }, 0.8)
-      .to(trustRef.current, { opacity: 1, duration: 0.8 }, 1.0);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(0.16, 1, 0.3, 1)' } });
+      tl.from(overlineRef.current, { opacity: 0, y: 20, duration: 0.8 }, 0.2)
+        .from(headlineRef.current, { opacity: 0, y: 30, duration: 0.8 }, 0.4)
+        .from(subRef.current, { opacity: 0, duration: 0.8 }, 0.6)
+        .from(ctaRef.current, { opacity: 0, y: 15, duration: 0.8 }, 0.8)
+        .from(trustRef.current, { opacity: 0, duration: 0.8 }, 1.0);
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -37,14 +54,13 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
         {/* Overline */}
         <span
           ref={overlineRef}
-          className="block opacity-0"
+          className="block"
           style={{
             fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             color: '#544D44',
-            transform: 'translateY(20px)',
           }}
         >
           WEBSITES & AUTOMATION — FRESNO & REMOTE ACROSS CALIFORNIA
@@ -52,7 +68,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
 
         <h1
           ref={headlineRef}
-          className="mt-6 opacity-0"
+          className="mt-6"
           style={{
             fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
             fontWeight: 700,
@@ -60,16 +76,15 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             lineHeight: 1.05,
             color: '#0F2A44',
             letterSpacing: '-0.02em',
-            transform: 'translateY(30px)',
           }}
         >
-          <span style={{ color: '#0F2A44' }}>Better websites.</span>{' '}
+          <span style={{ color: '#0F2A44' }}>Better websites for Fresno businesses.</span>{' '}
           <span style={{ color: '#E5742B' }}>Less busywork.</span>
         </h1>
 
         <p
           ref={subRef}
-          className="mx-auto mt-6 opacity-0"
+          className="mx-auto mt-6"
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.125rem',
@@ -83,8 +98,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
 
         <div
           ref={ctaRef}
-          className="mt-10 flex flex-col items-center justify-center gap-4 opacity-0 sm:flex-row"
-          style={{ transform: 'translateY(15px)' }}
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
             href="#contact"
@@ -132,7 +146,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
 
         <p
           ref={trustRef}
-          className="mt-8 opacity-0"
+          className="mt-8"
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '0.875rem',

@@ -1,4 +1,4 @@
-import { type CSSProperties, type FormEvent, useEffect, useRef, useState } from 'react';
+import { type CSSProperties, type FormEvent, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,36 +14,44 @@ export default function ContactFooterSection() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  useEffect(() => {
+  // Markup ships visible; gsap.from applies the pre-animation state at
+  // runtime only, so the prerendered contact info is never hidden for
+  // crawlers or no-JS visitors.
+  useLayoutEffect(() => {
     if (!sectionRef.current) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    if (leftRef.current) {
-      gsap.to(leftRef.current, {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      });
-    }
+    const ctx = gsap.context(() => {
+      if (leftRef.current) {
+        gsap.from(leftRef.current, {
+          opacity: 0,
+          x: -30,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
 
-    if (rightRef.current) {
-      gsap.to(rightRef.current, {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      });
-    }
+      if (rightRef.current) {
+        gsap.from(rightRef.current, {
+          opacity: 0,
+          x: 30,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -121,11 +129,7 @@ export default function ContactFooterSection() {
         {/* Two-column layout */}
         <div className="grid gap-16 md:grid-cols-2">
           {/* Left column */}
-          <div
-            ref={leftRef}
-            className="opacity-0"
-            style={{ transform: 'translateX(-30px)' }}
-          >
+          <div ref={leftRef}>
             <h2
               style={{
                 fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
@@ -215,11 +219,7 @@ export default function ContactFooterSection() {
           </div>
 
           {/* Right column - Form */}
-          <div
-            ref={rightRef}
-            className="opacity-0"
-            style={{ transform: 'translateX(30px)' }}
-          >
+          <div ref={rightRef}>
             {status === 'success' ? (
               <div
                 className="rounded-xl px-8 py-12 text-center"
@@ -419,7 +419,7 @@ export default function ContactFooterSection() {
         </div>
 
         {/* Bottom bar */}
-        <div
+        <footer
           className="mt-16 border-t pt-8"
           style={{ borderColor: '#E2DDD6' }}
         >
@@ -450,8 +450,45 @@ export default function ContactFooterSection() {
               </Link>
             ))}
           </nav>
+          {/* NAP block. Name and phone must match the Google Business Profile
+              character-for-character ("LocalFix.now" / "(559)389-8850") — do
+              not reformat them. */}
+          <div
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center"
+            style={{
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
+              fontSize: '0.875rem',
+              color: '#0F2A44',
+            }}
+          >
+            <span style={{ fontWeight: 600 }}>LocalFix.now</span>
+            <span aria-hidden="true">·</span>
+            <a href="tel:+15593898850" className="transition-colors hover:text-[#E5742B]">
+              (559)389-8850
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://maps.google.com/?cid=17860024772841425269"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-[#E5742B]"
+            >
+              Find us on Google
+            </a>
+          </div>
           <p
-            className="mt-6 text-center"
+            className="mt-2 text-center"
+            style={{
+              fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
+              fontSize: '0.8125rem',
+              color: '#544D44',
+            }}
+          >
+            Serving Fresno, Clovis, Madera, Sanger, Selma, Visalia, Kerman &amp; Hanford, CA — the
+            Central Valley.
+          </p>
+          <p
+            className="mt-4 text-center"
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.8125rem',
@@ -460,7 +497,7 @@ export default function ContactFooterSection() {
           >
             &copy; 2026 LocalFix. Built in Fresno, California. Serving the Central Valley &amp; small businesses across California.
           </p>
-        </div>
+        </footer>
       </div>
     </section>
   );

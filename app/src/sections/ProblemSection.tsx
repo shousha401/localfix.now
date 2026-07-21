@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -35,23 +35,31 @@ export default function ProblemSection({
   const bodyRef = useRef<HTMLParagraphElement>(null);
   const statRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Markup ships visible; gsap.from applies the pre-animation state at
+  // runtime only, so the prerendered HTML is never hidden for crawlers.
+  useLayoutEffect(() => {
     if (!sectionRef.current) return;
-    const els = [overlineRef.current, headlineRef.current, bodyRef.current, statRef.current].filter(
-      Boolean
-    );
-    gsap.to(els, {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 75%',
-        toggleActions: 'play none none none',
-      },
-    });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = gsap.context(() => {
+      const els = [overlineRef.current, headlineRef.current, bodyRef.current, statRef.current].filter(
+        Boolean
+      );
+      gsap.from(els, {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+          toggleActions: 'play none none none',
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -67,14 +75,13 @@ export default function ProblemSection({
       <div className="mx-auto text-center" style={{ maxWidth: '720px' }}>
         <span
           ref={overlineRef}
-          className="block opacity-0"
+          className="block"
           style={{
             fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             color: '#E5742B',
-            transform: 'translateY(30px)',
           }}
         >
           {overline}
@@ -82,7 +89,7 @@ export default function ProblemSection({
 
         <h2
           ref={headlineRef}
-          className="mt-5 opacity-0"
+          className="mt-5"
           style={{
             fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
@@ -90,7 +97,6 @@ export default function ProblemSection({
             color: '#0F2A44',
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
-            transform: 'translateY(30px)',
           }}
         >
           {headline}
@@ -98,14 +104,13 @@ export default function ProblemSection({
 
         <p
           ref={bodyRef}
-          className="mx-auto mt-5 opacity-0"
+          className="mx-auto mt-5"
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.0625rem',
             color: '#2A2A2A',
             lineHeight: 1.7,
             maxWidth: '600px',
-            transform: 'translateY(30px)',
           }}
         >
           {body}
@@ -114,13 +119,12 @@ export default function ProblemSection({
         {stat && (
           <div
             ref={statRef}
-            className="mx-auto mt-8 opacity-0"
+            className="mx-auto mt-8"
             style={{
               background: 'rgba(15, 42, 68, 0.04)',
               borderRadius: '12px',
               padding: '1rem 1.5rem',
               maxWidth: '480px',
-              transform: 'translateY(30px)',
             }}
           >
             <p

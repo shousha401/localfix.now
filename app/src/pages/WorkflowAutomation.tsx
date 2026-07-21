@@ -27,8 +27,8 @@ export default function WorkflowAutomation() {
       />
       <ServiceHero
         eyebrow="WORKFLOW AUTOMATION — FRESNO & CENTRAL VALLEY"
-        headline="Automate the"
-        headlineAccent="busywork."
+        headline="Workflow automation for"
+        headlineAccent="Fresno businesses."
         subheadline="Custom booking systems, customer inquiry automation, internal dashboards, and integrations built for Fresno small businesses. Save 5–15 hours a week."
         primaryCtaText="Get a Free Review"
         secondaryCtaText="Text us - (559) 389-8850"

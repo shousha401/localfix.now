@@ -16,7 +16,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: 'Do you serve businesses outside Fresno?',
     answer:
-      'Yes. LocalFix serves businesses across the entire Central Valley including Clovis, Madera, Visalia, Hanford, Selma, and Reedley. We also work with clients anywhere in California.',
+      'Yes. LocalFix serves businesses across the entire Central Valley including Clovis, Madera, Sanger, Selma, Visalia, Kerman, and Hanford. We also work with clients anywhere in California.',
   },
   {
     question: 'What is workflow automation and do I need it?',

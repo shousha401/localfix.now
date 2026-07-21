@@ -75,7 +75,15 @@ export const fresnoWebDesign: ServiceContent = {
     {
       question: 'How much does Fresno web design cost?',
       answer:
-        "Every project is quoted as one flat price based on how many pages and features you need — never hourly billing. You'll see the full price in writing after a free review, before you pay anything.",
+        "A custom one-page website is $595 flat. Multi-page sites are quoted as one flat price based on how many pages and features you need — never hourly billing. You'll see the full price in writing after a free review, before you pay anything.",
+    },
+    {
+      question: 'What does $595 include?',
+      answer:
+        'A custom one-page website — includes domain, business email, hosting, and SSL setup, plus local SEO. No hourly billing, no surprises. Multi-page sites quoted flat, up front.',
+      // TODO(owner): renewal/term wording for hosting/domain/email — supply
+      // final language (or keep it in the proposal). Do not add duration or
+      // renewal claims here without it.
     },
     {
       question: 'How long until my new website is live?',
@@ -100,7 +108,7 @@ export const fresnoWebDesign: ServiceContent = {
     {
       question: 'Do you only work with businesses in Fresno?',
       answer:
-        "No. I'm based in Fresno and work throughout Clovis, Madera, Visalia, Hanford, Selma, Reedley, and the wider Central Valley — and with clients anywhere in California.",
+        "No. I'm based in Fresno and work throughout Clovis, Madera, Sanger, Selma, Visalia, Kerman, Hanford, and the wider Central Valley — and with clients anywhere in California.",
     },
   ],
   schema: {
@@ -191,7 +199,7 @@ export const workflowAutomation: ServiceContent = {
     {
       question: 'Do you work with businesses outside Fresno?',
       answer:
-        "Yes. I'm based in Fresno and work throughout Clovis, Madera, Visalia, Hanford, Selma, Reedley, and the wider Central Valley — and I take on clients anywhere in California.",
+        "Yes. I'm based in Fresno and work throughout Clovis, Madera, Sanger, Selma, Visalia, Kerman, Hanford, and the wider Central Valley — and I take on clients anywhere in California.",
     },
   ],
   schema: {
@@ -282,7 +290,7 @@ export const aiChatbot: ServiceContent = {
     {
       question: 'Do you work with businesses outside Fresno?',
       answer:
-        "Yes. I'm based in Fresno and serve Clovis, Madera, Visalia, Hanford, Selma, Reedley, and the wider Central Valley, and I work with clients anywhere in California.",
+        "Yes. I'm based in Fresno and serve Clovis, Madera, Sanger, Selma, Visalia, Kerman, Hanford, and the wider Central Valley, and I work with clients anywhere in California.",
     },
   ],
   schema: {
@@ -373,7 +381,7 @@ export const websiteFixes: ServiceContent = {
     {
       question: 'Do you only work with Fresno businesses?',
       answer:
-        'No. LocalFix is based in Fresno and serves the whole Central Valley — Clovis, Madera, Visalia, Hanford, Selma, and Reedley — and works with clients anywhere in California, since most fixes are handled remotely.',
+        'No. LocalFix is based in Fresno and serves the whole Central Valley — Clovis, Madera, Sanger, Selma, Visalia, Kerman, and Hanford — and works with clients anywhere in California, since most fixes are handled remotely.',
     },
   ],
   schema: {

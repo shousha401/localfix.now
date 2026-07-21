@@ -3,7 +3,8 @@ import { createContext } from 'react';
 export type SeoData = {
   title: string;
   description: string;
-  canonical: string;
+  /** Absent on pages without a real fetchable URL (e.g. the 404 page). */
+  canonical?: string;
   robots: string;
 };
 

@@ -36,16 +36,16 @@ function buildHead(seo: SeoData | null): string {
 
   const title = escape(seo.title);
   const description = escape(seo.description);
-  const canonical = escape(seo.canonical);
+  const canonical = seo.canonical ? escape(seo.canonical) : null;
 
   return [
     `<title>${title}</title>`,
     `<meta name="description" content="${description}" />`,
-    `<link rel="canonical" href="${canonical}" />`,
+    ...(canonical ? [`<link rel="canonical" href="${canonical}" />`] : []),
     `<meta property="og:type" content="website" />`,
     `<meta property="og:title" content="${title}" />`,
     `<meta property="og:description" content="${description}" />`,
-    `<meta property="og:url" content="${canonical}" />`,
+    ...(canonical ? [`<meta property="og:url" content="${canonical}" />`] : []),
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,

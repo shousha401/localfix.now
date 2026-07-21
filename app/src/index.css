@@ -27,7 +27,10 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2-variations');
+  /* Served from /public with a stable name (copied from
+     @fontsource-variable/inter) so index.html can preload it — the mobile LCP
+     element is body text set in Inter. */
+  src: url('/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
 }
 @font-face {
   font-family: 'Space Mono';

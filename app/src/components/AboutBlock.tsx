@@ -5,7 +5,11 @@ export default function AboutBlock() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
           <div className="flex justify-center lg:justify-start">
             <picture className="contents">
-              <source srcSet="/projects/pic.webp" type="image/webp" />
+              <source
+                srcSet="/projects/pic-640w.webp 640w, /projects/pic.webp 1200w"
+                sizes="280px"
+                type="image/webp"
+              />
               <img
                 src="/projects/pic.jpeg"
                 alt="Eslam Shousha, founder of LocalFix — Fresno web developer"
@@ -58,7 +62,7 @@ export default function AboutBlock() {
                 maxWidth: '540px',
               }}
             >
-              Hi — LocalFix is run by one developer, not an agency. I've spent the last three years building production software for a regional food-service company: internal tools, dashboards, and mobile apps used by drivers every day. LocalFix is where I bring the same engineering to local businesses — without the agency price tag. You'll work directly with me from the first message to launch. No account managers, no offshore handoffs, no "we'll get back to you next week."
+              Hi — LocalFix is run by one developer, not an agency. I've spent the last three years building production software for a regional food-service company: internal tools, dashboards, and the mobile tools drivers use every day. LocalFix is where I bring the same engineering to local businesses — without the agency price tag. You'll work directly with me from the first message to launch. No account managers, no offshore handoffs, no "we'll get back to you next week."
             </p>
 
             <p

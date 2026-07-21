@@ -7,7 +7,6 @@ export default function NotFound() {
       <RouteSeo
         title="Page Not Found | LocalFix"
         description="The page you're looking for doesn't exist. Head back to LocalFix for Fresno web design, website fixes, workflow automation, and AI."
-        canonical="https://localfix.now/404"
         noindex
       />
 
@@ -41,6 +40,9 @@ export default function NotFound() {
               letterSpacing: '-0.02em',
             }}
           >
+            {/* scripts/prerender.mjs uses this exact sentence (NOT_FOUND_MARKER)
+                to detect routes that wrongly render the 404 page — update it
+                there too if you reword this. */}
             This page wandered off.
           </h1>
           <p

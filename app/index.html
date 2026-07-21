@@ -1,15 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTBCH36V7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XVTBCH36V7');
-    </script>
     <meta charset="UTF-8" />
+    <!-- Google Analytics loads lazily via src/lib/analytics.ts (gated on
+         VITE_GA_ID) with manual SPA page_view events. Do not re-add a
+         hardcoded gtag snippet here — it double-counts the first pageview. -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Fonts are self-hosted and bundled via @fontsource (see src/index.css).
@@ -17,6 +14,7 @@
          paint with no swap flash. The display font (Fraunces, used by every
          heading) is preloaded so it's in hand before the first paint. -->
     <link rel="preload" href="/fonts/fraunces-full-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -43,15 +41,15 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "@id": "https://localfix.now/#business",
-      "name": "LocalFix",
-      "alternateName": "LocalFix Web Design & Automation",
+      "name": "LocalFix.now",
+      "alternateName": ["LocalFix", "LocalFix Web Design & Automation"],
       "description": "Fresno web designer offering websites, workflow automation, and AI for small businesses across California.",
       "url": "https://localfix.now",
       "email": "help@localfix.now",
       "telephone": "+1-559-389-8850",
-      "priceRange": "$$",
+      "priceRange": "$",
       "image": "https://localfix.now/og-image.png",
       "logo": "https://localfix.now/assets/logo-icon.png",
       "address": {
@@ -64,10 +62,11 @@
         { "@type": "City", "name": "Fresno" },
         { "@type": "City", "name": "Clovis" },
         { "@type": "City", "name": "Madera" },
-        { "@type": "City", "name": "Visalia" },
-        { "@type": "City", "name": "Hanford" },
+        { "@type": "City", "name": "Sanger" },
         { "@type": "City", "name": "Selma" },
-        { "@type": "City", "name": "Reedley" },
+        { "@type": "City", "name": "Visalia" },
+        { "@type": "City", "name": "Kerman" },
+        { "@type": "City", "name": "Hanford" },
         { "@type": "AdministrativeArea", "name": "Central Valley, California" },
         { "@type": "AdministrativeArea", "name": "California" }
       ],
@@ -82,16 +81,14 @@
         "opens": "09:00",
         "closes": "18:00"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "6",
-        "bestRating": "5",
-        "worstRating": "1"
+      "founder": {
+        "@type": "Person",
+        "@id": "https://localfix.now/#founder",
+        "name": "Eslam Shousha"
       },
       "sameAs": [
         "https://maps.google.com/?cid=17860024772841425269",
-        "https://share.google/B7M1F0JFeexef85S9"
+        "https://www.yelp.com/biz/localfix-now-fresno"
       ]
     }
     </script>
@@ -100,10 +97,20 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": "https://localfix.now/#services",
+      "name": "Web Design and Workflow Automation",
       "serviceType": "Web Design and Workflow Automation",
+      "url": "https://localfix.now",
       "provider": { "@id": "https://localfix.now/#business" },
       "areaServed": [
         { "@type": "City", "name": "Fresno" },
+        { "@type": "City", "name": "Clovis" },
+        { "@type": "City", "name": "Madera" },
+        { "@type": "City", "name": "Sanger" },
+        { "@type": "City", "name": "Selma" },
+        { "@type": "City", "name": "Visalia" },
+        { "@type": "City", "name": "Kerman" },
+        { "@type": "City", "name": "Hanford" },
         { "@type": "AdministrativeArea", "name": "Central Valley, California" },
         { "@type": "AdministrativeArea", "name": "California" }
       ],

@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { markSpaNavigation } from './lib/navigation-state';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import FresnoWebDesign from './pages/FresnoWebDesign';
@@ -41,7 +42,13 @@ function AppShell() {
     initAnalytics();
   }, []);
 
+  const isFirstLocation = useRef(true);
   useEffect(() => {
+    if (isFirstLocation.current) {
+      isFirstLocation.current = false;
+    } else {
+      markSpaNavigation();
+    }
     trackPageview(location.pathname + location.search);
   }, [location.pathname, location.search]);
 
