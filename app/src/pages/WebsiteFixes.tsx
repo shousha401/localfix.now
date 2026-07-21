@@ -26,9 +26,9 @@ export default function WebsiteFixes() {
         breadcrumbName={content.schema.breadcrumbName}
       />
       <ServiceHero
-        eyebrow="WEBSITE FIXES — SAME-WEEK TURNAROUND"
-        headline="Fast fixes for"
-        headlineAccent="broken websites."
+        eyebrow="WEBSITE FIXES — FRESNO & CENTRAL VALLEY, SAME-WEEK TURNAROUND"
+        headline="Fast website fixes for"
+        headlineAccent="Fresno businesses."
         subheadline="Slow load times, broken contact forms, mobile issues, outdated design — we fix Fresno business websites in days, not months. Flat prices agreed before work starts."
         primaryCtaText="Get a Free Review"
         secondaryCtaText="Text us - (559) 389-8850"

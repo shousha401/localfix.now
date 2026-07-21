@@ -12,8 +12,11 @@ is required for the site to build or deploy — it's about *measuring* and
 3. In Vercel → Project → Settings → **Environment Variables**, add:
 
    ```
-   VITE_GA_ID = G-XXXXXXXXXX
+   VITE_GA_ID = G-XVTBCH36V7
    ```
+
+   (`G-XVTBCH36V7` is this site's existing GA4 Measurement ID — it used to be
+   hardcoded in `index.html` and now lives only in this env var.)
 
    (Production + Preview.) Redeploy. That's it — `src/lib/analytics.ts` loads
    gtag only when this var is set, and sends a page_view on every SPA route

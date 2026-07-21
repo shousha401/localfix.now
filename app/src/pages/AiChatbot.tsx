@@ -27,8 +27,8 @@ export default function AiChatbot() {
       />
       <ServiceHero
         eyebrow="AI FOR LOCAL BUSINESS — FRESNO & CENTRAL VALLEY"
-        headline="AI that knows"
-        headlineAccent="your business."
+        headline="AI chatbots for"
+        headlineAccent="Fresno businesses."
         subheadline="Custom AI chatbots and FAQ assistants for Fresno local businesses. Trained on your actual business — not generic answers. Answer customer questions 24/7."
         primaryCtaText="Get a Free Review"
         secondaryCtaText="Text us - (559) 389-8850"

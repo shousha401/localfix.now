@@ -4,7 +4,10 @@ import { SeoContext } from '../seo-context';
 type Props = {
   title: string;
   description: string;
-  canonical: string;
+  /** Omit on noindex pages whose URL is not a real, fetchable location
+   *  (e.g. the 404 page) — a canonical pointing at a URL that 404s is
+   *  worse than none. */
+  canonical?: string;
   /** Set on pages that should not be indexed (e.g. the thank-you page). */
   noindex?: boolean;
 };
@@ -39,10 +42,17 @@ export default function RouteSeo({ title, description, canonical, noindex = fals
     setMeta('name', 'robots', robots);
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
-    setMeta('property', 'og:url', canonical);
     setMeta('name', 'twitter:title', title);
     setMeta('name', 'twitter:description', description);
-    setLink('canonical', canonical);
+    if (canonical) {
+      setMeta('property', 'og:url', canonical);
+      setLink('canonical', canonical);
+    } else {
+      // SPA navigation onto a canonical-less page (e.g. 404) must clear the
+      // previous route's tags, or they'd claim this content lives there.
+      removeMeta('property', 'og:url');
+      removeLink('canonical');
+    }
   }, [title, description, canonical, robots]);
 
   return null;
@@ -66,4 +76,12 @@ function setLink(rel: string, href: string) {
     document.head.appendChild(el);
   }
   el.setAttribute('href', href);
+}
+
+function removeMeta(attr: 'name' | 'property', key: string) {
+  document.head.querySelector(`meta[${attr}="${key}"]`)?.remove();
+}
+
+function removeLink(rel: string) {
+  document.head.querySelector(`link[rel="${rel}"]`)?.remove();
 }

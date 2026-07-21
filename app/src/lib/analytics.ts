@@ -19,11 +19,10 @@ export function initAnalytics() {
   if (!GA_ID || initialized || typeof window === 'undefined') return;
   initialized = true;
 
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(script);
-
+  // dataLayer and gtag() are set up immediately so page_view events queue
+  // from the first route; the 166KB gtag.js script itself is deferred to
+  // idle so it never competes with rendering the page (it drains the queue
+  // when it loads).
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {
     // eslint-disable-next-line prefer-rest-params
@@ -33,6 +32,18 @@ export function initAnalytics() {
   // We send page_view manually on each route change (SPA), so turn off the
   // automatic initial one to avoid double-counting.
   window.gtag('config', GA_ID, { send_page_view: false });
+
+  const loadScript = () => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadScript, { timeout: 4000 });
+  } else {
+    setTimeout(loadScript, 2000);
+  }
 }
 
 /** Send a GA4 page_view for the current SPA route. */

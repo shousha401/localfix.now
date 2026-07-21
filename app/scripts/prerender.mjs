@@ -1,32 +1,36 @@
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, '..', 'dist');
 
+// Single source of truth for every prerendered route. `sitemap: null` keeps a
+// route out of sitemap.xml (noindex pages). `lastmod` is the date the page's
+// CONTENT last changed — update it by hand when you change a page's copy,
+// schema, or layout. It is deliberately NOT the build date: re-stamping every
+// deploy teaches Google to distrust the signal.
+//
+// App.tsx's <Route> table is still defined separately (it maps paths to
+// components); the render loop below fails the build if a route listed here
+// is missing there, so the two cannot silently drift.
 const ROUTES = [
-  '/',
-  '/fresno-web-design',
-  '/workflow-automation',
-  '/ai-chatbot',
-  '/website-fixes',
-  '/about',
-  '/thank-you',
+  { path: '/', sitemap: { priority: '1.0', lastmod: '2026-07-19' } },
+  { path: '/fresno-web-design', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
+  { path: '/workflow-automation', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
+  { path: '/ai-chatbot', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
+  { path: '/website-fixes', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
+  { path: '/about', sitemap: { priority: '0.7', lastmod: '2026-07-19' } },
+  { path: '/thank-you', sitemap: null },
 ];
 
 const SITE_ORIGIN = 'https://localfix.now';
 
-// Indexable routes for the sitemap (excludes the noindex /thank-you and 404
-// pages). Regenerated on every build so <lastmod> never goes stale.
-const SITEMAP_URLS = [
-  { path: '/', priority: '1.0' },
-  { path: '/fresno-web-design', priority: '0.9' },
-  { path: '/workflow-automation', priority: '0.9' },
-  { path: '/ai-chatbot', priority: '0.9' },
-  { path: '/website-fixes', priority: '0.9' },
-  { path: '/about', priority: '0.7' },
-];
+// Marker unique to the NotFound page. If a route listed above renders it,
+// the route exists here but not in App.tsx — a drift that would silently
+// ship a 404 for a real URL.
+const NOT_FOUND_MARKER = 'This page wandered off.';
 
 const template = await readFile(join(DIST, 'index.html'), 'utf-8');
 
@@ -35,9 +39,27 @@ const { render } = await import(pathToFileURL(join(DIST, 'server', 'entry-server
 
 const errors = [];
 
-for (const route of ROUTES) {
+for (const { path: route } of ROUTES) {
   try {
     const { html, head } = render(route);
+
+    if (html.includes(NOT_FOUND_MARKER)) {
+      throw new Error(
+        `route renders the 404 page — it is listed in scripts/prerender.mjs but has no matching <Route> in src/App.tsx`
+      );
+    }
+
+    // Every /projects/ image the markup references (including the -640w.webp
+    // srcset variants derived in RecentWork.tsx) must exist in dist —
+    // optimize:images is a manual step, so catch a missing variant here
+    // instead of shipping a broken srcset.
+    for (const [, imgPath] of html.matchAll(/["' ](\/projects\/[^"'\s,]+\.(?:webp|png|jpe?g))/g)) {
+      if (!existsSync(join(DIST, imgPath.slice(1)))) {
+        throw new Error(
+          `${imgPath} is referenced by ${route} but missing from dist — run \`npm run optimize:images\` and commit the output`
+        );
+      }
+    }
 
     let output = template;
 
@@ -78,13 +100,14 @@ try {
   console.error(`  FAILED 404: ${err instanceof Error ? err.message : String(err)}`);
 }
 
-// Generate sitemap.xml with a fresh lastmod so it never goes stale.
-const lastmod = new Date().toISOString().slice(0, 10);
+// Generate sitemap.xml from the same route table. <lastmod> is each route's
+// hand-maintained content-change date (see ROUTES above), not the build date.
+const sitemapRoutes = ROUTES.filter((r) => r.sitemap);
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  SITEMAP_URLS.map(
-    ({ path, priority }) =>
+  sitemapRoutes.map(
+    ({ path, sitemap: { priority, lastmod } }) =>
       `  <url>\n` +
       `    <loc>${SITE_ORIGIN}${path}</loc>\n` +
       `    <lastmod>${lastmod}</lastmod>\n` +
@@ -94,7 +117,7 @@ const sitemap =
   ).join('\n') +
   `\n</urlset>\n`;
 await writeFile(join(DIST, 'sitemap.xml'), sitemap);
-console.log(`  generated sitemap.xml (${SITEMAP_URLS.length} urls, lastmod ${lastmod})`);
+console.log(`  generated sitemap.xml (${sitemapRoutes.length} urls)`);
 
 // The SSR bundle (and the public assets Vite copies alongside it) is only
 // needed during prerendering. Remove it so it is not deployed publicly.
