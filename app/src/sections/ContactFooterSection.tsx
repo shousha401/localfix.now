@@ -132,7 +132,7 @@ export default function ContactFooterSection() {
           <div ref={leftRef}>
             <h2
               style={{
-                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
                 color: '#0F2A44',
@@ -257,7 +257,7 @@ export default function ContactFooterSection() {
               >
                 <h3
                   style={{
-                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                    fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: '1.125rem',
                     color: '#0F2A44',

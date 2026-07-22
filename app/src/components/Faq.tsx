@@ -71,7 +71,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+              fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
               color: '#0F2A44',

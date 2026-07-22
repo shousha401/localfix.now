@@ -3,24 +3,32 @@
    discovered through this render-blocking CSS, the real font is available on
    first paint — no external request to wait on, so no font-swap flash on page
    or route changes. Family names below match those used throughout the app
-   ('Fraunces', 'Inter', 'Space Mono'), so no component styles need to change. */
+   ('Newsreader', 'Inter', 'Space Mono'), so no component styles need to change.
+
+   The display font is Newsreader, not Fraunces. Fraunces' bold "f" has a top
+   arm whose ink overhangs its own advance box and lands on the following
+   letter, so "flat", "fix" and "office" render as fused, broken-looking
+   shapes at heading sizes. That is the typeface's design, not a ligature and
+   not a variable-axis setting: width("fi") === width("f") + width("i") to
+   three decimals, inserting U+200C (which blocks ligature formation) changes
+   nothing, and Google's own Fraunces build measures identically. No CSS can
+   correct it, so the font was replaced. */
 @font-face {
-  font-family: 'Fraunces';
+  font-family: 'Newsreader';
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  /* FULL variable file: varies weight AND optical size (opsz), so large headings
-     render with the sharp, high-contrast "display" shapes instead of the heavy,
-     text-optimised ones. Served from /public with a stable name so index.html can
-     preload it. */
-  src: url('/fonts/fraunces-full-normal.woff2') format('woff2-variations');
+  /* STANDARD variable file: varies weight AND optical size (opsz), so large
+     headings render with the sharp display shapes instead of the text-optimised
+     ones. Served from /public with a stable name so index.html can preload it. */
+  src: url('/fonts/newsreader-standard-normal.woff2') format('woff2-variations');
 }
 @font-face {
-  font-family: 'Fraunces';
+  font-family: 'Newsreader';
   font-style: italic;
   font-display: swap;
   font-weight: 100 900;
-  src: url('@fontsource-variable/fraunces/files/fraunces-latin-full-italic.woff2') format('woff2-variations');
+  src: url('@fontsource-variable/newsreader/files/newsreader-latin-standard-italic.woff2') format('woff2-variations');
 }
 @font-face {
   font-family: 'Inter';
@@ -90,33 +98,13 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    /* --- Fraunces letterform normalisation -------------------------------
-       Both rules live on body, not on h1-h6, because they inherit and
-       Fraunces is applied by inline style to plenty of non-heading elements
-       too: the SVG logo in Navbar, the ProblemSection pull-quote, the italic
-       sign-off in AboutBlock, and two spots in Testimonials. Scoping to
-       headings left those still rendering the quirky glyphs.
-
-       WONK ("wonky") defaults to 1 in the shipped Fraunces file, which swaps
-       in the decorative alternates — most visibly an "f" whose hook drops
-       below the baseline, plus flared legs on h/m/n. At hero sizes that reads
-       as a broken letter rather than a style choice. Only the WONK axis is
-       named, so font-optical-sizing: auto still drives opsz and headings keep
-       their sharp display shapes; fonts without a WONK axis (Inter, Space
-       Mono) ignore the declaration entirely.
-
-       liga fuses fi/fl/ff pairs ("flat", "five", "fixes") into single glyphs
-       that read as broken letters at display sizes. */
-    font-variation-settings: 'WONK' 0;
-    font-variant-ligatures: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    /* Georgia is metrically close to Fraunces, so the split-second before the
+    /* Georgia is metrically close to Newsreader, so the split-second before the
        web font loads shows a near-identical serif instead of Times New Roman.
        This removes the "funny letters" flash on client-side route changes. */
-    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
   }
 }
 

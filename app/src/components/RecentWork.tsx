@@ -952,7 +952,7 @@ export default function RecentWork() {
                   id="project-detail-title"
                   className="mt-2"
                   style={{
-                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                    fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: 'clamp(1.75rem, 4vw, 2.35rem)',
                     color: '#0F2A44',

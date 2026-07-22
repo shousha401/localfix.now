@@ -32,7 +32,7 @@ export default function ThankYou() {
         <div className="mx-auto text-center" style={{ maxWidth: '760px' }}>
           <h1
             style={{
-              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+              fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               lineHeight: 1.05,

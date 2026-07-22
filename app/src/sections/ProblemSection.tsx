@@ -91,7 +91,7 @@ export default function ProblemSection({
           ref={headlineRef}
           className="mt-5"
           style={{
-            fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+            fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
             fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
             color: '#0F2A44',
@@ -129,7 +129,7 @@ export default function ProblemSection({
           >
             <p
               style={{
-                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: '#0F2A44',

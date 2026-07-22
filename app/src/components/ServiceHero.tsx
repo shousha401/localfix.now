@@ -43,7 +43,7 @@ export default function ServiceHero({
         <h1
           className="mt-6"
           style={{
-            fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+            fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
             fontWeight: 700,
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.05,

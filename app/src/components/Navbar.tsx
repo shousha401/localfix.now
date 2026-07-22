@@ -48,7 +48,7 @@ export default function Navbar() {
             <text
               x="0"
               y="26"
-              fontFamily="Fraunces, Georgia, 'Times New Roman', serif"
+              fontFamily="Newsreader, Georgia, 'Times New Roman', serif"
               fontWeight="600"
               fontSize="28"
               fill="#0F2A44"

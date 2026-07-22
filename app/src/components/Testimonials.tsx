@@ -74,7 +74,7 @@ export default function Testimonials() {
             <h2
               className="mt-4"
               style={{
-                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(2rem, 4vw, 2.75rem)',
                 color: '#0F2A44',
@@ -104,7 +104,7 @@ export default function Testimonials() {
               <div className="flex items-center gap-2">
                 <span
                   style={{
-                    fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                    fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 700,
                     fontSize: '1.5rem',
                     color: '#0F2A44',
@@ -232,7 +232,7 @@ export default function Testimonials() {
           <div>
             <p
               style={{
-                fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1.25rem',
                 color: '#0F2A44',

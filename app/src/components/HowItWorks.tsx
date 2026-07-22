@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <h2
             className="mt-4"
             style={{
-              fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+              fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2.25rem, 5vw, 3rem)',
               color: '#0F2A44',
@@ -138,7 +138,7 @@ export default function HowItWorks() {
                   <h3
                     className="mt-3"
                     style={{
-                      fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
+                      fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                       fontWeight: 600,
                       fontSize: 'clamp(1.25rem, 2vw, 1.5rem)',
                       color: '#FAF7F2',
