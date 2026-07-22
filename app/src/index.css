@@ -90,6 +90,26 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /* --- Fraunces letterform normalisation -------------------------------
+       Both rules live on body, not on h1-h6, because they inherit and
+       Fraunces is applied by inline style to plenty of non-heading elements
+       too: the SVG logo in Navbar, the ProblemSection pull-quote, the italic
+       sign-off in AboutBlock, and two spots in Testimonials. Scoping to
+       headings left those still rendering the quirky glyphs.
+
+       WONK ("wonky") defaults to 1 in the shipped Fraunces file, which swaps
+       in the decorative alternates — most visibly an "f" whose hook drops
+       below the baseline, plus flared legs on h/m/n. At hero sizes that reads
+       as a broken letter rather than a style choice. Only the WONK axis is
+       named, so font-optical-sizing: auto still drives opsz and headings keep
+       their sharp display shapes; fonts without a WONK axis (Inter, Space
+       Mono) ignore the declaration entirely.
+
+       liga fuses fi/fl/ff pairs ("flat", "five", "fixes") into single glyphs
+       that read as broken letters at display sizes. */
+    font-variation-settings: 'WONK' 0;
+    font-variant-ligatures: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
