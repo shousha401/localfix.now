@@ -172,7 +172,7 @@ export default function ContactFooterSection() {
                 Text us: (559) 389-8850
               </a>
               <a
-                href="mailto:help@localfix.now"
+                href="mailto:eshousha@localfix.now"
                 className="flex items-center gap-3 transition-colors hover:opacity-80"
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
@@ -182,7 +182,7 @@ export default function ContactFooterSection() {
                 }}
               >
                 <Mail size={20} strokeWidth={1.5} color="#E5742B" />
-                help@localfix.now
+                eshousha@localfix.now
               </a>
               <div
                 className="flex items-center gap-3"

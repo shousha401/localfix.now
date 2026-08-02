@@ -88,8 +88,8 @@ export default function AboutBlock() {
                 (559) 389-8850
               </a>
               <span aria-hidden="true">·</span>
-              <a href="mailto:help@localfix.now" className="transition-colors hover:text-[#E5742B]">
-                Email: help@localfix.now
+              <a href="mailto:eshousha@localfix.now" className="transition-colors hover:text-[#E5742B]">
+                Email: eshousha@localfix.now
               </a>
             </div>
           </div>
