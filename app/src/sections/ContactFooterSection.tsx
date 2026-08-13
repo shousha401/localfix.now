@@ -451,8 +451,8 @@ export default function ContactFooterSection() {
             ))}
           </nav>
           {/* NAP block. Name and phone must match the Google Business Profile
-              character-for-character ("LocalFix.now" / "(559)389-8850") — do
-              not reformat them. */}
+              character-for-character ("LocalFix Web Design" / "(559)389-8850")
+              — do not reformat them. */}
           <div
             className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center"
             style={{
@@ -461,7 +461,7 @@ export default function ContactFooterSection() {
               color: '#0F2A44',
             }}
           >
-            <span style={{ fontWeight: 600 }}>LocalFix.now</span>
+            <span style={{ fontWeight: 600 }}>LocalFix Web Design</span>
             <span aria-hidden="true">·</span>
             <a href="tel:+15593898850" className="transition-colors hover:text-[#E5742B]">
               (559)389-8850
