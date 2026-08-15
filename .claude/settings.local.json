@@ -123,7 +123,14 @@
       "PowerShell(git pull origin main)",
       "PowerShell(git fetch --prune)",
       "PowerShell(try { $v = \\(Get-Command vercel -ErrorAction Stop\\).Source; \"vercel CLI: $v\" } catch { \"vercel CLI not found\" })",
-      "PowerShell(git add -A)"
+      "PowerShell(git add -A)",
+      "PowerShell(git pull --no-rebase origin main)",
+      "Bash(curl -s -m 25 -L \"https://alhambraofficialguide.com\")",
+      "Bash(curl -s -o /dev/null -m 20 -w \"status=%{http_code} redirect=%{redirect_url}\\\\n\" \"https://alhambraofficialguide.com\")",
+      "PowerShell(npm run build --prefix app 2>&1)",
+      "Bash(cd /c/Users/shous/Music/LocalFix/app/dist/work && grep -o -E 'href=\"https://\\(kingscwd|www\\\\.piratagoods|www\\\\.refinedstitchery|www\\\\.alhambraofficialguide\\)[^\"]*\"' index.html | sort -u *)",
+      "PowerShell(npm run lint --prefix app 2>&1)",
+      "PowerShell(npm run lint --prefix \"C:\\\\Users\\\\shous\\\\Music\\\\LocalFix\\\\app\" 2>&1)"
     ]
   }
 }
