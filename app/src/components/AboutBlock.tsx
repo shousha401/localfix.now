@@ -73,7 +73,7 @@ export default function AboutBlock() {
                 color: '#0F2A44',
               }}
             >
-              — Eslam Shousha, LocalFix
+              — Eslam Shousha, LocalFix Web Design
             </p>
 
             <div
