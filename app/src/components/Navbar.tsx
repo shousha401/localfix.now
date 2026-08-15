@@ -68,6 +68,14 @@ export default function Navbar() {
             Home
           </Link>
 
+          <Link
+            to="/work"
+            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            Work
+          </Link>
+
           {/* Services dropdown (opens on hover or keyboard focus) */}
           <div className="group relative">
             <button
@@ -160,7 +168,7 @@ export default function Navbar() {
       <div
         className="overflow-hidden transition-all duration-300 ease-out md:hidden"
         style={{
-          maxHeight: menuOpen ? '460px' : '0',
+          maxHeight: menuOpen ? '520px' : '0',
           opacity: menuOpen ? 1 : 0,
           background: '#FAF7F2',
           borderBottom: menuOpen ? '1px solid #E2DDD6' : '1px solid transparent',
@@ -174,6 +182,15 @@ export default function Navbar() {
             style={linkStyle}
           >
             Home
+          </Link>
+
+          <Link
+            to="/work"
+            onClick={() => setMenuOpen(false)}
+            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            style={linkStyle}
+          >
+            Work
           </Link>
 
           <span

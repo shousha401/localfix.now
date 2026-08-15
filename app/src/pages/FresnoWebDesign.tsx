@@ -37,7 +37,7 @@ export default function FresnoWebDesign() {
         headlineAccent="Fresno businesses."
         subheadline="Mobile-friendly websites built for Fresno restaurants, salons, contractors, clinics, and service providers. Flat prices. Two-week turnarounds. Serving Fresno, Clovis, Madera, Visalia, and the Central Valley."
         primaryCtaText="Get a Free Review"
-        secondaryCtaText="Text us - (559) 389-8850"
+        secondaryCtaText="Text me - (559) 389-8850"
       />
       <ProblemSection {...content.problem} stat={null} />
       <ServiceDetails {...content.details} />

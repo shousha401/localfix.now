@@ -56,7 +56,7 @@ export default function NotFound() {
             }}
           >
             The page you're looking for doesn't exist or has moved. Try one of these instead, or
-            text us at (559) 389-8850 and we'll point you the right way.
+            text me at (559) 389-8850 and I'll point you the right way.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">

@@ -179,7 +179,7 @@ export const workflowAutomation: ServiceContent = {
     {
       question: 'How much time will this really save me?',
       answer:
-        'Most local businesses lose 20-plus hours a week to automatable tasks, per the McKinsey Global Institute, and well-built automation typically wins back 5 to 15 of those hours every week. Your exact number depends on how much manual work we move off your plate, which we map out in the free review.',
+        'Most local businesses lose 20-plus hours a week to automatable tasks, per the McKinsey Global Institute, and well-built automation typically wins back 5 to 15 of those hours every week. Your exact number depends on how much manual work I move off your plate, which I map out in the free review.',
     },
     {
       question: 'Do I have to replace the software I already use?',

@@ -16,12 +16,13 @@ const DIST = join(__dirname, '..', 'dist');
 // components); the render loop below fails the build if a route listed here
 // is missing there, so the two cannot silently drift.
 const ROUTES = [
-  { path: '/', sitemap: { priority: '1.0', lastmod: '2026-07-19' } },
+  { path: '/', sitemap: { priority: '1.0', lastmod: '2026-08-03' } },
+  { path: '/work', sitemap: { priority: '0.9', lastmod: '2026-08-03' } },
   { path: '/fresno-web-design', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
   { path: '/workflow-automation', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
   { path: '/ai-chatbot', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
   { path: '/website-fixes', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
-  { path: '/about', sitemap: { priority: '0.7', lastmod: '2026-07-19' } },
+  { path: '/about', sitemap: { priority: '0.7', lastmod: '2026-08-03' } },
   { path: '/thank-you', sitemap: null },
 ];
 

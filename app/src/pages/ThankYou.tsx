@@ -6,7 +6,7 @@ export default function ThankYou() {
     <>
       <RouteSeo
         title="Thank You | LocalFix"
-        description="Your LocalFix request was received. We'll be in touch within 24 hours."
+        description="Your LocalFix request was received. I'll be in touch within 24 hours."
         canonical="https://localfix.now/thank-you"
         noindex
       />
@@ -51,7 +51,7 @@ export default function ThankYou() {
               lineHeight: 1.6,
             }}
           >
-            We'll review your message and get back to you within 24 hours — usually same day.
+            I'll review your message and get back to you within 24 hours — usually same day.
             For anything urgent, text or call (559) 389-8850.
           </p>
           {/* Google review prompt — shows after form submission when satisfaction is fresh */}
@@ -82,7 +82,7 @@ export default function ThankYou() {
                 lineHeight: 1.6,
               }}
             >
-              A quick Google review helps other Fresno businesses find us — and it takes about 30 seconds.
+              A quick Google review helps other Fresno businesses find me — and it takes about 30 seconds.
             </p>
             <a
               href="https://share.google/B7M1F0JFeexef85S9"
@@ -135,7 +135,7 @@ export default function ThankYou() {
                 fontSize: '1rem',
               }}
             >
-              See Our Services →
+              See My Services →
             </Link>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function WorkflowAutomation() {
         headlineAccent="Fresno businesses."
         subheadline="Custom booking systems, customer inquiry automation, internal dashboards, and integrations built for Fresno small businesses. Save 5–15 hours a week."
         primaryCtaText="Get a Free Review"
-        secondaryCtaText="Text us - (559) 389-8850"
+        secondaryCtaText="Text me - (559) 389-8850"
       />
       <ProblemSection {...content.problem} stat={null} />
       <ServiceDetails {...content.details} />

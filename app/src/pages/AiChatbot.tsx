@@ -31,7 +31,7 @@ export default function AiChatbot() {
         headlineAccent="Fresno businesses."
         subheadline="Custom AI chatbots and FAQ assistants for Fresno local businesses. Trained on your actual business — not generic answers. Answer customer questions 24/7."
         primaryCtaText="Get a Free Review"
-        secondaryCtaText="Text us - (559) 389-8850"
+        secondaryCtaText="Text me - (559) 389-8850"
       />
       <ProblemSection {...content.problem} stat={null} />
       <ServiceDetails {...content.details} />

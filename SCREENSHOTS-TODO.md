@@ -17,8 +17,9 @@ machine — so it can't be captured here. Drop screenshots when you can run it:
 - `askjd-dashboard.png` — an admin / audit / status view
 
 **To publish it:** add its 3 images with the exact filenames above, run
-`npm run optimize:images` (from `app/`), then uncomment its slug in
-`projectOrder` in `RecentWork.tsx`.
+`npm run optimize:images` (from `app/`), then in `app/src/content/projects.ts`
+uncomment its slug in `projectOrder` and remove its text card from
+`shippedTools` (it currently appears on /work as a screenshot-less card).
 
 ---
 

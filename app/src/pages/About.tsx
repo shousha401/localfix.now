@@ -47,7 +47,7 @@ export default function About() {
         headlineAccent="in Fresno."
         subheadline="LocalFix brings production software experience to local businesses that need better websites, faster workflows, and direct communication."
         primaryCtaText="Get a Free Review"
-        secondaryCtaText="Text us - (559) 389-8850"
+        secondaryCtaText="Text me - (559) 389-8850"
       />
       <AboutBlock />
       <RecentWork />

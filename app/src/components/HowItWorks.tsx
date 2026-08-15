@@ -9,19 +9,19 @@ const steps = [
     number: '02',
     title: 'Scoped Proposal',
     description:
-      'If you want to move forward, you get a one-page proposal with exactly what we’ll build, the flat price, and the delivery date. No hourly billing. No surprise charges.',
+      'If you want to move forward, you get a one-page proposal with exactly what I’ll build, the flat price, and the delivery date. No hourly billing. No surprise charges.',
   },
   {
     number: '03',
     title: 'Build in 1–2 Weeks',
     description:
-      'We build the site, set up forms, configure your domain and email, and send you a preview link. One round of revisions is included.',
+      'I build the site, set up forms, configure your domain and email, and send you a preview link. One round of revisions is included.',
   },
   {
     number: '04',
     title: 'Launch & 30-Day Support',
     description:
-      'We go live, hand over your login and account details, and you get 30 days of free fixes. Optional monthly maintenance after that.',
+      'I take the site live, hand over your login and account details, and you get 30 days of free fixes. Optional monthly maintenance after that.',
   },
 ];
 

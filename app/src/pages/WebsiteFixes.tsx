@@ -29,9 +29,9 @@ export default function WebsiteFixes() {
         eyebrow="WEBSITE FIXES — FRESNO & CENTRAL VALLEY, SAME-WEEK TURNAROUND"
         headline="Fast website fixes for"
         headlineAccent="Fresno businesses."
-        subheadline="Slow load times, broken contact forms, mobile issues, outdated design — we fix Fresno business websites in days, not months. Flat prices agreed before work starts."
+        subheadline="Slow load times, broken contact forms, mobile issues, outdated design — I fix Fresno business websites in days, not months. Flat prices agreed before work starts."
         primaryCtaText="Get a Free Review"
-        secondaryCtaText="Text us - (559) 389-8850"
+        secondaryCtaText="Text me - (559) 389-8850"
       />
       <ProblemSection {...content.problem} stat={null} />
       <ServiceDetails {...content.details} />

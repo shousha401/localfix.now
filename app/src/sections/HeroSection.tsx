@@ -93,7 +93,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             lineHeight: 1.6,
           }}
         >
-          We're a Fresno web designer and automation shop — we build, fix, and automate websites for local businesses across California. Flat prices, two-week turnarounds, and one person who answers the phone.
+          I'm a Fresno web designer and automation developer — I build, fix, and automate websites for local businesses across California. Flat prices, two-week turnarounds, and I'm the one who answers the phone.
         </p>
 
         <div
@@ -140,7 +140,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
               fontSize: '1rem',
             }}
           >
-            Text us — (559) 389-8850
+            Text me — (559) 389-8850
           </a>
         </div>
 

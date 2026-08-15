@@ -16,7 +16,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: 'Do you serve businesses outside Fresno?',
     answer:
-      'Yes. LocalFix serves businesses across the entire Central Valley including Clovis, Madera, Sanger, Selma, Visalia, Kerman, and Hanford. We also work with clients anywhere in California.',
+      'Yes. LocalFix serves businesses across the entire Central Valley including Clovis, Madera, Sanger, Selma, Visalia, Kerman, and Hanford. I also work with clients anywhere in California.',
   },
   {
     question: 'What is workflow automation and do I need it?',
@@ -26,7 +26,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: 'Can you build an AI chatbot for my business?',
     answer:
-      'Yes. We build custom AI chatbots trained on your specific business — not generic ChatGPT wrappers. They handle FAQs, capture leads, and route customers to the right place 24/7.',
+      'Yes. I build custom AI chatbots trained on your specific business — not generic ChatGPT wrappers. They handle FAQs, capture leads, and route customers to the right place 24/7.',
   },
 ];
 

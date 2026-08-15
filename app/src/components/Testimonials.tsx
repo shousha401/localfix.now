@@ -239,7 +239,7 @@ export default function Testimonials() {
                 lineHeight: 1.2,
               }}
             >
-              Worked with us? Leave a Google review.
+              Worked with me? Leave a Google review.
             </p>
             <p
               className="mt-1"
@@ -249,7 +249,7 @@ export default function Testimonials() {
                 color: '#544D44',
               }}
             >
-              It takes 30 seconds and helps other Fresno businesses find us.
+              It takes 30 seconds and helps other Fresno businesses find me.
             </p>
           </div>
           <a

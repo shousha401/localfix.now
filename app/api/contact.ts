@@ -121,12 +121,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (result.error) {
       console.error('Resend send error', result.error);
-      return res.status(500).json({ error: 'Could not send. Please try again or text us.' });
+      return res.status(500).json({ error: 'Could not send. Please try again or text me.' });
     }
 
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Unexpected send error', err);
-    return res.status(500).json({ error: 'Could not send. Please try again or text us.' });
+    return res.status(500).json({ error: 'Could not send. Please try again or text me.' });
   }
 }
