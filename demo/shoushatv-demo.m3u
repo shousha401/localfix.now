@@ -1,0 +1,15 @@
+#EXTM3U url-tvg="http://REPLACE-WITH-LAN-IP:8080/shoushatv-demo.xmltv"
+#EXTINF:-1 tvg-id="demo-news" tvg-name="Demo News HD" group-title="News",Demo News HD
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 tvg-id="demo-sports" tvg-name="Demo Sports" group-title="Sports",Demo Sports
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+#EXTINF:-1 tvg-id="demo-movies" tvg-name="Demo Movies" group-title="Movies",Demo Movies
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+#EXTINF:-1 tvg-id="demo-kids" tvg-name="Demo Kids" group-title="Kids",Demo Kids
+https://test-streams.mux.dev/test_001/stream.m3u8
+#EXTINF:-1 tvg-id="demo-music" tvg-name="Demo Music" group-title="Music",Demo Music
+https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8
+#EXTINF:-1 tvg-id="demo-docs" tvg-name="Demo Documentary" group-title="Documentary",Demo Documentary
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8
+#EXTINF:-1 tvg-id="demo-local" tvg-name="Demo Local 7" group-title="Local",Demo Local 7
+https://test-streams.mux.dev/pts_shift/master.m3u8
