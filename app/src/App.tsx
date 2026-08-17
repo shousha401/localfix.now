@@ -5,6 +5,7 @@ import { markSpaNavigation } from './lib/navigation-state';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Work from './pages/Work';
+import AppDevelopment from './pages/AppDevelopment';
 import FresnoWebDesign from './pages/FresnoWebDesign';
 import WorkflowAutomation from './pages/WorkflowAutomation';
 import AiChatbot from './pages/AiChatbot';
@@ -88,6 +89,7 @@ export default function App() {
       <Route element={<AppShell />}>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
+        <Route path="/app-development" element={<AppDevelopment />} />
         <Route path="/fresno-web-design" element={<FresnoWebDesign />} />
         <Route path="/workflow-automation" element={<WorkflowAutomation />} />
         <Route path="/ai-chatbot" element={<AiChatbot />} />

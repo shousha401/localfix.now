@@ -392,3 +392,94 @@ export const websiteFixes: ServiceContent = {
     breadcrumbName: 'Website Fixes',
   },
 };
+
+export const appDevelopment: ServiceContent = {
+  url: 'https://localfix.now/app-development',
+  problem: {
+    overline: 'THE APP GAP',
+    headline: 'Custom apps sound like something only big companies can afford.',
+    body: `Talk to an agency and the quote has a comma in it. Try a drag-and-drop app builder and you get a template that breaks the first time your workflow doesn't match theirs. So the ideas that would actually help — a tool your crew opens every morning, a screen for the lobby TV, an app your customers keep on their phone — stay ideas, and the day-to-day keeps running on group texts, spreadsheets, and paper. An app isn't out of reach. It just needs to be built at the right size.`,
+  },
+  details: {
+    eyebrow: 'WHAT I BUILD',
+    h2: 'Cross-platform apps, built end-to-end by one Fresno developer',
+    intro: [
+      `I design and build cross-platform apps with React Native and Expo, so one codebase runs on Android and iOS — and, when the job calls for the big screen, on Android TV and Fire TV too. Built end-to-end means exactly that: the interface, the data layer, the video and streaming layer when you need one, offline behavior, and error recovery are designed together by one person instead of stitched from plugins. And everything is tested against real hardware — actual phones and actual low-cost TV devices, not just a simulator — because that's where your app has to survive.`,
+      `This is the same engineering I've spent the last three years doing for a regional food-service company — internal dashboards, a driver app with offline barcode scanning, production-floor systems that aren't allowed to fail at 6 a.m. When I build an app for a Central Valley business, it gets that production-software treatment: clear error states instead of mystery crashes, data that survives a dead zone, and updates that don't break what already works. You work with me directly the whole way — one developer who designed it, built it, and answers the phone when you have a question.`,
+    ],
+    whatsIncludedTitle: "What's included",
+    whatsIncluded: [
+      {
+        title: 'One codebase, every platform',
+        description:
+          'React Native and Expo let a single codebase ship to Android and iOS — and to Android TV and Fire TV when your app belongs on a television.',
+      },
+      {
+        title: 'Interfaces built for the input',
+        description:
+          "Phones get thumb-friendly layouts; TVs get D-pad-first navigation that works from the couch with a remote. Every screen is designed for how it's actually driven.",
+      },
+      {
+        title: 'Video and streaming layers',
+        description:
+          'Player screens built on ExoPlayer with a stream-recovery state machine, so playback reconnects cleanly when a connection drops instead of freezing.',
+      },
+      {
+        title: 'Offline behavior that holds up',
+        description:
+          'Work is saved locally and synced when the signal returns — built for warehouses, job sites, and rural cell coverage.',
+      },
+      {
+        title: 'Error recovery, not error screens',
+        description:
+          'Failures are designed for up front: clear states, automatic retries, and no dead ends that make your crew force-close the app.',
+      },
+      {
+        title: 'Tested on real hardware',
+        description:
+          'Every build runs on physical phones and low-cost TV devices before you see it, because real hardware finds what simulators miss.',
+      },
+    ],
+    whoItsForTitle: "Who it's for",
+    whoItsFor: `Fresno, Clovis, and Central Valley businesses with a workflow that belongs in an app instead of a group text — field crews confirming jobs, a counter tablet taking orders, a lobby TV that should be showing your menu or schedule, or a customer-facing app you've only ever been quoted agency prices for. If you're not sure whether you need an app or a website, that's exactly what the free review sorts out.`,
+  },
+  faqs: [
+    {
+      question: 'What kinds of apps can you build?',
+      answer:
+        'Cross-platform mobile apps for Android and iOS, television apps for Android TV and Fire TV, and the systems behind them — interfaces, video and streaming layers, offline workflows, and dashboards. I build with React Native and Expo, so one codebase covers every platform you need.',
+    },
+    {
+      question: 'How much does app development cost?',
+      answer:
+        "App pricing isn't one-size-fits-all, so I don't publish a figure. After a free review of what you want to build, you get a flat-price quote and a delivery date in writing before any work starts — no hourly billing and no surprise charges.",
+    },
+    {
+      question: 'Do I need an app, or is a website enough?',
+      answer:
+        "Honest answer: sometimes a mobile-friendly website is the better first step, and I'll tell you when it is. An app earns its keep when your team or customers use it daily, need it to work offline, or need hardware features like barcode scanning or a TV interface. The free review tells you which one your business actually needs.",
+    },
+    {
+      question: 'Can you really build TV apps?',
+      answer:
+        'Yes — I build and run one. ShoushaTV is a full 10-foot app on Android TV and Fire TV with D-pad navigation, a live program guide, and an ExoPlayer video layer, tuned for low-cost TV hardware and running on my own TV every day.',
+    },
+    {
+      question: 'What happens after the app launches?',
+      answer:
+        "You get 30 days of free fixes while the app settles into real use, with optional monthly upkeep after that. Because I built every layer, there's no vendor to chase — the person who wrote the code is the one maintaining it.",
+    },
+    {
+      question: 'Do you only work with businesses in Fresno?',
+      answer:
+        "No. I'm based in Fresno and work throughout Clovis, Madera, Sanger, Selma, Visalia, Kerman, Hanford, and the wider Central Valley — and since app work is handled remotely, I take on clients anywhere in California.",
+    },
+  ],
+  schema: {
+    serviceType: 'Mobile and TV App Development',
+    name: 'Cross-Platform App Development',
+    description:
+      'Cross-platform app development for Fresno-area small businesses — Android, iOS, Android TV, and Fire TV apps built end-to-end by one developer, with offline support, video playback, and flat up-front pricing.',
+    breadcrumbName: 'App Development',
+  },
+};

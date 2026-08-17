@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const serviceLinks = [
+  { label: 'App Development', href: '/app-development' },
   { label: 'Fresno Web Design', href: '/fresno-web-design' },
   { label: 'Workflow Automation', href: '/workflow-automation' },
   { label: 'AI Chatbot', href: '/ai-chatbot' },

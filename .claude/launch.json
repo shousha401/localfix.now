@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "localfix-dev",
+      "name": "preview-dist",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "app"],
-      "port": 3000
+      "runtimeArgs": ["--prefix", "app", "run", "preview"],
+      "port": 4173
     }
   ]
 }

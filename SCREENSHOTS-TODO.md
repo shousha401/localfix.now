@@ -6,7 +6,30 @@ plus **Formulation Batch Builder**, **Digital Receiving Log**, and
 **Cmp-Plus (CMMS)** (internal — captured from the real apps with no
 company-identifying information; see notes below).
 
-Only one project remains hidden (commented out of `projectOrder`):
+Two projects remain hidden (commented out of `projectOrder`):
+
+## ShoushaTV (TV & mobile app)  → slug `shoushatv`
+
+Staged 2026-08-16 as part of the app-development positioning work. Its full
+project entry is written in `projects.ts`, and it currently appears on /work as
+a screenshot-less "Private beta" text card. It publishes as the FIRST portfolio
+card once captures land.
+
+Capture on real hardware (or emulator at TV resolution) with **demo/placeholder
+credentials only** — no real channel names, logos, or stream content. The copy's
+core claim is that the app ships empty and bundles no content; screenshots
+showing recognizable channels or programming would contradict that claim and
+create rights problems. Same spirit as the company-safe internal captures below.
+
+- `shoushatv-home.png`   — home screen, D-pad focus visible on a content rail
+- `shoushatv-guide.png`  — the EPG/XMLTV program guide grid
+- `shoushatv-player.png` — the player UI (controls overlay or recovery state)
+
+**To publish it:** add its 3 images with the exact filenames above, run
+`npm run optimize:images` (from `app/`), then in `app/src/content/projects.ts`
+uncomment `'shoushatv'` at the top of `projectOrder`, remove its text card from
+`shippedTools`, change the `totalShippedCount` adjustment from `- 2` back to
+`- 1`, and bump the `/work` lastmod in `app/scripts/prerender.mjs`.
 
 ## Ask JD (AI assistant)  → slug `ask-jd-ai-assistant`
 

@@ -37,6 +37,60 @@ export type ShippedTool = {
 
 const projects: Project[] = [
   {
+    slug: 'shoushatv',
+    title: 'ShoushaTV',
+    fullTitle: 'ShoushaTV — TV & Mobile App',
+    tags: ['TV App', 'Mobile App', 'Video Player', 'Private Beta'],
+    description:
+      'A full 10-foot TV app built for the remote — D-pad navigation, EPG program guide, favorites, watch history, and catch-up TV, with a video layer that recovers cleanly on flaky connections.',
+    techStack: 'React Native (Expo) · ExoPlayer · Android TV / Fire TV · iOS (TestFlight beta)',
+    images: [
+      {
+        src: '/projects/shoushatv-home.png',
+        alt: 'ShoushaTV home screen with D-pad-focused content rails on a television',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/shoushatv-guide.png',
+        alt: 'ShoushaTV EPG program guide grid built from XMLTV data',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/shoushatv-player.png',
+        alt: 'ShoushaTV video player with playback controls on TV hardware',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A television app built for the remote, not the mouse — a full 10-foot interface with live program guide, favorites, watch history, and catch-up TV. It ships completely empty: the app bundles no content and plays only from stream credentials the user enters.',
+      built: [
+        'D-pad-first 10-foot navigation',
+        'EPG / XMLTV program guide',
+        'Favorites, watch history, and catch-up TV',
+        'ExoPlayer-based video layer',
+        'Stream-recovery state machine for flaky connections',
+        'Performance tuning for low-cost TV hardware',
+        'One React Native (Expo) codebase for TV and mobile',
+      ],
+      value: [
+        'Runs on Android TV and Fire TV by direct install',
+        'iOS beta in TestFlight with a small beta group',
+        'In daily use on my own TV',
+        'Reconnects cleanly when a connection drops',
+        'Designed and built end-to-end by one developer',
+      ],
+      privacy:
+        'ShoushaTV ships empty by design — it bundles no content and plays only from stream credentials the user provides.',
+    },
+  },
+  {
     slug: 'alhambra-guide-platform',
     title: 'Alhambra Guide Platform',
     tags: ['Website', 'Bilingual', 'Tour Booking'],
@@ -616,6 +670,10 @@ const projects: Project[] = [
 
 /** Display order for the full portfolio on /work. */
 const projectOrder = [
+  // Staged — fully written above but hidden until its screenshots are added to
+  // public/projects/ (see SCREENSHOTS-TODO.md). Uncomment the slug to publish
+  // it as the FIRST card, and remove its ShippedTool card from `shippedTools`.
+  // 'shoushatv',
   'kings-county-water-district',
   'shoushabox-production-system',
   'pirata-goods',
@@ -656,6 +714,13 @@ export const featuredProjects = bySlugOrder(featuredOrder);
 /** Shipped work without company-safe screenshots — shown as text cards on /work. */
 export const shippedTools: ShippedTool[] = [
   {
+    title: 'ShoushaTV — TV & Mobile App',
+    blurb:
+      'A full 10-foot television app built for the remote: D-pad navigation, EPG/XMLTV program guide, favorites, watch history, and catch-up TV — with an ExoPlayer video layer and a stream-recovery state machine tuned for low-cost TV hardware. Ships completely empty: no bundled content, plays only from credentials the user enters. On Android TV and Fire TV by direct install, with an iOS beta in TestFlight.',
+    techStack: 'React Native (Expo) · ExoPlayer · Android TV / Fire TV · iOS (TestFlight beta)',
+    status: 'Private beta',
+  },
+  {
     title: 'Production Scheduling Report',
     blurb:
       'Tells the team what to make and how much — days ahead. Reads live inventory and open orders, factoring FIFO, partial lots, shelf life, and order risk. Checked daily by production and ownership.',
@@ -683,4 +748,4 @@ export const shippedTools: ShippedTool[] = [
 ];
 
 /** Everything shipped: full showcase projects (including staged) + text-only tools. */
-export const totalShippedCount = projects.length + shippedTools.length - 1; // Ask JD counted once
+export const totalShippedCount = projects.length + shippedTools.length - 2; // Ask JD + ShoushaTV counted once (staged, with interim text cards)
