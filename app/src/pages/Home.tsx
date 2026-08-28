@@ -17,10 +17,8 @@ export default function Home() {
 
   return (
     <>
-      {/* No price in this description: the pricing block now lives only on
-          /fresno-web-design, so a "$595" snippet here would land visitors on a
-          page that never states it. That page's description carries the price
-          and backs it with visible copy plus Offer schema. */}
+      {/* No dollar amounts anywhere on the site (owner request 2026-08-28):
+          "flat pricing" language only, in descriptions and visible copy. */}
       <RouteSeo
         title="Fresno Web Designer, Automation & AI | LocalFix"
         description="Fresno web designer & automation shop for small businesses. Custom one-page websites with domain, business email, hosting & local SEO included. Flat pricing."

@@ -75,12 +75,12 @@ export const fresnoWebDesign: ServiceContent = {
     {
       question: 'How much does Fresno web design cost?',
       answer:
-        "A custom one-page website is $595 flat. Multi-page sites are quoted as one flat price based on how many pages and features you need — never hourly billing. You'll see the full price in writing after a free review, before you pay anything.",
+        "Every site is one flat price based on how many pages and features you need — never hourly billing. You'll see the full price in writing after a free review, before you pay anything.",
     },
     {
-      question: 'What does $595 include?',
+      question: 'What does the flat price include?',
       answer:
-        'A custom one-page website — includes domain, business email, hosting, and SSL setup, plus local SEO. No hourly billing, no surprises. Multi-page sites quoted flat, up front.',
+        'A custom website — includes domain, business email, hosting, and SSL setup, plus local SEO. No hourly billing, no surprises. Multi-page sites quoted flat, up front.',
       // TODO(owner): renewal/term wording for hosting/domain/email — supply
       // final language (or keep it in the proposal). Do not add duration or
       // renewal claims here without it.

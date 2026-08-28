@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 /**
- * The $595 flat-price package. Rendered on the homepage and
- * /fresno-web-design so the price exists in visible, prerendered copy —
- * the page-level Offer schema (ServiceSchema) mirrors this on-page content.
+ * The flat-price package. No dollar amounts anywhere on the site (owner
+ * request 2026-08-28) — "flat price" language only, and no Offer schema
+ * without a visible on-page price to mirror.
  *
  * Wording is owner-approved: flat price, no duration or renewal terms for
  * hosting/domain/email anywhere.
@@ -36,7 +36,7 @@ export default function PricingBlock() {
             lineHeight: 1.12,
           }}
         >
-          <span style={{ color: '#E5742B' }}>$595 flat.</span> Custom one-page website.
+          <span style={{ color: '#E5742B' }}>One flat price.</span> Custom website.
         </h2>
 
         <p

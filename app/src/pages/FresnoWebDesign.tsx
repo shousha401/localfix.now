@@ -16,7 +16,7 @@ export default function FresnoWebDesign() {
     <>
       <RouteSeo
         title="Fresno Web Designer & Website Developer | LocalFix"
-        description="Fresno web designer building fast, mobile-friendly custom websites for Central Valley small businesses. One-page sites $595 flat. Built in 1–2 weeks."
+        description="Fresno web designer building fast, mobile-friendly websites for Central Valley small businesses. Flat pricing, free review first. Built in 1–2 weeks."
         canonical={content.url}
       />
       <ServiceSchema
@@ -25,11 +25,6 @@ export default function FresnoWebDesign() {
         description={content.schema.description}
         url={content.url}
         breadcrumbName={content.schema.breadcrumbName}
-        offer={{
-          price: '595',
-          description:
-            'Custom one-page website — includes domain, business email, hosting, and SSL setup, plus local SEO. Multi-page sites quoted flat, up front.',
-        }}
       />
       <ServiceHero
         eyebrow="FRESNO WEB DESIGN"
