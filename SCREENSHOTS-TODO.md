@@ -1,10 +1,12 @@
 # Screenshots — status
 
-**Live now (8 projects with real screenshots):**
-Kings County Water District, Pirata Goods, Refined Stitchery (public sites),
-plus **Formulation Batch Builder**, **Digital Receiving Log**, and
-**Cmp-Plus (CMMS)** (internal — captured from the real apps with no
-company-identifying information; see notes below).
+**Live now (11 projects with real screenshots):**
+Kings County Water District, Avila Infrastructure & Contracting (captured
+2026-09-11 from avilainfrastructure.com), Pirata Goods, Refined Stitchery (public sites),
+plus **Formulation Batch Builder**, **Digital Receiving Log**,
+**Cmp-Plus (CMMS)**, **Staff Scheduling & Tips App**, and **Breadcrumb**
+(internal/client — captured with no company-identifying information; the last
+two run entirely on fictional demo data; see notes below).
 
 Two projects remain hidden (commented out of `projectOrder`):
 
@@ -56,3 +58,18 @@ uncomment its slug in `projectOrder` and remove its text card from
   DOM scrub first that rewrites the building names `JD Main → Main Plant` and
   `JD Dry → Dry Store` (verified 0 "JD" left). Views with real vendor names
   (Purchase Orders) were deliberately not captured.
+- **Staff Scheduling & Tips App** (private client) — captured 2026-09-11 from a
+  throwaway copy rebranded as the fictional "Riverbend Butcher Co.": invented
+  store names (Northside / Old Town), 17 invented staff on `@demo.example`, a
+  placeholder SVG logo, and the migrations that write the client's real store
+  names neutralized. Built app, served pages, and SQLite audited for the
+  client's name, stores, and people → 0. The client stays unnamed on the site
+  (no name, logo, or filenames) until the owner OKs it.
+- **Breadcrumb** (internal field-sales app, pre-pilot) — captured 2026-09-11
+  from a throwaway copy on a fully synthetic dataset: 194 invented accounts
+  (made-up names, 555-01xx phone numbers), invented reps, generic products, and
+  24 months of generated orders, with every integration and cron disabled and
+  a separate port from the live app. The database was audited against the
+  employer's name, data-source names, and every person/business name in the
+  repo's fixtures → 0. Only signed-in screens were captured — the logged-out
+  landing page and the sign-in page carry the employer's name and were skipped.

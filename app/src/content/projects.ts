@@ -360,6 +360,58 @@ const projects: Project[] = [
     },
   },
   {
+    slug: 'avila-infrastructure',
+    title: 'Avila Infrastructure & Contracting',
+    fullTitle: 'Avila Infrastructure & Contracting — Utility & Electrical Contractor Website',
+    tags: ['Website', 'Local Business', 'Lead Capture', 'Local SEO'],
+    description:
+      'Website for an owner-operated utility and electrical contractor in Lemoore, CA — with an estimate-request form that emails every new lead straight to the owner.',
+    techStack: 'HTML · CSS · JavaScript · Vercel Serverless Functions · Resend',
+    images: [
+      {
+        src: '/projects/avila-home.jpg',
+        alt: 'Avila Infrastructure & Contracting homepage hero with call and estimate buttons',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/avila-services.jpg',
+        alt: 'Avila services section — infrastructure, ag solutions, utility installation, and electrical',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/avila-contact.jpg',
+        alt: 'Avila contact section with the Request an Estimate form',
+        fit: 'cover',
+        position: 'center top',
+      },
+    ],
+    liveUrl: 'https://avilainfrastructure.com',
+    detailUrl: null,
+    isPrivate: false,
+    lightFrame: true,
+    details: {
+      summary:
+        'A fast single-page website for an owner-operated utility and electrical contractor in Lemoore, CA — built to turn Central Valley searches into phone calls and estimate requests.',
+      built: [
+        'Bold “business card” brand design with a blueprint-grid motif',
+        'Services, Why Avila, service area, and FAQ sections',
+        'Click-to-call buttons throughout the page',
+        'Estimate-request form with a spam honeypot',
+        'Serverless lead handler that emails the owner and auto-replies to the customer',
+        'Contractor, service, and FAQ structured data for search',
+        'Fully responsive static site on Vercel — no build step',
+      ],
+      value: [
+        'Customers can call or request an estimate from any device',
+        'Every web lead lands in the owner’s inbox, ready to reply to',
+        'Customers get an instant confirmation that their request arrived',
+        'Search-ready for utility and electrical work across 10 Central Valley cities',
+      ],
+    },
+  },
+  {
     slug: 'pirata-goods',
     title: 'Pirata Goods',
     fullTitle: 'Pirata Goods — Leather Goods E-Commerce',
@@ -666,6 +718,115 @@ const projects: Project[] = [
         'This was built for an internal food-safety workflow, so company-specific details are hidden.',
     },
   },
+  {
+    slug: 'staff-scheduling-tips-app',
+    title: 'Staff Scheduling & Tips App',
+    fullTitle: 'Staff Scheduling & Tips App — Two-Location Butcher Shop',
+    tags: ['Web App', 'Mobile-First', 'Scheduling', 'Client Project'],
+    description:
+      'A mobile-first scheduling app for a two-location butcher shop — week-grid schedules, shift covers and trades, and an hours-weighted tip-pool calculator, replacing a spreadsheet and group texts.',
+    techStack: 'React · TypeScript · Vite · Tailwind · Node.js · Express · SQLite · Railway',
+    images: [
+      {
+        src: '/projects/staff-app-schedule.png',
+        alt: 'Manager week grid with shifts grouped by position, break labels, hours, and coverage bars',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/staff-app-tips.png',
+        alt: 'Locked tip day showing the pool total and each person’s share',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/staff-app-employee.png',
+        alt: 'Employee home screen on a phone with the next shift and the week’s schedule',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A scheduling and tip-sheet app for a two-location butcher shop — managers build and publish the week, and staff check shifts and pick up covers from their phones.',
+      built: [
+        'Week-grid scheduler with coverage bars, copy-last-week, and publish',
+        'Hours that exclude unpaid breaks, matching the shop’s old spreadsheet',
+        'Hours-weighted tip-pool engine with penny-exact splits (1,000-case test)',
+        'Locked tip days with version history and a payroll CSV export',
+        'Cover and trade board that only offers shifts a person can actually work',
+        'Installable mobile app for staff: next shift, week, team, tips, and covers',
+        'Role-based access, invite links, and CSRF-protected sessions',
+        'Encrypted nightly backups and 337 automated tests in CI',
+      ],
+      value: [
+        'In live use at both locations',
+        'Replaced a spreadsheet schedule and covers arranged over group text',
+        'The owner adds staff and publishes schedules without a developer',
+        'Staff see their shifts and request covers from their phones',
+      ],
+      privacy:
+        'Built for a private client, so these screenshots use a fictional business, fictional staff, and demo data.',
+    },
+  },
+  {
+    slug: 'breadcrumb-field-sales-app',
+    title: 'Breadcrumb',
+    fullTitle: 'Breadcrumb — Field Sales App for a Foodservice Distributor',
+    tags: ['Mobile App', 'Field Sales', 'Maps', 'Pre-Pilot'],
+    description:
+      'A mobile-first field-sales app for a distributor’s sales reps — an account map, a live team feed, check-ins that work offline, and alerts for accounts that are slipping.',
+    techStack: 'React · Vite · Node.js · Express · SQLite · Leaflet · Server-Sent Events · IndexedDB',
+    images: [
+      {
+        src: '/projects/breadcrumb-map.png',
+        alt: 'Breadcrumb account map with visit-recency pins and an open account sheet',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/breadcrumb-feed.png',
+        alt: 'Breadcrumb live team feed with check-ins, notes, and replies on a phone',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/breadcrumb-today.png',
+        alt: 'Breadcrumb Today screen with a rep’s visit plan and follow-ups on a phone',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'An in-house field-sales app that puts thousands of customer accounts on a map, shows reps each account’s order history before they walk in, and keeps the whole team’s visits in one live feed.',
+      built: [
+        'Clustered account map colored by how recently each account was visited',
+        'Account sheet with usual order, spend trend, open orders, and payment habits',
+        'Live team feed for check-ins, notes, calls, and @mentions',
+        'Offline check-in outbox that survives lost signal and retries safely',
+        'Alert engine for lapsed accounts, lost items, and declining spend',
+        'Visit plans, follow-ups, and visit-frequency targets',
+        'New-opening leads from state liquor-license data',
+        'Read-only nightly sync from the ERP and warehouse systems',
+        '1,400+ automated tests plus a five-device screenshot check',
+      ],
+      value: [
+        'Reps see an account’s history and alerts before they walk in',
+        'Every visit is visible to the team, so two reps don’t work the same account unknowingly',
+        'Surfaces lapsed accounts that no existing report showed',
+        'Keeps rep traffic off the shared ERP and warehouse systems',
+      ],
+      privacy:
+        'Built for an internal sales team and preparing for its pilot. Screenshots use a fictional dataset — no real customers, reps, or sales figures.',
+    },
+  },
 ];
 
 /** Display order for the full portfolio on /work. */
@@ -675,12 +836,15 @@ const projectOrder = [
   // it as the FIRST card, and remove its ShippedTool card from `shippedTools`.
   // 'shoushatv',
   'kings-county-water-district',
+  'avila-infrastructure',
   'shoushabox-production-system',
   'pirata-goods',
+  'staff-scheduling-tips-app',
   'formulation-batch-builder',
   'sanad-legal-ai-platform',
   'refined-stitchery',
   'delivery-verification-system',
+  'breadcrumb-field-sales-app',
   'digital-receiving-log',
   'cmp-plus-cmms',
   'alhambra-guide-platform',

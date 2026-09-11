@@ -18,7 +18,7 @@ const workSchema = {
 
 const stats = [
   { value: `${totalShippedCount}`, label: 'systems shipped' },
-  { value: '4', label: 'live public websites' },
+  { value: `${orderedProjects.filter((project) => project.liveUrl).length}`, label: 'live public websites' },
   { value: 'EN · ES', label: 'bilingual builds' },
   { value: 'Web · Mobile · AI', label: 'in production' },
 ];

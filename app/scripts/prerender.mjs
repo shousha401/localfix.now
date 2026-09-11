@@ -17,7 +17,7 @@ const DIST = join(__dirname, '..', 'dist');
 // is missing there, so the two cannot silently drift.
 const ROUTES = [
   { path: '/', sitemap: { priority: '1.0', lastmod: '2026-08-16' } },
-  { path: '/work', sitemap: { priority: '0.9', lastmod: '2026-08-16' } },
+  { path: '/work', sitemap: { priority: '0.9', lastmod: '2026-09-11' } },
   { path: '/app-development', sitemap: { priority: '0.9', lastmod: '2026-08-16' } },
   { path: '/fresno-web-design', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
   { path: '/workflow-automation', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
