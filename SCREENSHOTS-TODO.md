@@ -1,12 +1,13 @@
 # Screenshots — status
 
-**Live now (11 projects with real screenshots):**
+**Projects with real screenshots:**
 Kings County Water District, Avila Infrastructure & Contracting (captured
 2026-09-11 from avilainfrastructure.com), Pirata Goods, Refined Stitchery (public sites),
 plus **Formulation Batch Builder**, **Digital Receiving Log**,
-**Cmp-Plus (CMMS)**, **Staff Scheduling & Tips App**, and **Breadcrumb**
-(internal/client — captured with no company-identifying information; the last
-two run entirely on fictional demo data; see notes below).
+**Cmp-Plus (CMMS)**, **The Meat Up — Staff App**, **The Meat Up — Online
+Ordering**, **Breadcrumb**, **SnapBox**, and **Shousha-Hub** (internal/client,
+captured with no company-identifying information; the last five run entirely
+on fictional demo data; see notes below).
 
 Two projects remain hidden (commented out of `projectOrder`):
 
@@ -58,13 +59,37 @@ uncomment its slug in `projectOrder` and remove its text card from
   DOM scrub first that rewrites the building names `JD Main → Main Plant` and
   `JD Dry → Dry Store` (verified 0 "JD" left). Views with real vendor names
   (Purchase Orders) were deliberately not captured.
-- **Staff Scheduling & Tips App** (private client) — captured 2026-09-11 from a
-  throwaway copy rebranded as the fictional "Riverbend Butcher Co.": invented
-  store names (Northside / Old Town), 17 invented staff on `@demo.example`, a
-  placeholder SVG logo, and the migrations that write the client's real store
-  names neutralized. Built app, served pages, and SQLite audited for the
-  client's name, stores, and people → 0. The client stays unnamed on the site
-  (no name, logo, or filenames) until the owner OKs it.
+- **The Meat Up — Staff App** — the owner OK'd naming the client on
+  2026-09-24, so the 2026-09-11 "Riverbend Butcher Co." captures were replaced
+  with `meatup-staff-*.png`, taken from a throwaway copy that keeps the real
+  brand and store names but has 18 invented people (`@demo.example`,
+  555-01xx). The repo's seed people were never loaded. The rendered pages and
+  built app were audited against every name, email, and phone in the repo's
+  seed, migrations, tests, and docs → 0. Email, backups, and Railway were all
+  off.
+- **The Meat Up — Online Ordering** — captured 2026-09-24 from a throwaway copy
+  on a temporary local Postgres, with Square in stub mode (no charge possible),
+  email off, and the browser blocking all outbound traffic. It has 8 invented
+  customers (559-555-01xx, `@demo.example`) placed by our own script. The
+  repo's demo customers were not used, and seeded staff were renamed to
+  invented people. Prices are the app's test catalog, not the shop's real
+  prices. The live link stays off until order.themeatup.com leaves Square
+  stub mode.
+- **Shousha-Hub** — captured 2026-09-24 from a throwaway copy with a fictional
+  8-tool list on `floor.local` / `tools.local`, answered by local dummy
+  servers. A network guard blocked every connection except those local ports,
+  and alerts were off. Company wording in the UI was replaced with "Operations
+  Hub", and the inbox and incident history are invented. The rendered pages,
+  API responses, data files, and canvas text were audited → 0. Only the
+  developer's own name and avatar appear.
+- **SnapBox** — captured 2026-09-24 from a throwaway copy with the production
+  areas renamed to generic ones (Grinding / Portioning / Ready-to-Eat / Pack
+  Off) in both labels and internal keys. It holds 30 invented QC posts across
+  two days (the second day is for the History shot), and every "photo" is a
+  synthetic render made locally (invented labels, zeroed barcodes,
+  "EST. 0000"); no real photos were used. The database, uploads,
+  served code, and rendered pages were audited for company and brand strings
+  → 0.
 - **Breadcrumb** (internal field-sales app, pre-pilot) — captured 2026-09-11
   from a throwaway copy on a fully synthetic dataset: 194 invented accounts
   (made-up names, 555-01xx phone numbers), invented reps, generic products, and

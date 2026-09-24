@@ -719,29 +719,29 @@ const projects: Project[] = [
     },
   },
   {
-    slug: 'staff-scheduling-tips-app',
-    title: 'Staff Scheduling & Tips App',
-    fullTitle: 'Staff Scheduling & Tips App — Two-Location Butcher Shop',
-    tags: ['Web App', 'Mobile-First', 'Scheduling', 'Client Project'],
+    slug: 'the-meat-up-online-ordering',
+    title: 'The Meat Up — Online Ordering',
+    fullTitle: 'The Meat Up — Online Pickup Ordering',
+    tags: ['Web App', 'Online Ordering', 'Payments', 'Launching'],
     description:
-      'A mobile-first scheduling app for a two-location butcher shop — week-grid schedules, shift covers and trades, and an hours-weighted tip-pool calculator, replacing a spreadsheet and group texts.',
-    techStack: 'React · TypeScript · Vite · Tailwind · Node.js · Express · SQLite · Railway',
+      'Pickup ordering for The Meat Up, a two-location butcher shop — customers order cuts by the pound and pay only for the real weight, and the counter tablet calls out every new order.',
+    techStack: 'React · TypeScript · Vite · Tailwind · Node.js · Express · PostgreSQL · Square · Railway',
     images: [
       {
-        src: '/projects/staff-app-schedule.png',
-        alt: 'Manager week grid with shifts grouped by position, break labels, hours, and coverage bars',
+        src: '/projects/meatup-order-menu.png',
+        alt: 'The Meat Up ordering menu on a phone with house sausage and ready-to-grill packs, prices, and a cart bar',
         fit: 'contain',
         position: 'center top',
       },
       {
-        src: '/projects/staff-app-tips.png',
-        alt: 'Locked tip day showing the pool total and each person’s share',
+        src: '/projects/meatup-order-checkout.png',
+        alt: 'Checkout on a phone with a hand-cut ribeye by the pound, a pickup time, the estimated total, and the maximum that can be charged',
         fit: 'contain',
         position: 'center top',
       },
       {
-        src: '/projects/staff-app-employee.png',
-        alt: 'Employee home screen on a phone with the next shift and the week’s schedule',
+        src: '/projects/meatup-order-queue.png',
+        alt: 'Counter order queue with a new-order alert, a customer cancel request for a manager, and orders grouped by pickup time',
         fit: 'contain',
         position: 'center top',
       },
@@ -751,16 +751,72 @@ const projects: Project[] = [
     isPrivate: true,
     details: {
       summary:
-        'A scheduling and tip-sheet app for a two-location butcher shop — managers build and publish the week, and staff check shifts and pick up covers from their phones.',
+        'An online pickup-ordering app for a butcher shop, where most of what sells is cut and weighed to order — so the app holds a safe maximum on the card and charges the real weight once the butcher cuts it.',
+      built: [
+        'Menu with meat by the pound, thickness choices, and time-of-day menus for breakfast, hot food, and deli',
+        'Pickup in 15-minute slots with capacity limits, prep lead time, and holiday closures',
+        'Card hold for the estimate plus a buffer, then a charge at the real weight — never above the maximum shown',
+        'Square for pricing, tax, and card and Apple Pay payments, so card numbers never touch the app',
+        'Counter queue that chimes, reads each new order aloud, and repeats until someone taps “Got it”',
+        'Cancel flow: instant before the cut, a manager request after — and the counter hears every one',
+        'Guest checkout with no passwords, plus role- and store-based staff access',
+        '570 automated tests on a real database, and a 500-order load test with zero failed requests',
+        'Encrypted nightly off-site backups with a tested restore',
+      ],
+      value: [
+        'Customers order ahead instead of calling the counter',
+        'Cut-to-order meat is paid at the real weight, with no surprise charges',
+        'No new order or cancellation gets missed at a busy counter',
+        'Managers pause ordering or change the menu without a developer',
+      ],
+      privacy:
+        'Screenshots come from a test copy with demo prices and fictional customers and staff — no real orders or payments.',
+    },
+  },
+  {
+    slug: 'staff-scheduling-tips-app',
+    title: 'The Meat Up — Staff App',
+    fullTitle: 'The Meat Up — Staff Scheduling & Tips App',
+    tags: ['Web App', 'Mobile-First', 'Scheduling', 'Client Project'],
+    description:
+      'The staff app for The Meat Up, a two-location butcher shop — week-grid schedules, shift covers and trades, and an hours-weighted tip-pool calculator, replacing a spreadsheet and group texts.',
+    techStack: 'React · TypeScript · Vite · Tailwind · Node.js · Express · SQLite · Railway',
+    images: [
+      {
+        src: '/projects/meatup-staff-schedule.png',
+        alt: 'The Meat Up manager week grid with shifts grouped by counter, butcher, and cashier, unpaid breaks, weekly hours, and daily coverage bars',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/meatup-staff-tips.png',
+        alt: 'Locked Saturday tip day with the cash and card pool split by hours across seven staff, down to the cent, and a payroll CSV export',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/meatup-staff-employee.png',
+        alt: 'Employee home screen on a phone with today’s shift, the week’s schedule, and a claimed cover waiting for a manager',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'The scheduling and tip-sheet app The Meat Up runs on at both of its stores — managers build and publish the week, and staff check shifts and pick up covers from their phones.',
       built: [
         'Week-grid scheduler with coverage bars, copy-last-week, and publish',
         'Hours that exclude unpaid breaks, matching the shop’s old spreadsheet',
         'Hours-weighted tip-pool engine with penny-exact splits (1,000-case test)',
         'Locked tip days with version history and a payroll CSV export',
         'Cover and trade board that only offers shifts a person can actually work',
+        'Schedule emails on publish, with later edits batched into one summary per person',
         'Installable mobile app for staff: next shift, week, team, tips, and covers',
-        'Role-based access, invite links, and CSRF-protected sessions',
-        'Encrypted nightly backups and 337 automated tests in CI',
+        'Role-based access, invite links, CSRF-protected sessions, and an owner activity log',
+        'Encrypted nightly backups and 358 automated tests in CI',
       ],
       value: [
         'In live use at both locations',
@@ -769,7 +825,7 @@ const projects: Project[] = [
         'Staff see their shifts and request covers from their phones',
       ],
       privacy:
-        'Built for a private client, so these screenshots use a fictional business, fictional staff, and demo data.',
+        'Screenshots come from a demo copy with The Meat Up’s real branding and stores, but fictional staff and demo data.',
     },
   },
   {
@@ -827,6 +883,114 @@ const projects: Project[] = [
         'Built for an internal sales team and preparing for its pilot. Screenshots use a fictional dataset — no real customers, reps, or sales figures.',
     },
   },
+  {
+    slug: 'snapbox-qc-photo-hub',
+    title: 'SnapBox',
+    fullTitle: 'SnapBox — QC Photo Hub for the Production Floor',
+    tags: ['Internal Tool', 'Tablets', 'Quality Control', 'Real-Time'],
+    description:
+      'A quality-check photo hub for a food plant — each production line’s tablet snaps a photo and a note, and supervisors approve it or send feedback from one live board.',
+    techStack: 'Node.js · Express · SQLite · Server-Sent Events · JavaScript · PM2',
+    images: [
+      {
+        src: '/projects/snapbox-hub.png',
+        alt: 'SnapBox supervisor board with QC photo posts in columns by area and line, each with a status, a note, feedback, and approve and decline buttons',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/snapbox-tablet.png',
+        alt: 'Line tablet with a photo of a case on a check scale, a note, a send button, and supervisor feedback on this shift’s posts',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/snapbox-history.png',
+        alt: 'SnapBox history for a past day with date, area, line, and status filters, a count of approved and declined checks, and a grid of QC photos with notes and decline reasons',
+        fit: 'contain',
+        position: 'center top',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'Replaces “text the photo to someone” with one screen the whole floor shares: lines post their quality checks as they happen, and supervisors answer them live.',
+      built: [
+        'Line tablets that take a photo with the rear camera, add a note, and post in one tap',
+        'Live supervisor board by area and line, updated instantly over Server-Sent Events',
+        'Approve, decline with a reason, or send feedback that pops up on that line’s tablet',
+        'Each tablet only ever sees its own line’s posts and feedback',
+        'PIN-gated supervisor actions that the device remembers',
+        'Nothing is erased: delete archives, and a history page filters any past day and restores posts',
+        'Photos shrunk in the browser before upload, so tablets on weak Wi-Fi still post fast',
+        '70 automated tests covering every endpoint, run on every push',
+      ],
+      value: [
+        'Ended QC photos texted to one person’s phone',
+        'Every supervisor sees every line’s checks on one screen',
+        'Feedback reaches the line in seconds, not at the end of the shift',
+        'A searchable photo record of every check',
+      ],
+      privacy:
+        'Shown with generic area names, invented QC notes, and rendered demo photos — no real products, labels, or company details.',
+    },
+  },
+  {
+    slug: 'shousha-hub-launchpad-fleet-monitor',
+    title: 'Shousha-Hub',
+    fullTitle: 'Shousha-Hub — Company Launchpad & Fleet Monitor',
+    tags: ['Internal Platform', 'Monitoring', '3D', 'Dashboard'],
+    description:
+      'One front door to every internal tool a company runs — live status on every card, a watchtower that catches a tool going sick before anyone calls, and a 3D control room drawn from real health data.',
+    techStack: 'Node.js · Express · Three.js · JavaScript · JSON storage · PM2',
+    images: [
+      {
+        src: '/projects/shousha-hub-launchpad.png',
+        alt: 'Shousha-Hub launchpad with a 3D control-room band above eight tool cards showing online, issue, and offline status with latency',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/shousha-hub-ops.png',
+        alt: 'Watchtower fleet dashboard with up, degraded, and down counts, two open incidents, and every tool’s database, backup, and data-pull checks',
+        fit: 'contain',
+        position: 'center top',
+      },
+      {
+        src: '/projects/shousha-hub-diorama.png',
+        alt: 'Close-up of the 3D control room: kiosk screens with live latency sparklines, the developer at a red kiosk, and the monitor, repair, and deploy agents',
+        fit: 'cover',
+        position: 'center center',
+      },
+    ],
+    liveUrl: null,
+    detailUrl: null,
+    isPrivate: true,
+    details: {
+      summary:
+        'A launchpad that puts every internal tool one click away, with a built-in fleet monitor that knows the difference between a tool that’s down and one that’s up but quietly failing.',
+      built: [
+        'Launchpad with search and category filters for every internal tool',
+        'Live status on each card from a TCP or health-check probe, with latency',
+        'Watchtower monitor: read-only checks every minute, sorting each tool into up, degraded, or down',
+        'Degraded catches the quiet failures — a dead database, a stale backup, or a data pull that stopped',
+        'Incident tracking with one alert email after five minutes, reminders, and a recovery notice',
+        '3D control room in Three.js where each kiosk shows its tool’s real status and latency history',
+        'Runs fully offline on plant PCs, and scales its 3D down on weak hardware',
+        'Ideas & Help inbox with a PIN-gated admin and CSV export',
+      ],
+      value: [
+        'Staff stop hunting for bookmarks and IP addresses',
+        'Problems surface before someone on the floor reports them',
+        'One email to one person when an outage lasts — no alert spam',
+        'Staff ideas and bug reports land in one inbox',
+      ],
+      privacy:
+        'Shown with a fictional tool list and demo monitoring data — no real hosts, systems, or company details.',
+    },
+  },
 ];
 
 /** Display order for the full portfolio on /work. */
@@ -838,13 +1002,16 @@ const projectOrder = [
   'kings-county-water-district',
   'avila-infrastructure',
   'shoushabox-production-system',
-  'pirata-goods',
+  'the-meat-up-online-ordering',
   'staff-scheduling-tips-app',
+  'pirata-goods',
   'formulation-batch-builder',
   'sanad-legal-ai-platform',
   'refined-stitchery',
   'delivery-verification-system',
   'breadcrumb-field-sales-app',
+  'snapbox-qc-photo-hub',
+  'shousha-hub-launchpad-fleet-monitor',
   'digital-receiving-log',
   'cmp-plus-cmms',
   'alhambra-guide-platform',
@@ -902,6 +1069,18 @@ export const shippedTools: ShippedTool[] = [
     blurb:
       'Instant last-price lookup across two pricing tiers, so sales and purchasing always quote from the latest number instead of digging through old invoices.',
     techStack: 'Node.js · Express · SQLite',
+  },
+  {
+    title: 'Warehouse Location Feed',
+    blurb:
+      'Type a bin code and see exactly what sits on that rack right now — items, cases, fresh/frozen/tempering state and how long each pallet has been in it, with scannable barcodes. Every shift opens on a Today board that spells each job out down to which pallet is in which bin, and still shouts about yesterday’s work nobody ticked off.',
+    techStack: 'Node.js · Express · read-only warehouse API · role-based login',
+  },
+  {
+    title: 'Break & Lunch Compliance Tracker',
+    blurb:
+      'Watches up to four break and lunch windows per worker and nudges the site manager the moment one is due. A missed break becomes a meal-break compliance record, managers get a 5 PM summary email, and a live per-site board shows every break green, yellow, or red — built to switch to payroll clock punches without changing the board.',
+    techStack: 'Node.js · Express · node-cron · email alerts',
   },
   {
     title: 'Custom WordPress Theme',
