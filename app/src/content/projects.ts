@@ -412,6 +412,58 @@ const projects: Project[] = [
     },
   },
   {
+    slug: 'bullard-knights-softball',
+    title: 'Bullard Knights Softball',
+    fullTitle: 'Bullard Knights Softball — High School Athletics Website',
+    tags: ['Website', 'Local Business', 'Events', 'Accessibility'],
+    description:
+      'Official website for a Fresno high school softball program — schedule, events, coaches, youth program, and team gear on a fast static site built for parents on their phones at the field.',
+    techStack: 'Astro · TypeScript · Tailwind · Vercel',
+    images: [
+      {
+        src: '/projects/bullard-home.jpg',
+        alt: 'Bullard Knights Softball homepage hero with the next-event countdown banner',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/bullard-events.jpg',
+        alt: 'Events page listing upcoming Bullard softball events with dates, times, and locations',
+        fit: 'cover',
+        position: 'center top',
+      },
+      {
+        src: '/projects/bullard-event-detail.jpg',
+        alt: 'Event detail page with add-to-calendar, a map link, and the event flyer',
+        fit: 'cover',
+        position: 'center top',
+      },
+    ],
+    liveUrl: 'https://bullardsoftball.com',
+    detailUrl: null,
+    isPrivate: false,
+    lightFrame: true,
+    details: {
+      summary:
+        'A college-program-style site for Bullard High School softball in Fresno, CA — one clear place for the schedule, upcoming events, the coaching staff, the youth league, and the team store.',
+      built: [
+        'Bold athletics design with a full-bleed hero and dark / light themes',
+        '“Next Up” banner with a live countdown to the soonest event',
+        'Events pages with real text details, a zoomable flyer, add-to-calendar files, and a map link',
+        'Events that hide themselves once they have ended, so the site never shows a stale flyer',
+        'Coaches, sponsors, and youth-program pages',
+        'Team, event, and share-card metadata for search and social',
+        'Static Astro build with almost no JavaScript, hosted on Vercel',
+      ],
+      value: [
+        'Parents find game schedules, event times, and locations in a couple of taps',
+        'Event details are real text, not just a flyer image — readable, searchable, and accessible',
+        'New events are added as one small content file, with no redesign needed',
+        'Loads fast on a phone at the field',
+      ],
+    },
+  },
+  {
     slug: 'pirata-goods',
     title: 'Pirata Goods',
     fullTitle: 'Pirata Goods — Leather Goods E-Commerce',
@@ -1001,6 +1053,7 @@ const projectOrder = [
   // 'shoushatv',
   'kings-county-water-district',
   'avila-infrastructure',
+  'bullard-knights-softball',
   'shoushabox-production-system',
   'the-meat-up-online-ordering',
   'staff-scheduling-tips-app',
@@ -1081,6 +1134,25 @@ export const shippedTools: ShippedTool[] = [
     blurb:
       'Watches up to four break and lunch windows per worker and nudges the site manager the moment one is due. A missed break becomes a meal-break compliance record, managers get a 5 PM summary email, and a live per-site board shows every break green, yellow, or red — built to switch to payroll clock punches without changing the board.',
     techStack: 'Node.js · Express · node-cron · email alerts',
+  },
+  {
+    title: 'Supplier Document Tracker',
+    blurb:
+      'Replaces a stack of per-category Excel workbooks with one shared tracker: which supplier has which required document on file, what is about to expire, and what is missing — across ingredients, raw material, packaging, and services. Per-person sign-in with viewer, editor, and admin roles.',
+    techStack: 'Python · FastAPI · PostgreSQL · role-based login',
+  },
+  {
+    title: 'Receiving Label Generator',
+    blurb:
+      'A single-page tool for inspectors: fill in a short form — PO, item, lot, dates — and print a scannable GS1-128 pallet label that meets a customer’s receiving requirements, including mixed pallets. No install, no login, works offline, and ships with a printable step-by-step team guide.',
+    techStack: 'HTML · JavaScript · GS1-128 barcodes · works offline',
+  },
+  {
+    title: 'Best-By Watch',
+    blurb:
+      'Mirrors every case of the watched product groups from the warehouse system each night, works out days left to best-by, and surfaces the lots that have entered the decision window — so short-dated product gets a decision instead of a surprise.',
+    techStack: 'Python · PostgreSQL · nightly sync',
+    status: 'Phase 1 live',
   },
   {
     title: 'Custom WordPress Theme',

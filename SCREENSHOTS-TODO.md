@@ -2,7 +2,8 @@
 
 **Projects with real screenshots:**
 Kings County Water District, Avila Infrastructure & Contracting (captured
-2026-09-11 from avilainfrastructure.com), Pirata Goods, Refined Stitchery (public sites),
+2026-09-11 from avilainfrastructure.com), Bullard Knights Softball (captured
+2026-10-07 from bullardsoftball.com), Pirata Goods, Refined Stitchery (public sites),
 plus **Formulation Batch Builder**, **Digital Receiving Log**,
 **Cmp-Plus (CMMS)**, **The Meat Up — Staff App**, **The Meat Up — Online
 Ordering**, **Breadcrumb**, **SnapBox**, and **Shousha-Hub** (internal/client,
