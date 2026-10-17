@@ -6,7 +6,7 @@ import { featuredProjects, totalShippedCount } from '../content/projects';
  *  of the portfolio. The full collection lives on /work. */
 export default function RecentWork() {
   return (
-    <section id="work" className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
+    <section id="work" className="relative py-20 md:py-28" style={{ background: 'var(--lf-surface)' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1200px' }}>
         <div style={{ maxWidth: '720px' }}>
           <span
@@ -16,7 +16,7 @@ export default function RecentWork() {
               fontSize: '0.75rem',
               fontWeight: 600,
               letterSpacing: '0.04em',
-              color: '#5F6F80',
+              color: 'var(--lf-on-ink-dim)',
             }}
           >
             RECENT WORK
@@ -28,7 +28,7 @@ export default function RecentWork() {
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(2.35rem, 5vw, 3.25rem)',
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.03em',
               lineHeight: 1.04,
               maxWidth: '760px',
@@ -42,7 +42,7 @@ export default function RecentWork() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.0625rem',
-              color: '#2A2A2A',
+              color: 'var(--lf-body)',
               lineHeight: 1.7,
               maxWidth: '640px',
             }}
@@ -58,7 +58,7 @@ export default function RecentWork() {
             to="/work"
             className="inline-flex min-h-12 items-center rounded-lg px-7 py-3 font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1rem',
             }}
@@ -71,7 +71,7 @@ export default function RecentWork() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.9375rem',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             Some work is private or under NDA, but I can show more during a call.

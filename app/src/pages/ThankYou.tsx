@@ -14,7 +14,7 @@ export default function ThankYou() {
       <section
         className="flex min-h-screen items-center justify-center px-6"
         style={{
-          background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)',
+          background: 'radial-gradient(ellipse at center, var(--lf-surface) 0%, var(--lf-surface-2) 100%)',
           paddingTop: '64px',
         }}
       >
@@ -36,7 +36,7 @@ export default function ThankYou() {
               fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               lineHeight: 1.05,
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
             }}
           >
             Thanks — your request was sent.
@@ -46,7 +46,7 @@ export default function ThankYou() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.125rem',
-              color: '#2A2A2A',
+              color: 'var(--lf-body)',
               maxWidth: '620px',
               lineHeight: 1.6,
             }}
@@ -59,8 +59,8 @@ export default function ThankYou() {
             className="mx-auto mt-10 rounded-2xl px-8 py-6"
             style={{
               maxWidth: '540px',
-              background: '#FFFFFF',
-              border: '1px solid #E2DDD6',
+              background: 'var(--lf-card)',
+              border: '1px solid var(--lf-line)',
             }}
           >
             <p
@@ -68,7 +68,7 @@ export default function ThankYou() {
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontWeight: 600,
                 fontSize: '1rem',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
               }}
             >
               Happy with the service so far?
@@ -78,7 +78,7 @@ export default function ThankYou() {
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
-                color: '#544D44',
+                color: 'var(--lf-muted)',
                 lineHeight: 1.6,
               }}
             >
@@ -91,7 +91,7 @@ export default function ThankYou() {
               className="mt-4 inline-flex items-center gap-2 rounded-lg font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-                background: '#E5742B',
+                background: 'var(--lf-accent)',
                 padding: '10px 20px',
                 fontSize: '0.9375rem',
               }}
@@ -106,17 +106,17 @@ export default function ThankYou() {
               className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-                background: '#E5742B',
+                background: 'var(--lf-accent)',
                 padding: '14px 32px',
                 borderRadius: '10px',
                 fontSize: '1rem',
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.background = '#D46620';
-                (e.target as HTMLElement).style.boxShadow = '0 6px 20px rgba(229, 116, 43, 0.3)';
+                (e.target as HTMLElement).style.background = 'var(--lf-accent-hover)';
+                (e.target as HTMLElement).style.boxShadow = '0 6px 20px rgba(var(--lf-accent-rgb), 0.3)';
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.background = '#E5742B';
+                (e.target as HTMLElement).style.background = 'var(--lf-accent)';
                 (e.target as HTMLElement).style.boxShadow = 'none';
               }}
             >
@@ -124,12 +124,12 @@ export default function ThankYou() {
             </Link>
             <Link
               to="/fresno-web-design"
-              className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
+              className="w-full text-center font-medium transition-all duration-200 hover:bg-lf-ink-btn hover:text-lf-on-ink sm:w-auto"
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 background: 'transparent',
-                border: '2px solid #0F2A44',
-                color: '#0F2A44',
+                border: '2px solid var(--lf-ink)',
+                color: 'var(--lf-ink)',
                 padding: '12px 30px',
                 borderRadius: '10px',
                 fontSize: '1rem',

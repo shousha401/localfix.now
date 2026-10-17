@@ -29,7 +29,7 @@ function Stars({ size = 16 }: { size?: number }) {
   return (
     <div className="flex gap-0.5">
       {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} width={size} height={size} viewBox="0 0 20 20" fill="#E5742B" aria-hidden="true">
+        <svg key={i} width={size} height={size} viewBox="0 0 20 20" style={{ fill: 'var(--lf-accent)' }} aria-hidden="true">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
       ))}
@@ -53,7 +53,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       className="relative py-20 md:py-28"
-      style={{ background: '#FFFFFF' }}
+      style={{ background: 'var(--lf-card)' }}
     >
       <div className="mx-auto px-6" style={{ maxWidth: '1200px' }}>
         {/* Header */}
@@ -66,7 +66,7 @@ export default function Testimonials() {
                 fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#544D44',
+                color: 'var(--lf-muted)',
               }}
             >
               GOOGLE REVIEWS
@@ -77,7 +77,7 @@ export default function Testimonials() {
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.12,
               }}
@@ -93,8 +93,8 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-3 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             style={{
-              background: '#FAF7F2',
-              border: '1px solid #E2DDD6',
+              background: 'var(--lf-surface)',
+              border: '1px solid var(--lf-line)',
               textDecoration: 'none',
             }}
             aria-label="See all 6 Google reviews"
@@ -107,7 +107,7 @@ export default function Testimonials() {
                     fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 700,
                     fontSize: '1.5rem',
-                    color: '#0F2A44',
+                    color: 'var(--lf-ink)',
                     lineHeight: 1,
                   }}
                 >
@@ -119,7 +119,7 @@ export default function Testimonials() {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.8125rem',
-                  color: '#6B7B8D',
+                  color: 'var(--lf-slate)',
                   marginTop: '2px',
                 }}
               >
@@ -136,8 +136,8 @@ export default function Testimonials() {
               key={review.name}
               className="flex flex-col rounded-2xl p-7"
               style={{
-                background: '#FAF7F2',
-                border: '1px solid #E2DDD6',
+                background: 'var(--lf-surface)',
+                border: '1px solid var(--lf-line)',
               }}
             >
               <div className="flex items-start justify-between gap-4">
@@ -147,7 +147,7 @@ export default function Testimonials() {
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
                       fontSize: '0.9375rem',
-                      color: '#0F2A44',
+                      color: 'var(--lf-ink)',
                     }}
                   >
                     {review.name}
@@ -157,7 +157,7 @@ export default function Testimonials() {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.75rem',
-                        color: '#6B7B8D',
+                        color: 'var(--lf-slate)',
                         marginTop: '2px',
                       }}
                     >
@@ -173,7 +173,7 @@ export default function Testimonials() {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.9375rem',
-                  color: '#2A2A2A',
+                  color: 'var(--lf-body)',
                   lineHeight: 1.7,
                 }}
               >
@@ -190,8 +190,8 @@ export default function Testimonials() {
               key={review.name}
               className="flex flex-col gap-2 rounded-xl px-4 py-4"
               style={{
-                background: '#FAF7F2',
-                border: '1px solid #E2DDD6',
+                background: 'var(--lf-surface)',
+                border: '1px solid var(--lf-line)',
               }}
             >
               <Stars size={13} />
@@ -200,7 +200,7 @@ export default function Testimonials() {
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 600,
                   fontSize: '0.875rem',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                   lineHeight: 1.3,
                 }}
               >
@@ -211,7 +211,7 @@ export default function Testimonials() {
                   style={{
                     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     fontSize: '0.75rem',
-                    color: '#6B7B8D',
+                    color: 'var(--lf-slate)',
                   }}
                 >
                   {review.badge}
@@ -225,8 +225,8 @@ export default function Testimonials() {
         <div
           className="mx-auto mt-10 flex flex-col items-start gap-4 rounded-2xl px-8 py-7 sm:flex-row sm:items-center sm:justify-between"
           style={{
-            background: '#FAF7F2',
-            border: '1px solid #E2DDD6',
+            background: 'var(--lf-surface)',
+            border: '1px solid var(--lf-line)',
           }}
         >
           <div>
@@ -235,7 +235,7 @@ export default function Testimonials() {
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1.25rem',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
                 lineHeight: 1.2,
               }}
             >
@@ -246,7 +246,7 @@ export default function Testimonials() {
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
-                color: '#544D44',
+                color: 'var(--lf-muted)',
               }}
             >
               It takes 30 seconds and helps other Fresno businesses find me.
@@ -259,16 +259,16 @@ export default function Testimonials() {
             className="inline-flex shrink-0 items-center gap-2 rounded-xl font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               padding: '12px 24px',
               fontSize: '0.9375rem',
               whiteSpace: 'nowrap',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#D46620';
+              (e.currentTarget as HTMLElement).style.background = 'var(--lf-accent-hover)';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#E5742B';
+              (e.currentTarget as HTMLElement).style.background = 'var(--lf-accent)';
             }}
           >
             <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

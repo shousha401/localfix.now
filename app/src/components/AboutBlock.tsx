@@ -1,6 +1,6 @@
 export default function AboutBlock() {
   return (
-    <section id="about" className="relative py-20 md:py-28" style={{ background: '#FFFFFF' }}>
+    <section id="about" className="relative py-20 md:py-28" style={{ background: 'var(--lf-card)' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <div className="grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
           <div className="flex justify-center lg:justify-start">
@@ -18,7 +18,7 @@ export default function AboutBlock() {
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
-                style={{ border: '1px solid #E2DDD6' }}
+                style={{ border: '1px solid var(--lf-line)' }}
               />
             </picture>
           </div>
@@ -31,7 +31,7 @@ export default function AboutBlock() {
                 fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#6B7B8D',
+                color: 'var(--lf-slate)',
               }}
             >
               WHO BUILDS YOUR SITE
@@ -43,7 +43,7 @@ export default function AboutBlock() {
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(2rem, 4vw, 2.25rem)',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.15,
                 maxWidth: '620px',
@@ -57,7 +57,7 @@ export default function AboutBlock() {
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1.125rem',
-                color: '#2A2A2A',
+                color: 'var(--lf-body)',
                 lineHeight: 1.75,
                 maxWidth: '540px',
               }}
@@ -70,7 +70,7 @@ export default function AboutBlock() {
               style={{
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontSize: '1.25rem',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
               }}
             >
               — Eslam Shousha, LocalFix Web Design
@@ -81,14 +81,14 @@ export default function AboutBlock() {
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.9375rem',
-                color: '#6B7B8D',
+                color: 'var(--lf-slate)',
               }}
             >
-              <a href="sms:+15593898850" className="transition-colors hover:text-[#E5742B]">
+              <a href="sms:+15593898850" className="transition-colors hover:text-lf-accent">
                 (559) 389-8850
               </a>
               <span aria-hidden="true">·</span>
-              <a href="mailto:eshousha@localfix.now" className="transition-colors hover:text-[#E5742B]">
+              <a href="mailto:eshousha@localfix.now" className="transition-colors hover:text-lf-accent">
                 Email: eshousha@localfix.now
               </a>
             </div>

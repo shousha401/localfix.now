@@ -18,7 +18,7 @@ const inter = "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif"
  *  HTML is never hidden for crawlers or no-JS visitors. */
 function ShoushaTvProof() {
   return (
-    <section className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
+    <section className="relative py-20 md:py-28" style={{ background: 'var(--lf-surface)' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <span
           className="block"
@@ -27,7 +27,7 @@ function ShoushaTvProof() {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#E5742B',
+            color: 'var(--lf-accent)',
           }}
         >
           PROOF, NOT PROMISES
@@ -39,7 +39,7 @@ function ShoushaTvProof() {
             fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
             fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-            color: '#0F2A44',
+            color: 'var(--lf-ink)',
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
             maxWidth: '720px',
@@ -50,13 +50,13 @@ function ShoushaTvProof() {
 
         <div
           className="mt-8 rounded-2xl p-7 md:p-10"
-          style={{ background: '#0F2A44' }}
+          style={{ background: 'var(--lf-ink-surface)' }}
         >
           <p
             style={{
               fontFamily: inter,
               fontSize: '1.0625rem',
-              color: '#FAF7F2',
+              color: 'var(--lf-on-ink)',
               lineHeight: 1.75,
               maxWidth: '760px',
             }}
@@ -71,7 +71,7 @@ function ShoushaTvProof() {
             style={{
               fontFamily: inter,
               fontSize: '1.0625rem',
-              color: '#FAF7F2',
+              color: 'var(--lf-on-ink)',
               lineHeight: 1.75,
               maxWidth: '760px',
             }}
@@ -87,7 +87,7 @@ function ShoushaTvProof() {
             style={{
               fontFamily: "'Space Mono', 'Courier New', ui-monospace, monospace",
               fontSize: '0.8125rem',
-              color: '#9FB2C4',
+              color: 'var(--lf-on-ink-muted)',
               letterSpacing: '0.02em',
             }}
           >
@@ -97,12 +97,12 @@ function ShoushaTvProof() {
 
         <p
           className="mt-6"
-          style={{ fontFamily: inter, fontSize: '1rem', color: '#2A2A2A', lineHeight: 1.7 }}
+          style={{ fontFamily: inter, fontSize: '1rem', color: 'var(--lf-body)', lineHeight: 1.7 }}
         >
           <Link
             to="/work"
-            className="font-medium transition-colors hover:text-[#D46620]"
-            style={{ color: '#E5742B' }}
+            className="font-medium transition-colors hover:text-lf-accent-hover"
+            style={{ color: 'var(--lf-accent)' }}
           >
             See the rest of my work →
           </Link>

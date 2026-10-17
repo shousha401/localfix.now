@@ -57,8 +57,8 @@ function ScreenshotGallery({
   const [hero, ...thumbnails] = project.images;
   const visibleThumbnails = typeof maxThumbnails === 'number' ? thumbnails.slice(0, maxThumbnails) : thumbnails;
   const lightFrame = project.lightFrame ?? project.slug === 'alhambra-guide-platform';
-  const frameBackground = lightFrame ? 'bg-[#FAF7F2]' : 'bg-[#0F2A44]';
-  const thumbnailBackground = lightFrame ? 'bg-white' : 'bg-[#122F4B]';
+  const frameBackground = lightFrame ? 'bg-lf-surface' : 'bg-lf-ink-surface';
+  const thumbnailBackground = lightFrame ? 'bg-lf-card' : 'bg-lf-ink-3';
 
   return (
     <div className={frameBackground}>
@@ -119,10 +119,10 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
         {projects.map((project, projectIndex) => (
           <TiltArticle
             key={project.slug}
-            className={`group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md ${
+            className={`group flex flex-col overflow-hidden rounded-2xl bg-lf-card shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md ${
               projectIndex === 0 ? 'md:col-span-2' : ''
             }`}
-            style={{ border: '1px solid #E2DDD6' }}
+            style={{ border: '1px solid var(--lf-line)' }}
           >
             <ScreenshotGallery
               project={project}
@@ -138,14 +138,14 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     key={tag}
                     className="inline-flex items-center rounded-full px-3 py-1"
                     style={{
-                      background: 'rgba(229, 116, 43, 0.10)',
-                      color: '#C76024',
+                      background: 'rgba(var(--lf-accent-rgb), 0.10)',
+                      color: 'var(--lf-accent-deep)',
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.8125rem',
                       fontWeight: 500,
                       letterSpacing: '0',
                       lineHeight: 1.35,
-                      boxShadow: 'inset 0 0 0 1px rgba(229, 116, 43, 0.14)',
+                      boxShadow: 'inset 0 0 0 1px rgba(var(--lf-accent-rgb), 0.14)',
                     }}
                   >
                     {tag}
@@ -160,7 +160,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                   fontWeight: 700,
                   fontSize:
                     projectIndex === 0 ? 'clamp(1.85rem, 3vw, 2.25rem)' : 'clamp(1.45rem, 2vw, 1.75rem)',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                   letterSpacing: '-0.02em',
                   lineHeight: 1.16,
                 }}
@@ -173,7 +173,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '1rem',
-                  color: '#425061',
+                  color: 'var(--lf-body-2)',
                   lineHeight: 1.72,
                   display: '-webkit-box',
                   WebkitLineClamp: 2,
@@ -189,7 +189,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
-                  color: '#5F6F80',
+                  color: 'var(--lf-on-ink-dim)',
                   lineHeight: 1.6,
                 }}
               >
@@ -204,7 +204,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     rel="noopener noreferrer"
                     className="inline-flex min-h-10 items-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
                     style={{
-                      background: '#E5742B',
+                      background: 'var(--lf-accent)',
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     }}
                   >
@@ -216,8 +216,8 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                   <span
                     className="inline-flex min-h-10 items-center rounded-lg px-4 py-2 text-sm font-medium"
                     style={{
-                      background: '#FAF7F2',
-                      color: '#544D44',
+                      background: 'var(--lf-surface)',
+                      color: 'var(--lf-muted)',
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     }}
                   >
@@ -228,10 +228,10 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="inline-flex min-h-10 items-center rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-200 hover:-translate-y-px hover:text-[#E5742B]"
+                  className="inline-flex min-h-10 items-center rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-200 hover:-translate-y-px hover:text-lf-accent"
                   style={{
-                    borderColor: '#E2DDD6',
-                    color: '#0F2A44',
+                    borderColor: 'var(--lf-line)',
+                    color: 'var(--lf-ink)',
                     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   }}
                 >
@@ -245,18 +245,18 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
 
       {selectedProject && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-[#0F2A44]/70 px-4 py-8"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-[rgba(var(--lf-shadow-rgb),0.7)] px-4 py-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-detail-title"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white shadow-2xl"
-            style={{ border: '1px solid #E2DDD6' }}
+            className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-lf-card shadow-2xl"
+            style={{ border: '1px solid var(--lf-line)' }}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-6 border-b p-6" style={{ borderColor: '#E2DDD6' }}>
+            <div className="flex items-start justify-between gap-6 border-b p-6" style={{ borderColor: 'var(--lf-line)' }}>
               <div>
                 <p
                   style={{
@@ -264,7 +264,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     letterSpacing: '0.04em',
-                    color: '#C76024',
+                    color: 'var(--lf-accent-deep)',
                   }}
                 >
                   Project Details
@@ -276,7 +276,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: 'clamp(1.75rem, 4vw, 2.35rem)',
-                    color: '#0F2A44',
+                    color: 'var(--lf-ink)',
                     letterSpacing: '-0.005em',
                     lineHeight: 1.1,
                   }}
@@ -288,9 +288,9 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-2xl leading-none transition-colors hover:bg-[#FAF7F2]"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-2xl leading-none transition-colors hover:bg-lf-surface"
                 aria-label="Close project details"
-                style={{ color: '#0F2A44' }}
+                style={{ color: 'var(--lf-ink)' }}
               >
                 ×
               </button>
@@ -308,7 +308,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontWeight: 600,
-                        color: '#0F2A44',
+                        color: 'var(--lf-ink)',
                       }}
                     >
                       Summary
@@ -318,7 +318,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#2A2A2A',
+                        color: 'var(--lf-body)',
                         lineHeight: 1.65,
                       }}
                     >
@@ -332,7 +332,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     style={{
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
-                      color: '#0F2A44',
+                      color: 'var(--lf-ink)',
                     }}
                   >
                     What I built
@@ -343,7 +343,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#2A2A2A',
+                        color: 'var(--lf-body)',
                         lineHeight: 1.55,
                       }}
                     >
@@ -357,7 +357,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#2A2A2A',
+                        color: 'var(--lf-body)',
                         lineHeight: 1.65,
                       }}
                     >
@@ -371,7 +371,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     style={{
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
-                      color: '#0F2A44',
+                      color: 'var(--lf-ink)',
                     }}
                   >
                     Business impact
@@ -382,7 +382,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#2A2A2A',
+                        color: 'var(--lf-body)',
                         lineHeight: 1.55,
                       }}
                     >
@@ -396,7 +396,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#2A2A2A',
+                        color: 'var(--lf-body)',
                         lineHeight: 1.65,
                       }}
                     >
@@ -410,7 +410,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     style={{
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontWeight: 600,
-                      color: '#0F2A44',
+                      color: 'var(--lf-ink)',
                     }}
                   >
                     Tools used
@@ -420,7 +420,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     style={{
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.875rem',
-                      color: '#5F6F80',
+                      color: 'var(--lf-on-ink-dim)',
                       lineHeight: 1.6,
                     }}
                   >
@@ -435,7 +435,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     rel="noopener noreferrer"
                     className="inline-flex min-h-10 items-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
                     style={{
-                      background: '#E5742B',
+                      background: 'var(--lf-accent)',
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                     }}
                   >
@@ -448,7 +448,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
                     style={{
                       fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                       fontSize: '0.8125rem',
-                      color: '#544D44',
+                      color: 'var(--lf-muted)',
                       lineHeight: 1.6,
                     }}
                   >

@@ -40,7 +40,7 @@ export default function Work() {
           within the first scroll, so no full-viewport intro here. */}
       <section
         className="relative overflow-hidden"
-        style={{ background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, var(--lf-surface) 0%, var(--lf-surface-2) 100%)' }}
       >
         <div
           className="relative z-10 mx-auto px-6 text-center"
@@ -54,7 +54,7 @@ export default function Work() {
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             MY WORK
@@ -67,12 +67,12 @@ export default function Work() {
               fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 4.25rem)',
               lineHeight: 1.05,
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.02em',
             }}
           >
             <span>Every project here runs</span>{' '}
-            <span style={{ color: '#E5742B' }}>a real business.</span>
+            <span style={{ color: 'var(--lf-accent)' }}>a real business.</span>
           </h1>
 
           <p
@@ -80,7 +80,7 @@ export default function Work() {
             style={{
               fontFamily: inter,
               fontSize: '1.125rem',
-              color: '#2A2A2A',
+              color: 'var(--lf-body)',
               maxWidth: '640px',
               lineHeight: 1.65,
             }}
@@ -93,15 +93,15 @@ export default function Work() {
             {stats.map((stat) => (
               <span
                 key={stat.label}
-                className="inline-flex items-baseline gap-2 rounded-full bg-white px-4 py-2"
-                style={{ border: '1px solid #E2DDD6' }}
+                className="inline-flex items-baseline gap-2 rounded-full bg-lf-card px-4 py-2"
+                style={{ border: '1px solid var(--lf-line)' }}
               >
                 <span
                   style={{
                     fontFamily: inter,
                     fontWeight: 700,
                     fontSize: '0.9375rem',
-                    color: '#0F2A44',
+                    color: 'var(--lf-ink)',
                   }}
                 >
                   {stat.value}
@@ -110,7 +110,7 @@ export default function Work() {
                   style={{
                     fontFamily: inter,
                     fontSize: '0.8125rem',
-                    color: '#5F6F80',
+                    color: 'var(--lf-on-ink-dim)',
                   }}
                 >
                   {stat.label}
@@ -122,14 +122,14 @@ export default function Work() {
       </section>
 
       {/* Full portfolio grid */}
-      <section className="relative pb-20 pt-4 md:pb-24" style={{ background: '#FAF7F2' }}>
+      <section className="relative pb-20 pt-4 md:pb-24" style={{ background: 'var(--lf-surface)' }}>
         <div className="mx-auto px-6" style={{ maxWidth: '1200px' }}>
           <ProjectShowcase projects={orderedProjects} />
         </div>
       </section>
 
       {/* Shipped tools without company-safe screenshots */}
-      <section className="relative py-20 md:py-24" style={{ background: '#FFFFFF' }}>
+      <section className="relative py-20 md:py-24" style={{ background: 'var(--lf-card)' }}>
         <div className="mx-auto px-6" style={{ maxWidth: '1200px' }}>
           <div style={{ maxWidth: '720px' }}>
             <span
@@ -139,7 +139,7 @@ export default function Work() {
                 fontSize: '0.75rem',
                 fontWeight: 600,
                 letterSpacing: '0.04em',
-                color: '#5F6F80',
+                color: 'var(--lf-on-ink-dim)',
               }}
             >
               ALSO IN PRODUCTION
@@ -151,7 +151,7 @@ export default function Work() {
                 fontFamily: inter,
                 fontWeight: 700,
                 fontSize: 'clamp(1.85rem, 4vw, 2.5rem)',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
                 letterSpacing: '-0.03em',
                 lineHeight: 1.08,
               }}
@@ -164,7 +164,7 @@ export default function Work() {
               style={{
                 fontFamily: inter,
                 fontSize: '1.0625rem',
-                color: '#2A2A2A',
+                color: 'var(--lf-body)',
                 lineHeight: 1.7,
                 maxWidth: '640px',
               }}
@@ -179,7 +179,7 @@ export default function Work() {
               <article
                 key={tool.title}
                 className="flex flex-col rounded-2xl p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md md:p-7"
-                style={{ background: '#FAF7F2', border: '1px solid #E2DDD6' }}
+                style={{ background: 'var(--lf-surface)', border: '1px solid var(--lf-line)' }}
               >
                 <div className="flex flex-wrap items-center gap-3">
                   <h3
@@ -187,7 +187,7 @@ export default function Work() {
                       fontFamily: inter,
                       fontWeight: 700,
                       fontSize: '1.25rem',
-                      color: '#0F2A44',
+                      color: 'var(--lf-ink)',
                       letterSpacing: '-0.02em',
                       lineHeight: 1.25,
                     }}
@@ -198,12 +198,12 @@ export default function Work() {
                     <span
                       className="inline-flex items-center rounded-full px-3 py-1"
                       style={{
-                        background: 'rgba(229, 116, 43, 0.10)',
-                        color: '#C76024',
+                        background: 'rgba(var(--lf-accent-rgb), 0.10)',
+                        color: 'var(--lf-accent-deep)',
                         fontFamily: inter,
                         fontSize: '0.75rem',
                         fontWeight: 500,
-                        boxShadow: 'inset 0 0 0 1px rgba(229, 116, 43, 0.14)',
+                        boxShadow: 'inset 0 0 0 1px rgba(var(--lf-accent-rgb), 0.14)',
                       }}
                     >
                       {tool.status}
@@ -216,7 +216,7 @@ export default function Work() {
                   style={{
                     fontFamily: inter,
                     fontSize: '0.9375rem',
-                    color: '#425061',
+                    color: 'var(--lf-body-2)',
                     lineHeight: 1.7,
                   }}
                 >
@@ -228,7 +228,7 @@ export default function Work() {
                   style={{
                     fontFamily: inter,
                     fontSize: '0.875rem',
-                    color: '#5F6F80',
+                    color: 'var(--lf-on-ink-dim)',
                     lineHeight: 1.6,
                   }}
                 >
@@ -243,7 +243,7 @@ export default function Work() {
             style={{
               fontFamily: inter,
               fontSize: '0.9375rem',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             Some work is private or under NDA, but I can show more during a call.
