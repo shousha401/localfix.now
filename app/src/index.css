@@ -82,19 +82,177 @@
     --ring: 240 5.9% 10%;
     --radius: 0.625rem;
 
-    /* Custom design tokens */
-    --color-navy: #0F2A44;
-    --color-orange: #E5742B;
-    --color-cream: #FAF7F2;
-    --color-charcoal: #2A2A2A;
-    --color-muted-text: #544D44;
-    --color-border: #E2DDD6;
+    /* ---------------------------------------------------------------------
+       LocalFix design tokens. Every color in the app flows through these —
+       components must never hardcode hex values, or they won't follow themes
+       (data-theme="halloween" below redefines the full set).
+
+       Role notes:
+       - ink          navy used as TEXT/fill/border (headings, logo, outlines)
+       - ink-surface  navy used as a large section BACKGROUND
+       - ink-btn      navy used as an interactive element's background
+       - on-ink-*     text/borders sitting ON an ink-surface section
+       - success-soft light-green TEXT on the always-dark terminal card, so
+                      it stays light in every theme
+       - surface/card page + card backgrounds
+       --------------------------------------------------------------------- */
+    --lf-surface: #FAF7F2;
+    --lf-surface-2: #F0EBE3;
+    --lf-card: #FFFFFF;
+    --lf-ink: #0F2A44;
+    --lf-ink-2: #1A3D5C;
+    --lf-ink-3: #122F4B;
+    --lf-ink-surface: #0F2A44;
+    --lf-ink-btn: #0F2A44;
+    --lf-ink-btn-hover: #1A3D5C;
+    --lf-ink-line: #425061;
+    --lf-body: #2A2A2A;
+    --lf-body-2: #425061;
+    --lf-muted: #544D44;
+    --lf-line: #E2DDD6;
+    --lf-accent: #E5742B;
+    --lf-accent-hover: #D46620;
+    --lf-accent-deep: #C76024;
+    --lf-on-ink: #FAF7F2;
+    --lf-on-ink-muted: #9FB2C4;
+    --lf-on-ink-dim: #5F6F80;
+    --lf-slate: #6B7B8D;
+    --lf-success: #25C46B;
+    --lf-success-soft: #BFE8CF;
+    --lf-gold: #F2C14E;
+    /* Comma-form RGB channels for rgba() composition in inline styles. */
+    --lf-accent-rgb: 229, 116, 43;
+    --lf-on-ink-rgb: 250, 247, 242;
+    --lf-surface-rgb: 250, 247, 242;
+    --lf-shadow-rgb: 15, 42, 68;
+    /* Low-alpha ink wash used as a box tint: darkens on light surfaces,
+       lightens on dark ones (a dark tint would vanish there). */
+    --lf-tint-rgb: 15, 42, 68;
+  }
+
+  /* -----------------------------------------------------------------------
+     Dark mode (year-round): the brand at night. Navy-based, same ember
+     accent — distinct from the purple seasonal theme below. Chosen by the
+     visitor via the navbar toggle, or automatically from
+     prefers-color-scheme when they have no stored choice (and no Halloween
+     season is active). Applied pre-paint by the index.html script.
+     ----------------------------------------------------------------------- */
+  html[data-theme='dark'] {
+    /* shadcn/ui token set, so Radix-based components follow the theme too. */
+    --background: 210 52% 10%;
+    --foreground: 210 42% 94%;
+    --card: 214 52% 14%;
+    --card-foreground: 210 42% 94%;
+    --popover: 214 52% 14%;
+    --popover-foreground: 210 42% 94%;
+    --primary: 25 86% 58%;
+    --primary-foreground: 210 52% 10%;
+    --secondary: 212 39% 18%;
+    --secondary-foreground: 210 42% 94%;
+    --muted: 212 39% 18%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 212 39% 20%;
+    --accent-foreground: 210 42% 94%;
+    --border: 212 39% 23%;
+    --input: 212 39% 23%;
+    --ring: 25 86% 58%;
+
+    --lf-surface: #0C1826;
+    --lf-surface-2: #13243A;
+    --lf-card: #112136;
+    --lf-ink: #E9EFF6;
+    --lf-ink-2: #1E3C5F;
+    --lf-ink-3: #102438;
+    --lf-ink-surface: #142C47;
+    --lf-ink-btn: #28517C;
+    --lf-ink-btn-hover: #35679B;
+    --lf-ink-line: #2C4055;
+    --lf-body: #D3DCE6;
+    --lf-body-2: #A9BACB;
+    --lf-muted: #93A5B7;
+    --lf-line: #233850;
+    --lf-accent: #F08438;
+    --lf-accent-hover: #FF9A52;
+    --lf-accent-deep: #D96B24;
+    --lf-on-ink: #F2F0EB;
+    --lf-on-ink-muted: #9FB2C4;
+    --lf-on-ink-dim: #7A8EA2;
+    --lf-slate: #8DA2B5;
+    --lf-success: #34D37C;
+    --lf-success-soft: #B4E9CA;
+    --lf-gold: #F6C750;
+    --lf-accent-rgb: 240, 132, 56;
+    --lf-on-ink-rgb: 242, 240, 235;
+    --lf-surface-rgb: 12, 24, 38;
+    --lf-shadow-rgb: 0, 0, 0;
+    --lf-tint-rgb: 214, 228, 241;
+
+    scrollbar-color: var(--lf-ink-line) var(--lf-surface);
+  }
+
+  /* -----------------------------------------------------------------------
+     Haunted Mode (seasonal Halloween theme).
+     Activated pre-paint by the inline script in index.html: auto Oct 1–Nov 2,
+     overridable via the navbar toggle (persisted in localStorage 'lf-theme').
+     Deep void-violet surfaces, bone/lavender text, ember-orange accent.
+     ----------------------------------------------------------------------- */
+  html[data-theme='halloween'] {
+    /* shadcn/ui token set, so Radix-based components follow the theme too. */
+    --background: 253 42% 5%;
+    --foreground: 258 36% 92%;
+    --card: 254 35% 10%;
+    --card-foreground: 258 36% 92%;
+    --popover: 254 35% 10%;
+    --popover-foreground: 258 36% 92%;
+    --primary: 24 100% 59%;
+    --primary-foreground: 253 42% 6%;
+    --secondary: 255 30% 14%;
+    --secondary-foreground: 258 36% 92%;
+    --muted: 255 30% 14%;
+    --muted-foreground: 258 18% 66%;
+    --accent: 255 30% 16%;
+    --accent-foreground: 258 36% 92%;
+    --border: 256 33% 20%;
+    --input: 256 33% 20%;
+    --ring: 24 100% 59%;
+
+    --lf-surface: #0D0916;
+    --lf-surface-2: #171023;
+    --lf-card: #151021;
+    --lf-ink: #E9E2F6;
+    --lf-ink-2: #1D1536;
+    --lf-ink-3: #170F2B;
+    --lf-ink-surface: #120C20;
+    --lf-ink-btn: #342659;
+    --lf-ink-btn-hover: #453273;
+    --lf-ink-line: #342852;
+    --lf-body: #CFC7E2;
+    --lf-body-2: #AFA4CC;
+    --lf-muted: #9D92BE;
+    --lf-line: #2B2144;
+    --lf-accent: #FF7A2F;
+    --lf-accent-hover: #FF934F;
+    --lf-accent-deep: #E8641D;
+    --lf-on-ink: #EFE8DB;
+    --lf-on-ink-muted: #A79DC2;
+    --lf-on-ink-dim: #867BA8;
+    --lf-slate: #8E82AE;
+    --lf-success: #3DDB82;
+    --lf-success-soft: #B4E9CA;
+    --lf-gold: #FFC94B;
+    --lf-accent-rgb: 255, 122, 47;
+    --lf-on-ink-rgb: 239, 232, 219;
+    --lf-surface-rgb: 13, 9, 22;
+    --lf-shadow-rgb: 0, 0, 0;
+    --lf-tint-rgb: 233, 226, 246;
+
+    scrollbar-color: var(--lf-ink-line) var(--lf-surface);
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-    background-color: var(--color-cream);
-    color: var(--color-charcoal);
+    background-color: var(--lf-surface);
+    color: var(--lf-body);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -105,6 +263,11 @@
        web font loads shows a near-identical serif instead of Times New Roman.
        This removes the "funny letters" flash on client-side route changes. */
     font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  }
+
+  ::selection {
+    background: var(--lf-accent);
+    color: var(--lf-surface);
   }
 }
 
@@ -132,8 +295,129 @@ html.lenis, html.lenis body {
 /* Focus states */
 @layer base {
   *:focus-visible {
-    outline: 2px solid var(--color-orange);
+    outline: 2px solid var(--lf-accent);
     outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Haunted Mode presentation layer
+   --------------------------------------------------------------------------- */
+
+/* Theme switch uses the View Transitions API (lib/theme.ts animates a clip-path
+   circle on the new snapshot). Disable the default cross-fade so the circular
+   reveal is the only animation. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* The hero's inline radial gradient is light-centered; in the dark themes it
+   becomes a lit-from-above vignette instead (inline style needs !important). */
+html[data-theme='dark'] #hero {
+  background: radial-gradient(120% 90% at 50% 30%, #163250 0%, #0A1522 72%) !important;
+}
+html[data-theme='halloween'] #hero {
+  background: radial-gradient(120% 90% at 50% 30%, #1A1130 0%, #0B0712 72%) !important;
+}
+
+/* Soft ember glow behind large headings. */
+html[data-theme='halloween'] h1,
+html[data-theme='halloween'] h2 {
+  text-shadow: 0 0 40px rgba(var(--lf-accent-rgb), 0.14);
+}
+
+/* Logo wordmark picks its colors up from CSS (beats the SVG presentation
+   attributes), so it follows the theme; the orange dot flickers like a
+   jack-o'-lantern candle in Haunted Mode. */
+.lf-logo text {
+  fill: var(--lf-ink);
+}
+.lf-logo .lf-logo-dot {
+  fill: var(--lf-accent);
+}
+@keyframes lf-flicker {
+  0%, 86%, 100% { opacity: 1; }
+  87% { opacity: 0.35; }
+  88% { opacity: 1; }
+  91% { opacity: 0.55; }
+  92% { opacity: 1; }
+  96% { opacity: 0.75; }
+  97% { opacity: 1; }
+}
+html[data-theme='halloween'] .lf-logo-dot {
+  animation: lf-flicker 5.5s linear infinite;
+}
+
+/* Navbar theme toggle (ghost button). */
+.lf-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--lf-line);
+  color: var(--lf-muted);
+  background: transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.lf-theme-toggle:hover {
+  color: var(--lf-accent);
+  border-color: var(--lf-accent);
+  transform: translateY(-1px);
+}
+html[data-theme='halloween'] .lf-theme-toggle {
+  color: var(--lf-accent);
+  border-color: rgba(var(--lf-accent-rgb), 0.5);
+  box-shadow: 0 0 16px rgba(var(--lf-accent-rgb), 0.28), inset 0 0 8px rgba(var(--lf-accent-rgb), 0.12);
+}
+
+/* The toggle's icon is keyed by theme, so it remounts and spins in on every
+   switch. */
+@keyframes lf-icon-in {
+  from { transform: rotate(-90deg) scale(0.4); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.lf-theme-icon {
+  animation: lf-icon-in 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Flashlight cursor halo (HalloweenFX positions it with a rAF-lerped
+   transform). Screen blend keeps it additive over any surface. */
+.lf-cursor-glow {
+  position: fixed;
+  top: -240px;
+  left: -240px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--lf-accent-rgb), 0.1) 0%, rgba(var(--lf-accent-rgb), 0.04) 38%, transparent 66%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 45;
+  will-change: transform;
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .lf-cursor-glow {
+    display: none !important;
+  }
+}
+
+/* Corner cobwebs draw themselves in when Haunted Mode mounts. */
+@keyframes lf-web-draw {
+  from { stroke-dashoffset: 420; }
+  to { stroke-dashoffset: 0; }
+}
+.lf-cobweb path {
+  stroke-dasharray: 420;
+  animation: lf-web-draw 2.4s ease-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lf-cobweb path {
+    stroke-dasharray: none;
+    animation: none;
   }
 }
 

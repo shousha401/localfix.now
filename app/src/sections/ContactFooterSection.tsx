@@ -98,12 +98,12 @@ export default function ContactFooterSection() {
 
   const inputStyle: CSSProperties = {
     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-    background: '#FAF7F2',
-    border: '1px solid #E2DDD6',
+    background: 'var(--lf-surface)',
+    border: '1px solid var(--lf-line)',
     borderRadius: '8px',
     padding: '12px 16px',
     fontSize: '0.9375rem',
-    color: '#2A2A2A',
+    color: 'var(--lf-body)',
     width: '100%',
     outline: 'none',
     transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
@@ -113,7 +113,7 @@ export default function ContactFooterSection() {
     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
     fontSize: '0.8125rem',
     fontWeight: 600,
-    color: '#0F2A44',
+    color: 'var(--lf-ink)',
   };
 
   return (
@@ -121,7 +121,7 @@ export default function ContactFooterSection() {
       ref={sectionRef}
       id="contact"
       style={{
-        background: '#FAF7F2',
+        background: 'var(--lf-surface)',
         padding: 'clamp(4rem, 8vh, 6rem) 24px 3rem',
       }}
     >
@@ -135,7 +135,7 @@ export default function ContactFooterSection() {
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.15,
               }}
@@ -147,7 +147,7 @@ export default function ContactFooterSection() {
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1rem',
-                color: '#544D44',
+                color: 'var(--lf-muted)',
                 maxWidth: '400px',
                 lineHeight: 1.6,
               }}
@@ -159,16 +159,16 @@ export default function ContactFooterSection() {
             <div className="mt-10 space-y-4">
               <a
                 href="sms:+15593898850"
-                className="flex items-center gap-3 transition-colors hover:text-[#E5742B]"
+                className="flex items-center gap-3 transition-colors hover:text-lf-accent"
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 500,
                   fontSize: '1.125rem',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                   textDecoration: 'none',
                 }}
               >
-                <MessageCircle size={20} strokeWidth={1.5} color="#E5742B" />
+                <MessageCircle size={20} strokeWidth={1.5} style={{ color: 'var(--lf-accent)' }} />
                 Text me: (559) 389-8850
               </a>
               <a
@@ -177,11 +177,11 @@ export default function ContactFooterSection() {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '1rem',
-                  color: '#E5742B',
+                  color: 'var(--lf-accent)',
                   textDecoration: 'none',
                 }}
               >
-                <Mail size={20} strokeWidth={1.5} color="#E5742B" />
+                <Mail size={20} strokeWidth={1.5} style={{ color: 'var(--lf-accent)' }} />
                 eshousha@localfix.now
               </a>
               <div
@@ -189,10 +189,10 @@ export default function ContactFooterSection() {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
-                  color: '#544D44',
+                  color: 'var(--lf-muted)',
                 }}
               >
-                <Clock size={20} strokeWidth={1.5} color="#544D44" />
+                <Clock size={20} strokeWidth={1.5} style={{ color: 'var(--lf-muted)' }} />
                 Mon–Fri, 9am–6pm PST
               </div>
               <a
@@ -203,14 +203,14 @@ export default function ContactFooterSection() {
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
-                  color: '#0F2A44',
-                  background: '#FAF7F2',
-                  border: '1px solid #E2DDD6',
+                  color: 'var(--lf-ink)',
+                  background: 'var(--lf-surface)',
+                  border: '1px solid var(--lf-line)',
                   padding: '8px 14px',
                   width: 'fit-content',
                 }}
               >
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="#E5742B" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 20 20" style={{ fill: 'var(--lf-accent)' }} aria-hidden="true">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 Leave a Google review
@@ -224,12 +224,12 @@ export default function ContactFooterSection() {
               <div
                 className="rounded-xl px-8 py-12 text-center"
                 style={{
-                  background: '#FFFFFF',
-                  boxShadow: '0 4px 32px rgba(15, 42, 68, 0.08)',
+                  background: 'var(--lf-card)',
+                  boxShadow: '0 4px 32px rgba(var(--lf-shadow-rgb), 0.08)',
                 }}
               >
                 <p
-                  className="mb-3 text-xl font-medium text-brand-navy"
+                  className="mb-3 text-xl font-medium text-lf-ink"
                   style={{
                     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   }}
@@ -251,8 +251,8 @@ export default function ContactFooterSection() {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4 rounded-xl p-8"
                 style={{
-                  background: '#FFFFFF',
-                  boxShadow: '0 4px 32px rgba(15, 42, 68, 0.08)',
+                  background: 'var(--lf-card)',
+                  boxShadow: '0 4px 32px rgba(var(--lf-shadow-rgb), 0.08)',
                 }}
               >
                 <h3
@@ -260,7 +260,7 @@ export default function ContactFooterSection() {
                     fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                     fontWeight: 600,
                     fontSize: '1.125rem',
-                    color: '#0F2A44',
+                    color: 'var(--lf-ink)',
                     marginBottom: '0.5rem',
                   }}
                 >
@@ -291,11 +291,11 @@ export default function ContactFooterSection() {
                   required
                   style={inputStyle}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                    e.target.style.borderColor = 'var(--lf-accent)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(var(--lf-accent-rgb), 0.15)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.borderColor = 'var(--lf-line)';
                     e.target.style.boxShadow = 'none';
                   }}
                 />
@@ -309,11 +309,11 @@ export default function ContactFooterSection() {
                   placeholder="Business name"
                   style={inputStyle}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                    e.target.style.borderColor = 'var(--lf-accent)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(var(--lf-accent-rgb), 0.15)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.borderColor = 'var(--lf-line)';
                     e.target.style.boxShadow = 'none';
                   }}
                 />
@@ -328,11 +328,11 @@ export default function ContactFooterSection() {
                   required
                   style={inputStyle}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                    e.target.style.borderColor = 'var(--lf-accent)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(var(--lf-accent-rgb), 0.15)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.borderColor = 'var(--lf-line)';
                     e.target.style.boxShadow = 'none';
                   }}
                 />
@@ -345,11 +345,11 @@ export default function ContactFooterSection() {
                   defaultValue=""
                   style={inputStyle}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                    e.target.style.borderColor = 'var(--lf-accent)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(var(--lf-accent-rgb), 0.15)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.borderColor = 'var(--lf-line)';
                     e.target.style.boxShadow = 'none';
                   }}
                 >
@@ -377,11 +377,11 @@ export default function ContactFooterSection() {
                     resize: 'vertical',
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#E5742B';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(229, 116, 43, 0.15)';
+                    e.target.style.borderColor = 'var(--lf-accent)';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(var(--lf-accent-rgb), 0.15)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#E2DDD6';
+                    e.target.style.borderColor = 'var(--lf-line)';
                     e.target.style.boxShadow = 'none';
                   }}
                 />
@@ -396,7 +396,7 @@ export default function ContactFooterSection() {
                   className="w-full font-medium text-white transition-all duration-200 hover:-translate-y-px"
                   style={{
                     fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-                    background: '#0F2A44',
+                    background: 'var(--lf-ink-btn)',
                     opacity: status === 'submitting' ? 0.75 : 1,
                     cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
                     padding: '14px',
@@ -405,10 +405,10 @@ export default function ContactFooterSection() {
                     fontWeight: 500,
                   }}
                   onMouseEnter={(e) => {
-                    (e.target as HTMLElement).style.background = '#1A3D5C';
+                    (e.target as HTMLElement).style.background = 'var(--lf-ink-btn-hover)';
                   }}
                   onMouseLeave={(e) => {
-                    (e.target as HTMLElement).style.background = '#0F2A44';
+                    (e.target as HTMLElement).style.background = 'var(--lf-ink-btn)';
                   }}
                 >
                   {status === 'submitting' ? 'Sending...' : 'Send Message'}
@@ -421,7 +421,7 @@ export default function ContactFooterSection() {
         {/* Bottom bar */}
         <footer
           className="mt-16 border-t pt-8"
-          style={{ borderColor: '#E2DDD6' }}
+          style={{ borderColor: 'var(--lf-line)' }}
         >
           <nav
             aria-label="Footer"
@@ -438,11 +438,11 @@ export default function ContactFooterSection() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="transition-colors hover:text-[#E5742B]"
+                className="transition-colors hover:text-lf-accent"
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.875rem',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                   fontWeight: 500,
                 }}
               >
@@ -458,12 +458,12 @@ export default function ContactFooterSection() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.875rem',
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
             }}
           >
             <span style={{ fontWeight: 600 }}>LocalFix Web Design</span>
             <span aria-hidden="true">·</span>
-            <a href="tel:+15593898850" className="transition-colors hover:text-[#E5742B]">
+            <a href="tel:+15593898850" className="transition-colors hover:text-lf-accent">
               (559)389-8850
             </a>
             <span aria-hidden="true">·</span>
@@ -471,7 +471,7 @@ export default function ContactFooterSection() {
               href="https://maps.google.com/?cid=17860024772841425269"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-[#E5742B]"
+              className="transition-colors hover:text-lf-accent"
             >
               Find me on Google
             </a>
@@ -481,7 +481,7 @@ export default function ContactFooterSection() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.8125rem',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             Serving Fresno, Clovis, Madera, Sanger, Selma, Visalia, Kerman &amp; Hanford, CA — the
@@ -492,7 +492,7 @@ export default function ContactFooterSection() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '0.8125rem',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             &copy; 2026 LocalFix. Built in Fresno, California. Serving the Central Valley &amp; small businesses across California.

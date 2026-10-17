@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
  */
 export default function PricingBlock() {
   return (
-    <section id="pricing" className="relative py-20 md:py-28" style={{ background: '#FFFFFF' }}>
+    <section id="pricing" className="relative py-20 md:py-28" style={{ background: 'var(--lf-card)' }}>
       <div className="mx-auto px-6 text-center" style={{ maxWidth: '720px' }}>
         <span
           className="block"
@@ -19,7 +19,7 @@ export default function PricingBlock() {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#544D44',
+            color: 'var(--lf-muted)',
           }}
         >
           SIMPLE PRICING
@@ -31,12 +31,12 @@ export default function PricingBlock() {
             fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
             fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-            color: '#0F2A44',
+            color: 'var(--lf-ink)',
             letterSpacing: '-0.01em',
             lineHeight: 1.12,
           }}
         >
-          <span style={{ color: '#E5742B' }}>One flat price.</span> Custom website.
+          <span style={{ color: 'var(--lf-accent)' }}>One flat price.</span> Custom website.
         </h2>
 
         <p
@@ -44,7 +44,7 @@ export default function PricingBlock() {
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.0625rem',
-            color: '#2A2A2A',
+            color: 'var(--lf-body)',
             lineHeight: 1.7,
             maxWidth: '600px',
           }}
@@ -62,7 +62,7 @@ export default function PricingBlock() {
             className="inline-flex items-center text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5"
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               padding: '14px 32px',
               borderRadius: '10px',
               fontSize: '1rem',

@@ -49,7 +49,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
   };
 
   return (
-    <section id="faq" className="relative py-20 md:py-28" style={{ background: '#FAF7F2' }}>
+    <section id="faq" className="relative py-20 md:py-28" style={{ background: 'var(--lf-surface)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -63,7 +63,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             FAQ
@@ -74,7 +74,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
               fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.01em',
               lineHeight: 1.12,
             }}
@@ -88,7 +88,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
             <details
               key={faq.question}
               className="group overflow-hidden rounded-xl"
-              style={{ background: '#FFFFFF', border: '1px solid #E2DDD6' }}
+              style={{ background: 'var(--lf-card)', border: '1px solid var(--lf-line)' }}
             >
               <summary
                 className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 [&::-webkit-details-marker]:hidden"
@@ -96,7 +96,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontWeight: 600,
                   fontSize: '1.0625rem',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                 }}
               >
                 {faq.question}
@@ -106,7 +106,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#E5742B"
+                  style={{ stroke: 'var(--lf-accent)' }}
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -120,7 +120,7 @@ export default function Faq({ items = defaultFaqs, heading = 'Frequently asked q
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '1rem',
-                  color: '#425061',
+                  color: 'var(--lf-body-2)',
                   lineHeight: 1.7,
                 }}
               >

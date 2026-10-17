@@ -13,7 +13,7 @@ export default function NotFound() {
       <section
         className="flex min-h-screen items-center justify-center px-6"
         style={{
-          background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)',
+          background: 'radial-gradient(ellipse at center, var(--lf-surface) 0%, var(--lf-surface-2) 100%)',
           paddingTop: '64px',
         }}
       >
@@ -24,7 +24,7 @@ export default function NotFound() {
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#E5742B',
+              color: 'var(--lf-accent)',
             }}
           >
             ERROR 404
@@ -36,7 +36,7 @@ export default function NotFound() {
               fontWeight: 700,
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               lineHeight: 1.05,
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.02em',
             }}
           >
@@ -50,7 +50,7 @@ export default function NotFound() {
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.125rem',
-              color: '#2A2A2A',
+              color: 'var(--lf-body)',
               maxWidth: '560px',
               lineHeight: 1.6,
             }}
@@ -71,11 +71,11 @@ export default function NotFound() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-medium transition-colors hover:text-[#E5742B]"
+                className="font-medium transition-colors hover:text-lf-accent"
                 style={{
                   fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                   fontSize: '0.9375rem',
-                  color: '#0F2A44',
+                  color: 'var(--lf-ink)',
                 }}
               >
                 {link.label}
@@ -89,7 +89,7 @@ export default function NotFound() {
               className="inline-flex items-center text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5"
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-                background: '#E5742B',
+                background: 'var(--lf-accent)',
                 padding: '14px 32px',
                 borderRadius: '10px',
                 fontSize: '1rem',

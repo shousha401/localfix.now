@@ -68,7 +68,7 @@ export default function ProblemSection({
       id="problems"
       className="relative"
       style={{
-        background: '#FAF7F2',
+        background: 'var(--lf-surface)',
         padding: 'clamp(5rem, 12vh, 9rem) 24px',
       }}
     >
@@ -81,7 +81,7 @@ export default function ProblemSection({
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#E5742B',
+            color: 'var(--lf-accent)',
           }}
         >
           {overline}
@@ -94,7 +94,7 @@ export default function ProblemSection({
             fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
             fontWeight: 600,
             fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-            color: '#0F2A44',
+            color: 'var(--lf-ink)',
             letterSpacing: '-0.01em',
             lineHeight: 1.15,
           }}
@@ -108,7 +108,7 @@ export default function ProblemSection({
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.0625rem',
-            color: '#2A2A2A',
+            color: 'var(--lf-body)',
             lineHeight: 1.7,
             maxWidth: '600px',
           }}
@@ -121,7 +121,7 @@ export default function ProblemSection({
             ref={statRef}
             className="mx-auto mt-8"
             style={{
-              background: 'rgba(15, 42, 68, 0.04)',
+              background: 'rgba(var(--lf-tint-rgb), 0.04)',
               borderRadius: '12px',
               padding: '1rem 1.5rem',
               maxWidth: '480px',
@@ -132,7 +132,7 @@ export default function ProblemSection({
                 fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
                 fontWeight: 600,
                 fontSize: '1rem',
-                color: '#0F2A44',
+                color: 'var(--lf-ink)',
               }}
             >
               {stat.text}
@@ -142,7 +142,7 @@ export default function ProblemSection({
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '0.75rem',
-                color: '#544D44',
+                color: 'var(--lf-muted)',
               }}
             >
               {stat.source}

@@ -28,7 +28,7 @@ export default function ServiceDetails({
   whoItsFor,
 }: ServiceDetailsContent) {
   return (
-    <section id="details" className="relative py-20 md:py-28" style={{ background: '#FFFFFF' }}>
+    <section id="details" className="relative py-20 md:py-28" style={{ background: 'var(--lf-card)' }}>
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <div style={{ maxWidth: '720px' }}>
           <span
@@ -38,7 +38,7 @@ export default function ServiceDetails({
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             {eyebrow}
@@ -50,7 +50,7 @@ export default function ServiceDetails({
               fontFamily: "'Newsreader', Georgia, 'Times New Roman', serif",
               fontWeight: 600,
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.01em',
               lineHeight: 1.12,
             }}
@@ -65,7 +65,7 @@ export default function ServiceDetails({
               style={{
                 fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                 fontSize: '1.0625rem',
-                color: '#2A2A2A',
+                color: 'var(--lf-body)',
                 lineHeight: 1.75,
                 maxWidth: '660px',
               }}
@@ -81,16 +81,16 @@ export default function ServiceDetails({
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontWeight: 700,
               fontSize: '1.125rem',
-              color: '#0F2A44',
+              color: 'var(--lf-ink)',
               letterSpacing: '-0.01em',
             }}
           >
             {whatsIncludedTitle}
           </h3>
 
-          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl md:grid-cols-2" style={{ background: '#E2DDD6' }}>
+          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl md:grid-cols-2" style={{ background: 'var(--lf-line)' }}>
             {whatsIncluded.map((item) => (
-              <div key={item.title} className="p-6" style={{ background: '#FAF7F2' }}>
+              <div key={item.title} className="p-6" style={{ background: 'var(--lf-surface)' }}>
                 <div className="flex items-start gap-3">
                   <svg
                     className="mt-0.5 shrink-0"
@@ -98,7 +98,7 @@ export default function ServiceDetails({
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#E5742B"
+                    style={{ stroke: 'var(--lf-accent)' }}
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -112,7 +112,7 @@ export default function ServiceDetails({
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontWeight: 600,
                         fontSize: '1.0625rem',
-                        color: '#0F2A44',
+                        color: 'var(--lf-ink)',
                         lineHeight: 1.3,
                       }}
                     >
@@ -123,7 +123,7 @@ export default function ServiceDetails({
                       style={{
                         fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
                         fontSize: '0.9375rem',
-                        color: '#425061',
+                        color: 'var(--lf-body-2)',
                         lineHeight: 1.65,
                       }}
                     >
@@ -138,7 +138,7 @@ export default function ServiceDetails({
 
         <div
           className="mt-10 rounded-2xl p-6 md:p-8"
-          style={{ background: 'rgba(15, 42, 68, 0.04)', border: '1px solid #E2DDD6', maxWidth: '760px' }}
+          style={{ background: 'rgba(var(--lf-tint-rgb), 0.04)', border: '1px solid var(--lf-line)', maxWidth: '760px' }}
         >
           <h3
             style={{
@@ -146,7 +146,7 @@ export default function ServiceDetails({
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#544D44',
+              color: 'var(--lf-muted)',
             }}
           >
             {whoItsForTitle}
@@ -156,7 +156,7 @@ export default function ServiceDetails({
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               fontSize: '1.0625rem',
-              color: '#2A2A2A',
+              color: 'var(--lf-body)',
               lineHeight: 1.7,
             }}
           >

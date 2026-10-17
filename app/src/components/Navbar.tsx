@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const serviceLinks = [
   { label: 'App Development', href: '/app-development' },
@@ -22,22 +23,24 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const linkStyle = { color: '#2A2A2A', fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" } as const;
+  const linkStyle = { color: 'var(--lf-body)', fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" } as const;
 
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out"
       style={{
         height: '64px',
-        background: scrolled ? 'rgba(250, 247, 242, 0.92)' : 'transparent',
+        background: scrolled ? 'rgba(var(--lf-surface-rgb), 0.92)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid #E2DDD6' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid var(--lf-line)' : '1px solid transparent',
       }}
     >
       <div className="mx-auto flex h-full items-center justify-between px-6" style={{ maxWidth: '1200px' }}>
         {/* Logo */}
         <Link to="/" aria-label="LocalFix home" className="inline-flex items-center">
+          {/* Colors come from CSS (.lf-logo in index.css) so the wordmark
+              follows the active theme — SVG fill attributes can't use var(). */}
           <svg
             width="140"
             height="32"
@@ -45,6 +48,7 @@ export default function Navbar() {
             xmlns="http://www.w3.org/2000/svg"
             role="img"
             aria-hidden="true"
+            className="lf-logo"
           >
             <text
               x="0"
@@ -52,9 +56,8 @@ export default function Navbar() {
               fontFamily="Newsreader, Georgia, 'Times New Roman', serif"
               fontWeight="600"
               fontSize="28"
-              fill="#0F2A44"
             >
-              LocalFix<tspan fill="#E5742B">.</tspan>
+              LocalFix<tspan className="lf-logo-dot">.</tspan>
             </text>
           </svg>
         </Link>
@@ -63,7 +66,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <Link
             to="/"
-            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            className="text-sm font-medium transition-colors duration-200 hover:text-lf-accent"
             style={linkStyle}
           >
             Home
@@ -71,7 +74,7 @@ export default function Navbar() {
 
           <Link
             to="/work"
-            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            className="text-sm font-medium transition-colors duration-200 hover:text-lf-accent"
             style={linkStyle}
           >
             Work
@@ -81,7 +84,7 @@ export default function Navbar() {
           <div className="group relative">
             <button
               type="button"
-              className="inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+              className="inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-lf-accent"
               style={linkStyle}
               aria-haspopup="true"
             >
@@ -95,13 +98,13 @@ export default function Navbar() {
             >
               <div
                 className="flex w-56 flex-col overflow-hidden rounded-xl py-2 shadow-lg"
-                style={{ background: '#FAF7F2', border: '1px solid #E2DDD6' }}
+                style={{ background: 'var(--lf-surface)', border: '1px solid var(--lf-line)' }}
               >
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="px-4 py-2.5 text-sm font-medium transition-colors hover:bg-[#F0EBE3] hover:text-[#E5742B]"
+                    className="px-4 py-2.5 text-sm font-medium transition-colors hover:bg-lf-surface-2 hover:text-lf-accent"
                     style={linkStyle}
                   >
                     {link.label}
@@ -113,27 +116,29 @@ export default function Navbar() {
 
           <Link
             to="/about"
-            className="text-sm font-medium transition-colors duration-200 hover:text-[#E5742B]"
+            className="text-sm font-medium transition-colors duration-200 hover:text-lf-accent"
             style={linkStyle}
           >
             About
           </Link>
 
+          <ThemeToggle />
+
           <Link
             to="/#review-form"
             className="text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px"
             style={{
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               padding: '8px 20px',
               borderRadius: '8px',
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.background = '#D46620';
-              (e.target as HTMLElement).style.boxShadow = '0 4px 12px rgba(229, 116, 43, 0.25)';
+              (e.target as HTMLElement).style.background = 'var(--lf-accent-hover)';
+              (e.target as HTMLElement).style.boxShadow = '0 4px 12px rgba(var(--lf-accent-rgb), 0.25)';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.background = '#E5742B';
+              (e.target as HTMLElement).style.background = 'var(--lf-accent)';
               (e.target as HTMLElement).style.boxShadow = 'none';
             }}
           >
@@ -141,14 +146,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile: theme toggle + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+        <ThemeToggle />
         <button
-          className="flex h-10 w-10 items-center justify-center md:hidden"
+          className="flex h-10 w-10 items-center justify-center"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0F2A44" strokeWidth="2" strokeLinecap="round">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" style={{ stroke: 'var(--lf-ink)' }}>
             {menuOpen ? (
               <>
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -163,6 +170,7 @@ export default function Navbar() {
             )}
           </svg>
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -171,15 +179,15 @@ export default function Navbar() {
         style={{
           maxHeight: menuOpen ? '520px' : '0',
           opacity: menuOpen ? 1 : 0,
-          background: '#FAF7F2',
-          borderBottom: menuOpen ? '1px solid #E2DDD6' : '1px solid transparent',
+          background: 'var(--lf-surface)',
+          borderBottom: menuOpen ? '1px solid var(--lf-line)' : '1px solid transparent',
         }}
       >
         <div className="flex flex-col py-2">
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-lf-accent"
             style={linkStyle}
           >
             Home
@@ -188,7 +196,7 @@ export default function Navbar() {
           <Link
             to="/work"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            className="px-6 py-3 text-left text-sm font-medium transition-colors hover:text-lf-accent"
             style={linkStyle}
           >
             Work
@@ -201,7 +209,7 @@ export default function Navbar() {
               fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#6B7B8D',
+              color: 'var(--lf-slate)',
             }}
           >
             Services
@@ -211,7 +219,7 @@ export default function Navbar() {
               key={link.href}
               to={link.href}
               onClick={() => setMenuOpen(false)}
-              className="px-6 py-2.5 pl-8 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+              className="px-6 py-2.5 pl-8 text-left text-sm font-medium transition-colors hover:text-lf-accent"
               style={linkStyle}
             >
               {link.label}
@@ -221,7 +229,7 @@ export default function Navbar() {
           <Link
             to="/about"
             onClick={() => setMenuOpen(false)}
-            className="px-6 py-3 pt-4 text-left text-sm font-medium transition-colors hover:text-[#E5742B]"
+            className="px-6 py-3 pt-4 text-left text-sm font-medium transition-colors hover:text-lf-accent"
             style={linkStyle}
           >
             About
@@ -232,7 +240,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="mx-6 my-2 text-center text-sm font-medium text-white"
             style={{
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               padding: '10px',
               borderRadius: '8px',
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",

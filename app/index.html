@@ -25,6 +25,38 @@
     <meta name="theme-color" content="#0F2A44" />
     <meta name="color-scheme" content="light" />
 
+    <!-- Theme (light / dark / seasonal Haunted Mode), applied before first
+         paint so there is never a flash of the wrong palette. Order: a stored
+         choice ('lf-theme' = light|dark) wins; otherwise Haunted Mode during
+         Oct 1 – Nov 2; otherwise the OS prefers-color-scheme. Keep in sync
+         with src/lib/theme.ts. The prerendered markup itself is untouched —
+         this only sets data-theme on <html>. -->
+    <script>
+      (function () {
+        try {
+          var stored = null;
+          try { stored = localStorage.getItem('lf-theme'); } catch (e) {}
+          var now = new Date();
+          var month = now.getMonth();
+          var seasonal = month === 9 || (month === 10 && now.getDate() <= 2);
+          var theme;
+          if (stored === 'light' || stored === 'dark') theme = stored;
+          else if (seasonal) theme = 'halloween';
+          else theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          if (theme === 'light') return;
+          var root = document.documentElement;
+          root.setAttribute('data-theme', theme);
+          root.style.colorScheme = 'dark';
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#0C1826' : '#0D0916');
+          if (theme === 'halloween') {
+            var icon = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
+            if (icon) icon.setAttribute('href', '/favicon-halloween.svg');
+          }
+        } catch (e) { /* default theme */ }
+      })();
+    </script>
+
     <meta property="og:site_name" content="LocalFix" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />

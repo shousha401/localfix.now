@@ -47,7 +47,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
       className="relative flex items-center justify-center overflow-hidden"
       style={{
         minHeight: '100vh',
-        background: 'radial-gradient(ellipse at center, #FAF7F2 0%, #F0EBE3 100%)',
+        background: 'radial-gradient(ellipse at center, var(--lf-surface) 0%, var(--lf-surface-2) 100%)',
       }}
     >
       <div className="relative z-10 mx-auto px-6 text-center" style={{ maxWidth: '720px', paddingTop: '64px' }}>
@@ -60,7 +60,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#544D44',
+            color: 'var(--lf-muted)',
           }}
         >
           WEBSITES & AUTOMATION — FRESNO & REMOTE ACROSS CALIFORNIA
@@ -74,12 +74,12 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             fontWeight: 700,
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
             lineHeight: 1.05,
-            color: '#0F2A44',
+            color: 'var(--lf-ink)',
             letterSpacing: '-0.02em',
           }}
         >
-          <span style={{ color: '#0F2A44' }}>Better websites for Fresno businesses.</span>{' '}
-          <span style={{ color: '#E5742B' }}>Less busywork.</span>
+          <span style={{ color: 'var(--lf-ink)' }}>Better websites for Fresno businesses.</span>{' '}
+          <span style={{ color: 'var(--lf-accent)' }}>Less busywork.</span>
         </h1>
 
         <p
@@ -88,7 +88,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '1.125rem',
-            color: '#2A2A2A',
+            color: 'var(--lf-body)',
             maxWidth: '600px',
             lineHeight: 1.6,
           }}
@@ -111,17 +111,17 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             className="w-full text-center font-medium text-white transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
-              background: '#E5742B',
+              background: 'var(--lf-accent)',
               padding: '14px 32px',
               borderRadius: '10px',
               fontSize: '1rem',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.background = '#D46620';
-              (e.target as HTMLElement).style.boxShadow = '0 6px 20px rgba(229, 116, 43, 0.3)';
+              (e.target as HTMLElement).style.background = 'var(--lf-accent-hover)';
+              (e.target as HTMLElement).style.boxShadow = '0 6px 20px rgba(var(--lf-accent-rgb), 0.3)';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.background = '#E5742B';
+              (e.target as HTMLElement).style.background = 'var(--lf-accent)';
               (e.target as HTMLElement).style.boxShadow = 'none';
             }}
           >
@@ -129,12 +129,12 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           </a>
           <a
             href="sms:+15593898850"
-            className="w-full text-center font-medium transition-all duration-200 hover:bg-[#0F2A44] hover:text-[#FAF7F2] sm:w-auto"
+            className="w-full text-center font-medium transition-all duration-200 hover:bg-lf-ink-btn hover:text-lf-on-ink sm:w-auto"
             style={{
               fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
               background: 'transparent',
-              border: '2px solid #0F2A44',
-              color: '#0F2A44',
+              border: '2px solid var(--lf-ink)',
+              color: 'var(--lf-ink)',
               padding: '12px 30px',
               borderRadius: '10px',
               fontSize: '1rem',
@@ -150,7 +150,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
           style={{
             fontFamily: "'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif",
             fontSize: '0.875rem',
-            color: '#544D44',
+            color: 'var(--lf-muted)',
           }}
         >
           Serving Fresno, the Central Valley, and small businesses across California — remote-friendly.

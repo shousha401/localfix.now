@@ -1,8 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef, useSyncExternalStore } from 'react';
 import Lenis from 'lenis';
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { markSpaNavigation } from './lib/navigation-state';
+import { currentTheme, startSystemThemeSync, subscribe, type ThemeName } from './lib/theme';
+
+// Prerender/hydration snapshot: the FX layer never renders server-side.
+const getServerTheme = (): ThemeName => 'light';
 import Navbar from './components/Navbar';
+
+// Haunted Mode's atmosphere layer is its own lazy chunk: it only downloads
+// while the halloween theme is active, so the normal site pays nothing.
+const HalloweenFX = lazy(() => import('./components/HalloweenFX'));
 import Home from './pages/Home';
 import Work from './pages/Work';
 import AppDevelopment from './pages/AppDevelopment';
@@ -17,6 +25,10 @@ import { initAnalytics, trackPageview } from './lib/analytics';
 
 function AppShell() {
   const location = useLocation();
+
+  // 'light' during prerender/hydration, then tracks the live theme.
+  const theme = useSyncExternalStore(subscribe, currentTheme, getServerTheme);
+  useEffect(() => startSystemThemeSync(), []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -79,6 +91,12 @@ function AppShell() {
       <main className="relative z-10">
         <Outlet context={{ scrollToSection }} />
       </main>
+
+      {theme === 'halloween' && (
+        <Suspense fallback={null}>
+          <HalloweenFX />
+        </Suspense>
+      )}
     </div>
   );
 }
