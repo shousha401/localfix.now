@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 const HalloweenFX = lazy(() => import('./components/HalloweenFX'));
 import Home from './pages/Home';
 import Work from './pages/Work';
+import CaseStudy from './pages/CaseStudy';
 import AppDevelopment from './pages/AppDevelopment';
 import FresnoWebDesign from './pages/FresnoWebDesign';
 import WorkflowAutomation from './pages/WorkflowAutomation';
@@ -107,6 +108,7 @@ export default function App() {
       <Route element={<AppShell />}>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
+        <Route path="/work/:slug" element={<CaseStudy />} />
         <Route path="/app-development" element={<AppDevelopment />} />
         <Route path="/fresno-web-design" element={<FresnoWebDesign />} />
         <Route path="/workflow-automation" element={<WorkflowAutomation />} />

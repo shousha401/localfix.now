@@ -17,7 +17,15 @@ const DIST = join(__dirname, '..', 'dist');
 // is missing there, so the two cannot silently drift.
 const ROUTES = [
   { path: '/', sitemap: { priority: '1.0', lastmod: '2026-08-16' } },
-  { path: '/work', sitemap: { priority: '0.9', lastmod: '2026-10-07' } },
+  { path: '/work', sitemap: { priority: '0.9', lastmod: '2026-10-26' } },
+  // Case studies — one per entry in src/content/caseStudies.ts.
+  { path: '/work/kings-county-water-district', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/avila-infrastructure', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/bullard-knights-softball', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/the-meat-up', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/pirata-goods', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/refined-stitchery', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
+  { path: '/work/alhambra-guide-platform', sitemap: { priority: '0.7', lastmod: '2026-10-26' } },
   { path: '/app-development', sitemap: { priority: '0.9', lastmod: '2026-08-16' } },
   { path: '/fresno-web-design', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },
   { path: '/workflow-automation', sitemap: { priority: '0.9', lastmod: '2026-07-19' } },

@@ -118,7 +118,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://www.alhambraofficialguide.com/en',
-    detailUrl: null,
+    detailUrl: '/work/alhambra-guide-platform',
     isPrivate: false,
     details: {
       built:
@@ -349,7 +349,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://kingscwd.org',
-    detailUrl: null,
+    detailUrl: '/work/kings-county-water-district',
     isPrivate: false,
     lightFrame: true,
     details: {
@@ -388,7 +388,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://avilainfrastructure.com',
-    detailUrl: null,
+    detailUrl: '/work/avila-infrastructure',
     isPrivate: false,
     lightFrame: true,
     details: {
@@ -440,7 +440,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://bullardsoftball.com',
-    detailUrl: null,
+    detailUrl: '/work/bullard-knights-softball',
     isPrivate: false,
     lightFrame: true,
     details: {
@@ -492,7 +492,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://www.piratagoods.com',
-    detailUrl: null,
+    detailUrl: '/work/pirata-goods',
     isPrivate: false,
     lightFrame: true,
     details: {
@@ -544,7 +544,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: 'https://www.refinedstitchery.co.uk',
-    detailUrl: null,
+    detailUrl: '/work/refined-stitchery',
     isPrivate: false,
     lightFrame: true,
     details: {
@@ -554,14 +554,14 @@ const projects: Project[] = [
         'Responsive marketing storefront',
         'Services, who-we-serve, and FAQ pages',
         'Shopping cart',
-        'Stripe checkout (activates when keys are set)',
+        'Stripe card checkout',
         'Password-protected admin portal',
         'Product and photo management via serverless functions + Vercel Blob',
       ],
       value: [
         'Owner updates products and photos without touching code',
         'Customers browse services and order online',
-        'Ready for card payments the moment Stripe keys are added',
+        'Customers pay by card through Stripe',
       ],
     },
   },
@@ -854,7 +854,7 @@ const projects: Project[] = [
       },
     ],
     liveUrl: null,
-    detailUrl: null,
+    detailUrl: '/work/the-meat-up',
     isPrivate: true,
     details: {
       summary:
