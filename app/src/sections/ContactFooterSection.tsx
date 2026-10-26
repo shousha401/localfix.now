@@ -197,7 +197,7 @@ export default function ContactFooterSection() {
                 }}
               >
                 <Clock size={20} strokeWidth={1.5} style={{ color: 'var(--lf-muted)' }} />
-                Mon–Fri, 9am–6pm PST
+                Mon–Sat, 8am–8pm PT
               </div>
               <a
                 href="https://share.google/B7M1F0JFeexef85S9"
