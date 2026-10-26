@@ -123,6 +123,10 @@ export default function ContactFooterSection() {
       style={{
         background: 'var(--lf-surface)',
         padding: 'clamp(4rem, 8vh, 6rem) 24px 3rem',
+        // The columns slide in from ±30px, which is wider than the 24px side
+        // padding; clip (not hidden) so the pre-animation offset can't widen
+        // the page without turning the section into a scroll container.
+        overflowX: 'clip',
       }}
     >
       <div className="mx-auto" style={{ maxWidth: '1200px' }}>
