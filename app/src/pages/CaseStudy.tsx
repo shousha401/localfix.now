@@ -37,7 +37,8 @@ export default function CaseStudy() {
   const { project } = study;
   const url = `https://localfix.now/work/${study.slug}`;
   const [hero, ...gallery] = project.images;
-  const built = Array.isArray(project.details.built) ? project.details.built : [project.details.built];
+  const built =
+    study.built ?? (Array.isArray(project.details.built) ? project.details.built : [project.details.built]);
   const lightFrame = project.lightFrame ?? project.slug === 'alhambra-guide-platform';
   const frameBackground = lightFrame ? 'bg-lf-surface' : 'bg-lf-ink-surface';
   const moreStudies = caseStudies.filter((item) => item.slug !== study.slug).slice(0, 3);

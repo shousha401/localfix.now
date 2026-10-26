@@ -24,8 +24,10 @@ export type CaseStudy = {
   headline: string;
   intro: string;
   challenge: string;
-  /** Optional lead-in above the project's "What I built" bullets. */
+  /** Optional lead-in above the "What I built" bullets. */
   solution?: string;
+  /** Overrides the project's `details.built` when that is a single sentence. */
+  built?: string[];
   stats: CaseStudyStat[];
   results: string[];
   /** Optional closing note, e.g. what is being built next. */
@@ -57,6 +59,14 @@ export const caseStudies: CaseStudy[] = [
       'The district’s old site was built in Adobe Muse in the early 2000s. It was slow, awkward on a phone, English-only, and the documents residents and landowners actually come for — board agendas, minutes, and policies — were hard to find.',
     solution:
       'I rebuilt it from scratch as a modern React site, with every page available in both English and Spanish:',
+    built: [
+      'Home page introducing the district and its work',
+      'Board of Directors page with a tabbed archive of meeting agendas and minutes',
+      'Projects page for the district’s groundwater recharge basins, with stats and tables',
+      'Policies page with the district’s policy documents',
+      'Contact page so residents and landowners can reach the district',
+      'Responsive on any device, built with modern accessibility in mind',
+    ],
     stats: [
       { value: 'EN · ES', label: 'every page bilingual' },
       { value: '5 pages', label: 'rebuilt from an early-2000s site' },
@@ -257,6 +267,12 @@ export const caseStudies: CaseStudy[] = [
       'Alhambra Official Guide offers expert-guided tours of Granada’s UNESCO World Heritage site. I built a fast English and Spanish website where visitors can browse tours, check availability, and get in touch from any device.',
     challenge:
       'Visitors come from all over the world, most of them on a phone. They need clear tour information, availability, and a simple way to ask questions — in their own language.',
+    built: [
+      'Tour detail pages with the information visitors need before booking',
+      'Availability and customer inquiry flow',
+      'Full English and Spanish content',
+      'Mobile-first layout for visitors browsing on the go',
+    ],
     stats: [
       { value: 'EN · ES', label: 'every page bilingual' },
       { value: 'Mobile-first', label: 'for visitors on the go' },
