@@ -200,7 +200,7 @@ export default function ContactFooterSection() {
                 Mon–Sat, 8am–8pm PT
               </div>
               <a
-                href="https://share.google/B7M1F0JFeexef85S9"
+                href="https://g.page/r/CXXJ44jnjdv3EAE/review"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5"

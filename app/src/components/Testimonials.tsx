@@ -1,4 +1,6 @@
 const GOOGLE_REVIEW_LINK = 'https://share.google/B7M1F0JFeexef85S9';
+// Opens Google's "write a review" box directly, unlike the share link above.
+const GOOGLE_WRITE_REVIEW_LINK = 'https://g.page/r/CXXJ44jnjdv3EAE/review';
 
 type Review = {
   name: string;
@@ -253,7 +255,7 @@ export default function Testimonials() {
             </p>
           </div>
           <a
-            href={GOOGLE_REVIEW_LINK}
+            href={GOOGLE_WRITE_REVIEW_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl font-medium text-white transition-all duration-200 hover:-translate-y-0.5"

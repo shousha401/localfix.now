@@ -85,7 +85,7 @@ export default function ThankYou() {
               A quick Google review helps other Fresno businesses find me — and it takes about 30 seconds.
             </p>
             <a
-              href="https://share.google/B7M1F0JFeexef85S9"
+              href="https://g.page/r/CXXJ44jnjdv3EAE/review"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-lg font-medium text-white transition-all duration-200 hover:-translate-y-0.5"
