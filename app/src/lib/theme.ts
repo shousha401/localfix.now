@@ -6,9 +6,9 @@
 // Resolution order (keep in sync with the index.html script):
 //   1. an explicit stored choice ('light' | 'dark') wins;
 //   2. otherwise Haunted Mode during its season (Oct 1 – Nov 2);
-//   3. otherwise the OS preference (prefers-color-scheme).
+//   3. otherwise light.
 // Only deviations from that default are stored, so a visitor who picks the
-// default theme goes back to following the season and their OS.
+// default theme goes back to following the season.
 
 export type ThemeName = 'light' | 'dark' | 'halloween';
 
@@ -29,22 +29,8 @@ export function seasonActive(now = new Date()): boolean {
   return month === 9 || (month === 10 && now.getDate() <= 2);
 }
 
-function systemPrefersDark(): boolean {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
-function readStoredChoice(): 'light' | 'dark' | null {
-  try {
-    const value = localStorage.getItem(STORAGE_KEY);
-    return value === 'light' || value === 'dark' ? value : null;
-  } catch {
-    return null;
-  }
-}
-
 function defaultTheme(): ThemeName {
-  if (seasonActive()) return 'halloween';
-  return systemPrefersDark() ? 'dark' : 'light';
+  return seasonActive() ? 'halloween' : 'light';
 }
 
 export function currentTheme(): ThemeName {
@@ -92,21 +78,6 @@ function applyTheme(theme: ThemeName) {
   }
 
   listeners.forEach((listener) => listener(theme));
-}
-
-/**
- * Follow OS light/dark changes live for visitors with no stored choice.
- * Returns an unsubscribe function.
- */
-export function startSystemThemeSync(): () => void {
-  const query = window.matchMedia('(prefers-color-scheme: dark)');
-  const onChange = () => {
-    if (readStoredChoice() !== null) return;
-    const theme = defaultTheme();
-    if (theme !== currentTheme()) applyTheme(theme);
-  };
-  query.addEventListener('change', onChange);
-  return () => query.removeEventListener('change', onChange);
 }
 
 /**

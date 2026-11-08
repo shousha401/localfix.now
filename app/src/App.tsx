@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useRef, useSyncExternalStore } from 'react';
 import Lenis from 'lenis';
 import { Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { markSpaNavigation } from './lib/navigation-state';
-import { currentTheme, startSystemThemeSync, subscribe, type ThemeName } from './lib/theme';
+import { currentTheme, subscribe, type ThemeName } from './lib/theme';
 
 // Prerender/hydration snapshot: the FX layer never renders server-side.
 const getServerTheme = (): ThemeName => 'light';
@@ -29,7 +29,6 @@ function AppShell() {
 
   // 'light' during prerender/hydration, then tracks the live theme.
   const theme = useSyncExternalStore(subscribe, currentTheme, getServerTheme);
-  useEffect(() => startSystemThemeSync(), []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -132,10 +132,10 @@
 
   /* -----------------------------------------------------------------------
      Dark mode (year-round): the brand at night. Navy-based, same ember
-     accent — distinct from the purple seasonal theme below. Chosen by the
-     visitor via the navbar toggle, or automatically from
-     prefers-color-scheme when they have no stored choice (and no Halloween
-     season is active). Applied pre-paint by the index.html script.
+     accent — distinct from the purple seasonal theme below. Only applied
+     when the visitor picks it via the navbar toggle (outside the Halloween
+     season the default is always light). Applied pre-paint by the
+     index.html script when stored.
      ----------------------------------------------------------------------- */
   html[data-theme='dark'] {
     /* shadcn/ui token set, so Radix-based components follow the theme too. */

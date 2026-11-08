@@ -28,9 +28,9 @@
     <!-- Theme (light / dark / seasonal Haunted Mode), applied before first
          paint so there is never a flash of the wrong palette. Order: a stored
          choice ('lf-theme' = light|dark) wins; otherwise Haunted Mode during
-         Oct 1 – Nov 2; otherwise the OS prefers-color-scheme. Keep in sync
-         with src/lib/theme.ts. The prerendered markup itself is untouched —
-         this only sets data-theme on <html>. -->
+         Oct 1 – Nov 2; otherwise light. Keep in sync with src/lib/theme.ts.
+         The prerendered markup itself is untouched — this only sets
+         data-theme on <html>. -->
     <script>
       (function () {
         try {
@@ -42,7 +42,7 @@
           var theme;
           if (stored === 'light' || stored === 'dark') theme = stored;
           else if (seasonal) theme = 'halloween';
-          else theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          else theme = 'light';
           if (theme === 'light') return;
           var root = document.documentElement;
           root.setAttribute('data-theme', theme);
