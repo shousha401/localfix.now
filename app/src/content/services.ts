@@ -10,6 +10,9 @@ import type { ServiceDetailsContent } from '../components/ServiceDetails';
 export type ServiceContent = {
   /** Canonical URL — shared by RouteSeo and the per-page Service/Breadcrumb schema. */
   url: string;
+  /** One sentence for the homepage Services block (ServicesBlock.tsx). Reuses
+   *  the service page's own hero copy rather than introducing new claims. */
+  summary: string;
   problem: { overline: string; headline: string; body: string };
   details: ServiceDetailsContent;
   faqs: FaqItem[];
@@ -23,6 +26,8 @@ export type ServiceContent = {
 
 export const fresnoWebDesign: ServiceContent = {
   url: 'https://localfix.now/fresno-web-design',
+  summary:
+    'Mobile-friendly websites built for Fresno restaurants, salons, contractors, clinics, and service providers.',
   problem: {
     overline: 'SOUND LIKE YOUR SITE?',
     headline: 'Your site looks fine on a laptop and falls apart on a phone.',
@@ -122,6 +127,8 @@ export const fresnoWebDesign: ServiceContent = {
 
 export const workflowAutomation: ServiceContent = {
   url: 'https://localfix.now/workflow-automation',
+  summary:
+    'Custom booking systems, customer inquiry automation, internal dashboards, and integrations built for Fresno small businesses.',
   problem: {
     overline: 'THE REAL COST',
     headline: "The busywork isn't free — it's costing you the day",
@@ -213,6 +220,7 @@ export const workflowAutomation: ServiceContent = {
 
 export const aiChatbot: ServiceContent = {
   url: 'https://localfix.now/ai-chatbot',
+  summary: 'Custom AI chatbots and FAQ assistants for Fresno local businesses.',
   problem: {
     overline: 'SOUND FAMILIAR?',
     headline: "You're answering the same five questions all day.",
@@ -304,6 +312,8 @@ export const aiChatbot: ServiceContent = {
 
 export const websiteFixes: ServiceContent = {
   url: 'https://localfix.now/website-fixes',
+  summary:
+    'Slow load times, broken contact forms, mobile issues, outdated design — I fix Fresno business websites in days, not months.',
   problem: {
     overline: 'SOUNDS FAMILIAR?',
     headline: 'Your website works — except for the parts that don\'t.',
@@ -395,6 +405,7 @@ export const websiteFixes: ServiceContent = {
 
 export const appDevelopment: ServiceContent = {
   url: 'https://localfix.now/app-development',
+  summary: 'Cross-platform apps built with React Native and Expo — for phones, tablets, and TVs.',
   problem: {
     overline: 'THE APP GAP',
     headline: 'Custom apps sound like something only big companies can afford.',
