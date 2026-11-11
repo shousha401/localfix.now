@@ -1098,6 +1098,12 @@ export const featuredProjects = bySlugOrder(featuredOrder);
 /** Shipped work without company-safe screenshots — shown as text cards on /work. */
 export const shippedTools: ShippedTool[] = [
   {
+    title: 'Smokehouse Oven Monitor & QA Reports',
+    blurb:
+      'A live view of four industrial smokehouse ovens, read off the controller cable in listen-only mode so nothing can ever reach the ovens. Shows every oven’s temperatures, humidity and current program step, keeps a full cook history, counts every alarm, and sends an email alert when a cook drifts off its usual pattern. QA turns any past cook into a PDF or Excel batch report with every channel at the interval they pick, decoded from the oven system’s own database and checked against its screen with zero mismatches.',
+    techStack: 'Node.js · serial protocol decoding · Python · Firebird · PDF & Excel reports',
+  },
+  {
     title: 'ShoushaTV — TV & Mobile App',
     blurb:
       'A full 10-foot television app built for the remote: D-pad navigation, EPG/XMLTV program guide, favorites, watch history, and catch-up TV — with an ExoPlayer video layer and a stream-recovery state machine tuned for low-cost TV hardware. Ships completely empty: no bundled content, plays only from credentials the user enters. On Android TV and Fire TV by direct install, with an iOS beta in TestFlight.',
@@ -1109,6 +1115,12 @@ export const shippedTools: ShippedTool[] = [
     blurb:
       'Tells the team what to make and how much — days ahead. Reads live inventory and open orders, factoring FIFO, partial lots, shelf life, and order risk. Checked daily by production and ownership.',
     techStack: 'Node.js · React · SQLite',
+  },
+  {
+    title: 'Customer Production Reports',
+    blurb:
+      'Automated production reports for two customers: raw trim ground, finished goods packed and yield per day and per product, with every raw lot traced through processing to its finished lot, lot balance and billing. Pulled from the warehouse system on a schedule, reviewed on a web page with read-only sign-in, and sent out as a workbook.',
+    techStack: 'Python · PostgreSQL · scheduled pulls · Excel workbooks',
   },
   {
     title: 'Ask JD — On-Prem AI Assistant',
