@@ -35,7 +35,7 @@ export const fresnoWebDesign: ServiceContent = {
   },
   details: {
     eyebrow: 'WHAT YOU GET',
-    h2: 'Fresno web design built to turn visitors into calls',
+    h2: 'A small business website built to turn visitors into calls',
     intro: [
       `LocalFix builds custom websites for Fresno-area businesses — not a stock template you have to wrestle into shape. I design every page around the one thing that matters to you: getting the phone to ring and the calendar to fill. That means a layout where your number, hours, and booking button are the first things a visitor sees, copy that speaks to your actual customers, and a structure built by hand instead of dragged out of a page-builder. Restaurant, salon, contractor, clinic — your site should look like your business, not like everyone else's.`,
       `Speed and phones come first, because that's where your customers are. I build pages that load fast on a cell signal and stay readable one-thumbed, so nobody bounces before they reach your form. Pricing is flat and agreed up front: one fixed number based on how many pages and features you need, in writing before any work starts. New builds launch in 10 to 14 days, refreshes in 7 to 10. When it's done, the domain, the logins, and the whole thing belong to you. You work with me directly the entire way — no account managers, no handoffs.`,
