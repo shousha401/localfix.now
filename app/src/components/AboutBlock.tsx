@@ -4,23 +4,17 @@ export default function AboutBlock() {
       <div className="mx-auto px-6" style={{ maxWidth: '1120px' }}>
         <div className="grid items-center gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:gap-16">
           <div className="flex justify-center lg:justify-start">
-            <picture className="contents">
-              <source
-                srcSet="/projects/pic-640w.webp 640w, /projects/pic.webp 1200w"
-                sizes="280px"
-                type="image/webp"
-              />
-              <img
-                src="/projects/pic.jpeg"
-                alt="Eslam Shousha, founder of LocalFix — Fresno web developer"
-                width={280}
-                height={350}
-                loading="lazy"
-                decoding="async"
-                className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
-                style={{ border: '1px solid var(--lf-line)' }}
-              />
-            </picture>
+            {/* founder.jpg is 800x1000; width/height give the same 4:5 ratio so the box is reserved before it loads. */}
+            <img
+              src="/projects/founder.jpg"
+              alt="Eslam Shousha, founder of LocalFix — Fresno web developer"
+              width={280}
+              height={350}
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/5] w-full max-w-[280px] rounded-2xl object-cover object-center shadow-sm"
+              style={{ border: '1px solid var(--lf-line)' }}
+            />
           </div>
 
           <div>
