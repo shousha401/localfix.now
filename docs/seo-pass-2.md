@@ -3,7 +3,7 @@
 Follow-up to `docs/seo-audit-2026-11.md` (findings 2, 4 and 6, task cards 2–4).
 Branch `seo-pass-2`, based on `main` @ `3ae83ed`.
 
-**Merge commit:** not merged yet. Record the hash and date here after merging.
+**Merge commit:** `db978ff` (PR #13), merged 2026-11-11. Production deploy confirmed the same day. Re-check date: about 2027-02-09 (90 days).
 
 ## What changed
 
