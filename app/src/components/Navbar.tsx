@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const serviceLinks = [
-  { label: 'App Development', href: '/app-development' },
   { label: 'Fresno Web Design', href: '/fresno-web-design' },
   { label: 'Workflow Automation', href: '/workflow-automation' },
   { label: 'AI Chatbot', href: '/ai-chatbot' },
   { label: 'Website Fixes', href: '/website-fixes' },
+  { label: 'App Development', href: '/app-development' },
 ];
 
 export default function Navbar() {

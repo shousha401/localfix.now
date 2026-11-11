@@ -78,7 +78,7 @@ export default function HeroSection({ onScrollTo }: HeroSectionProps) {
             letterSpacing: '-0.02em',
           }}
         >
-          <span style={{ color: 'var(--lf-ink)' }}>Better websites for Fresno businesses.</span>{' '}
+          <span style={{ color: 'var(--lf-ink)' }}>Web design for Fresno businesses.</span>{' '}
           <span style={{ color: 'var(--lf-accent)' }}>Less busywork.</span>
         </h1>
 

@@ -1,5 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 import HeroSection from '../sections/HeroSection';
+import ServicesBlock from '../components/ServicesBlock';
 import RecentWork from '../components/RecentWork';
 import Testimonials from '../components/Testimonials';
 import HowItWorks from '../components/HowItWorks';
@@ -20,11 +21,12 @@ export default function Home() {
       {/* No dollar amounts anywhere on the site (owner request 2026-08-28):
           "flat pricing" language only, in descriptions and visible copy. */}
       <RouteSeo
-        title="Fresno Web Designer, Automation & AI | LocalFix"
-        description="Fresno web designer & automation shop for small businesses. Custom one-page websites with domain, business email, hosting & local SEO included. Flat pricing."
+        title="Fresno Web Design for Small Businesses | LocalFix"
+        description="Web design in Fresno for small businesses. Custom websites, fixes and automation from one local developer. Flat pricing, built in 1-2 weeks, free review first."
         canonical="https://localfix.now/"
       />
       <HeroSection onScrollTo={scrollToSection} />
+      <ServicesBlock />
       <RecentWork />
       <Testimonials />
       <HowItWorks />

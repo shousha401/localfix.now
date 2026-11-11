@@ -432,11 +432,14 @@ export default function ContactFooterSection() {
             className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
           >
             {[
+              // Same routes and order as the header nav (Navbar.tsx).
               { label: 'Home', to: '/' },
+              { label: 'Work', to: '/work' },
               { label: 'Fresno Web Design', to: '/fresno-web-design' },
               { label: 'Workflow Automation', to: '/workflow-automation' },
               { label: 'AI Chatbot', to: '/ai-chatbot' },
               { label: 'Website Fixes', to: '/website-fixes' },
+              { label: 'App Development', to: '/app-development' },
               { label: 'About', to: '/about' },
             ].map((link) => (
               <Link
@@ -455,8 +458,8 @@ export default function ContactFooterSection() {
             ))}
           </nav>
           {/* NAP block. Name and phone must match the Google Business Profile
-              character-for-character ("LocalFix Web Design" / "(559)389-8850")
-              — do not reformat them. */}
+              character-for-character ("LocalFix Web Design" / "(559) 389-8850",
+              set in seo-pass-2) — do not reformat them. */}
           <div
             className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center"
             style={{
@@ -468,7 +471,7 @@ export default function ContactFooterSection() {
             <span style={{ fontWeight: 600 }}>LocalFix Web Design</span>
             <span aria-hidden="true">·</span>
             <a href="tel:+15593898850" className="transition-colors hover:text-lf-accent">
-              (559)389-8850
+              (559) 389-8850
             </a>
             <span aria-hidden="true">·</span>
             <a
@@ -499,7 +502,7 @@ export default function ContactFooterSection() {
               color: 'var(--lf-muted)',
             }}
           >
-            &copy; 2026 LocalFix. Built in Fresno, California. Serving the Central Valley &amp; small businesses across California.
+            &copy; 2026 LocalFix Web Design. Built in Fresno, California. Serving the Central Valley &amp; small businesses across California.
           </p>
         </footer>
       </div>
